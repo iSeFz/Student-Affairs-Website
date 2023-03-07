@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>Edit Student Data</title>
+</head>
+
+<body>
+    <br><br><br><br><br><br><br>
+    <center>
+        <h1>Edit Existing Student Data</h1><br>
+        <form onsubmit="alert('Student data updated successfully!')">
+            <p><b>Student ID</b>
+                <input name="id" minlength="8" maxlength="8" placeholder="e.g 20220070" required>
+            </p>
+            <p><b>Name</b>
+                <input type="text" name="name" placeholder="e.g David Malan" required>
+            </p>
+            <p><b>GPA</b>
+                <input type="number" name="gpa" max="4" placeholder="e.g 3.4" step="0.01" required>
+            </p>
+            <p><b>Gender</b>
+                <select name="gender" required>
+                    <option selected hidden value="">Edit Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </p>
+            <p><b>Level</b>
+                <select name="level" required>
+                    <option selected hidden value="">Edit Level</option>
+                    <option value="first">First Level</option>
+                    <option value="second">Second Level</option>
+                    <option value="third">Third Level</option>
+                    <option value="fourth">Fourth Level</option>
+                </select>
+            </p>
+            <p><b> Status </b><input type="checkbox" name="status"> Active/Inactive </p>
+            <p><b>Department</b>
+                <input type="text" name="dept" placeholder="e.g Computer Science" required>
+            </p>
+            <p><b>Email</b>
+                <input type="email" name="email" placeholder="e.g d.malan@fci-cu.edu.eg" required>
+            </p>
+            <p><b>Phone Number</b>
+                <input type="tel" name="phone" maxlength="11" placeholder="e.g 01234567890">
+            </p>
+            <input type="submit" value="Confirm Edit">&#20;
+            <input type="reset" value="Delete Student" onclick="location.href='index.html'">
+        </form>
+    </center>
+</body>
+
+</html>
