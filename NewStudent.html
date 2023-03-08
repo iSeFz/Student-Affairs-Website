@@ -1,0 +1,93 @@
+<html>
+    <header>
+        <title>Add a New Student</title>
+    </header>
+    <body>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <center>
+        <form onsubmit="alert('Student Created Successfully'); return false">
+            <table>
+                <tr>
+                    <td>Student ID :</td>
+                    <td><input type="text" placeholder="Enter ID"></td>
+                </tr>
+                <tr>
+                    <td>Student Name :</td>
+                    <td><input type="text" placeholder="Enter Name"></td>
+                </tr>
+                <tr>
+                    <td>Date of Birth :</td>
+                    <td><input type="date" name="Date"></td>
+                </tr>
+                <tr>
+                    <td>Student GPA :</td>
+                    <td><input type="number" placeholder="Enter GPA" max="4" step="0.01"></td>
+                </tr>
+                <tr>
+                    <td><p>Gender : </td>
+
+                    <td><input type="radio" id="male" name="gender" value="m">
+                    <label for="male">Male</label>
+
+                    <input type="radio" id="female" name="gender" value="f">
+                    <label for="female">Female</label><br></td>
+                    </p>
+                </tr>
+                <tr>
+                    <td><label for="level">Student Level :</label></td>
+                    <td><select name="level" id="level">
+                        <option value="1">First Level</option>
+                        <option value="2">Second Level</option>
+                        <option value="3">Third Level</option>
+                        <option value="4">Fourth Level</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><p>Status : </td>
+
+                    <td><input type="radio" id="active" name="status" value="active">
+                    <label for="active">Active</label>
+
+                    <input type="radio" id="inactive" name="status" value="inactive">
+                    <label for="inactive">Inactive</label><br></td>
+                    </p>
+                </tr>
+                <tr>
+                    <td><p>Department : </td>
+
+                    <td><input type="radio" id="CS" name="department" value="CS">
+                    <label for="CS">CS</label>
+
+                    <input type="radio" id="IS" name="department" value="IS">
+                    <label for="IS">IS</label>
+
+                    <input type="radio" id="AI" name="department" value="AI">
+                    <label for="AI">AI</label>
+
+                    <input type="radio" id="IT" name="department" value="IT">
+                    <label for="IT">IT</label>
+
+                    <input type="radio" id="DS" name="department" value="DS">
+                    <label for="DS">DS</label><br></td>
+                    </p>
+                </tr>
+                <tr>
+                    <td><p>Email :</p></td>
+                    <td><input type="email" placeholder="Enter Student Email"></td>
+                </tr>
+                <tr>
+                    <td><p>Phone Number :</p></td>
+                    <td><input type="phone" placeholder="Enter Student Phone"></td>
+                </tr>
+                <tr>
+                    <td><input type="reset" value="Go back" onclick="location.href='index.html'"></td>
+                    <td><input type="submit" value="Confirm Edit"></td>
+                </tr>
+            </table>
+        </form>
+
+
+        </center>
+
+    </body>
+</html>
