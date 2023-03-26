@@ -1,20 +1,72 @@
 <html>
+
     <header>
+        <link rel="stylesheet" href="index.css">
         <title>Student Affairs</title>
     </header>
-    <body>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <form>
-            <p><center><b> Add New Student -> </b><button onclick="location.href='NewStudent.html'" type="button">
-                Click</button> <br> </p> </center>
-            <p><center><b> Edit Student Data -> </b><button onclick="location.href='edit.html'" type="button">
-                Click</button> <br> </p> </center>
-            <p><center><b> Search -> </b><button onclick="location.href='Search.html'" type="button">
-                Click</button> <br> </p> </center>
-            <p><center><b> View All Students -> </b><button onclick="location.href='ViewAll.html'" type="button">
-                Click</button> <br> </p> </center>
-            <p><center><b> Assign Department -> </b><button onclick="location.href='deptAssign.html'" type="button">
-                Click</button> <br> </p> </center>
-            </form>
+    <script>
+        function testFun(item){
+            item.classList.toggle("dark-mode-td");
+        }
+
+        function lightSwitch(){
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            element = document.getElementById("navbar");
+            element.classList.toggle("dark-mode-nav");
+
+            var items = document.getElementsByTagName("td");
+            items.foreach(testFun)
+
+            
+        }
+    </script>
+    <head>
+        <ul id="navbar">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="newStudent.html">Add New Student</a></li>
+            <li><a href="edit.html">Edit Student Data</a></li>
+            <li><a href="Search.html">Search</a></li> 
+            <li><a href="ViewAll.html">View All Students</a></li>
+            <li><a href="deptAssign.html">Assign Department</a></li>
+            <li style="float:right"><button class="DMSwitch" onclick="lightSwitch()">Dark Mode</button></li>
+        </ul>
+    </head>
+    
+    <body> 
+
+        <br><br><br><br><br><br><br><br>
+        <center><table>
+            <tr class="even">
+                <td class="test"><center> Add New Student </center></td>
+                <td><center><button class="choiceButtons" onclick="location.href='NewStudent.html'" type="button">
+                Click</button></center></td> 
+            </tr>
+            <tr class="odd">
+                <td><center> Edit Student Data </center></td>
+                <td><center><button class="choiceButtons" onclick="location.href='edit.html'" type="button">
+                Click</button></center></td> 
+            </tr> 
+            <br>
+            <tr class="even">
+                <td><center> Search </center></td>
+                <td><center><button class="choiceButtons" onclick="location.href='Search.html'" type="button">
+                Click</button></center></td>
+            </tr> 
+            <br>
+            <tr class="odd">
+                <td><center> View All Students </center></td>
+                <td><center><button class="choiceButtons" onclick="location.href='ViewAll.html'" type="button">
+                Click</button></center></td> 
+            </tr> 
+            <br>
+            <tr class="even">
+                <td><center> Assign Department </center></td>
+                <td><center><button class="choiceButtons" onclick="location.href='deptAssign.html'" type="button">
+                Click</button></center></td> 
+            </tr> 
+            <br>
+                
+        </table></center>
     </body>
 </html>
