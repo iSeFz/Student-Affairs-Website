@@ -1,4 +1,9 @@
-input[type=text], input[type=date], input[type=number], input[type=radio], input[type=email], input[type=phone]{
+input[type=text],
+input[type=date],
+input[type=number],
+input[type=radio],
+input[type=email],
+input[type=phone] {
     width: 100%;
     margin: 8px 0;
     padding: 10px 10px;
@@ -8,12 +13,18 @@ input[type=text], input[type=date], input[type=number], input[type=radio], input
     border-color: #458F6C;
 }
 
-input[type=text]:focus, input[type=date]:focus, input[type=number]:focus, input[type=radio]:focus, input[type=email]:focus, input[type=phone]:focus{
+input[type=text]:focus,
+input[type=date]:focus,
+input[type=number]:focus,
+input[type=radio]:focus,
+input[type=email]:focus,
+input[type=phone]:focus {
     border: 2px solid #458F6C;
     outline: none;
 }
 
-input[type=submit], input[type=reset]{
+input[type=submit],
+input[type=reset] {
     background-color: #458F6C;
     border: 1px solid #458F6C;
     border-radius: 4px;
@@ -40,61 +51,59 @@ input[type=submit]:hover {
     transform: translateY(-2px);
 }
 
-body{
+body {
     background-color: #EFEFEF;
     color: black;
     font-size: 20px;
 }
 
-ul{
-    list-style-type: none;
-    margin: -8;
-    padding: 0px 0px 0px 0px;
-    overflow: hidden;
+#navbar {
     background-color: white;
-    color: black;
-    /* outline-style: solid; */
-    /* outline-color: white; */
+    margin: 10px;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 30px;
 }
 
-li{
+.navbarItems {
     float: left;
-}
-
-li a{
     display: block;
+    margin: 5px;
+    padding: 14px 16px;
     color: black;
     text-align: center;
-    padding: 14px 16px;
+    font-size: 20px;
     text-decoration: none;
-
+    font-family: 'Rubik', sans-serif;
+    border-radius: 30px;
 }
 
-li a:hover{
+a.navbarItems:hover {
     background-color: #B6D6C7;
-    /* color: black; */
 }
 
-.active{
+#current {
+    color: white;
     background-color: #458F6C;
+    font-weight: bold;
 }
 
-table{
+table {
     width: 300px;
     color: black;
 }
 
-td{
+td {
     padding: 7px 10px 10px 10px;
     /* border: 2px solid #8899A6; */
     font-size: 20px;
 }
 
-tr.even{
+tr.even {
     background-color: white;
 }
 
-tr.odd{
+tr.odd {
     background-color: #B6C3C7;
 }
 
@@ -111,74 +120,48 @@ tr.odd{
     transition: transform 100ms;
     align-self: center;
 }
+
 .choiceButtons:hover {
     box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
     transform: translateY(-2px);
-}
-
-.DMSwitch{
-    background-color: #458F6C;
-    border: 0px solid #458F6C;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 100;
-    text-align: center;
-    color: white;
-    padding: 10px 10px;
-    transform: translate3d(-6px, 6px, 0px);
-    /* transform: translateX(-5px); */
-}
-
-.dark-mode{
-    background-color: #15202B;
-    color: white;
-}
-
-.dark-mode-nav{
-    background-color: #22303C;
-    color: white;
-    outline-color: #8899A6;
-    color: white;
-}
-
-.dark-mode-td{
-    border: 2px solid #8899A6;
-
 }
 
 input[type="radio"] {
     display: none;
 
 }
-input[type="radio"]:hover{
+
+input[type="radio"]:hover {
     background-color: #B6D6C7;
 }
 
 
-  input[type="radio"] + label,
-  select {
+input[type="radio"]+label,
+select {
     display: inline-block;
     width: 50%;
     text-align: center;
     /* float: left; */
     border-radius: 0;
-  }
-  input[type="radio"] + label:first-of-type {
+}
+
+input[type="radio"]+label:first-of-type {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-  }
-  input[type="radio"] + label:last-of-type {
+}
+
+input[type="radio"]+label:last-of-type {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
-  }
-  input[type="radio"] + label i {
+}
+
+input[type="radio"]+label i {
     padding-right: 0.4em;
-  }
-  input[type="radio"]:checked + label{
+}
+
+input[type="radio"]:checked+label {
     transition: 500ms;
     background-color: #458F6C;
     color: #fff;
     border-color: #458F6C;
-  }
+}

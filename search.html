@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Search Active Students</title>
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
+    <nav id="navbar">
+        <a class="navbarItems" href="index.html">Home</a>
+        <a class="navbarItems" href="newStudent.html">Add New Student</a>
+        <a class="navbarItems" href="editStudent.html">Edit Student Data</a>
+        <a class="navbarItems" id="current" href="search.html">Search Active Students</a>
+        <a class="navbarItems" href="viewAll.html">View All Students</a>
+        <a class="navbarItems" href="deptAssign.html">Assign Department</a>
+        <img style="float:right;" src="resources/FCAI-Logo.png" alt="FCAI Logo" width="70" height="65">
+    </nav>
+</head>
+
+<body>
+    <center>
+        <!-- search bar -->
+        <form action="Search.html" method="post">
+            <input type="text" name="search" placeholder="Enter student name">
+            <input type="submit" value="Search">
+                <table border="1px">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Id</th>
+                        <th>GPA</th>
+                        <th>Level</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Mohamed Amgad
+                        </td>
+                        <td>
+                            20210330
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <a href="deptAssign.html">AI</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Omar Elgammal
+                        </td>
+                        <td>
+                            20210271
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <a href="deptAssign.html">CS</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Seif Yahia
+                        </td>
+                        <td>
+                            20210172
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <a href="deptAssign.html">General</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Yousef Alzayat
+                        </td>
+                        <td>
+                            20210460
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <a href="deptAssign.html">IT</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </center>
+</body>
+
+</html>

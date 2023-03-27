@@ -1,59 +1,55 @@
-body{
+body {
     background-color: #EFEFEF;
     color: black;
     font-size: 20px;
 }
 
-ul{
-    list-style-type: none;
-    margin: -8;
-    padding: 0px 0px 0px 0px;
-    overflow: hidden;
+#navbar {
     background-color: white;
-    color: black;
-    /* outline-style: solid; */
-    /* outline-color: white; */
+    margin: 10px;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 30px;
 }
 
-li{
+.navbarItems {
     float: left;
-}
-
-li a{
     display: block;
+    margin: 5px;
+    padding: 14px 16px;
     color: black;
     text-align: center;
-    padding: 14px 16px;
+    font-size: 20px;
     text-decoration: none;
-
+    font-family: 'Rubik', sans-serif;
+    border-radius: 30px;
 }
 
-li a:hover{
+a.navbarItems:hover {
     background-color: #B6D6C7;
-    /* color: black; */
 }
 
-.active{
+#current {
     background-color: #458F6C;
+    color: white;
+    font-weight: bold;
 }
 
-table{
+table {
     width: 300px;
     color: black;
 }
 
-td{
+td {
     padding: 7px 10px 10px 10px;
-    /* transform: rotate() */
-    /* border: 2px solid #8899A6; */
     font-size: 20px;
 }
 
-tr.even{
+tr.even {
     background-color: white;
 }
 
-tr.odd{
+tr.odd {
     background-color: #B6C3C7;
 }
 
@@ -70,39 +66,37 @@ tr.odd{
     transition: transform 100ms;
     align-self: center;
 }
+
 .choiceButtons:hover {
     box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
     transform: translateY(-2px);
 }
 
-.DMSwitch{
-    background-color: #458F6C;
-    border: 0px solid #458F6C;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 100;
+.DMSwitch {
+    float: right;
+    display: block;
+    margin: 5px;
+    padding: 14px 16px;
+    color: black;
     text-align: center;
-    color: white;
-    padding: 10px 10px;
-    transform: translate3d(-6px, 6px, 0px);
-    /* transform: translateX(-5px); */
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
-.dark-mode{
+.dark-mode {
     background-color: #15202B;
     color: white;
 }
 
-.dark-mode-nav{
+.dark-mode-nav {
     background-color: #22303C;
     color: white;
     outline-color: #8899A6;
     color: white;
 }
 
-.dark-mode-td{
+.dark-mode-td {
     border: 2px solid #8899A6;
-
 }
