@@ -1,0 +1,151 @@
+body {
+    background-color: #EFEFEF;
+}
+
+#navbar {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.navbarItems {
+    float: left;
+    display: block;
+    margin: 5px;
+    padding: 14px 16px;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    border-radius: 30px;
+}
+
+a.navbarItems:hover {
+    background-color: #B6D6C7;
+}
+
+#current {
+    color: white;
+    background-color: #458F6C;
+    font-weight: bold;
+}
+
+table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+div {
+    margin: 15px;
+}
+
+.label {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px;
+}
+
+.inputFields {
+    width: 95%;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: 1px solid #68797B;
+    border-radius: 15px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+    background-size: 1em;
+}
+
+#dept {
+    cursor: not-allowed;
+    appearance: none;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]+label {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+input[type="radio"]:hover+label {
+    background-color: #B6D6C7;
+}
+
+input[type="radio"]:checked+label {
+    color: white;
+    font-weight: bold;
+    background-color: #458F6C;
+}
+
+.gender,
+.status {
+    font-size: 18px;
+}
+
+#level {
+    appearance: none;
+    background-image: url("resources/chevron.png");
+    background-position: right 1rem center;
+}
+
+#name {
+    padding-left: 3.3rem;
+    background-image: url("resources/user.png");
+}
+
+#id {
+    padding-left: 3.3rem;
+    background-image: url("resources/id.png");
+}
+
+#email {
+    padding-left: 3.3rem;
+    background-image: url("resources/email.png");
+}
+
+#phone {
+    padding-left: 3.3rem;
+    background-image: url("resources/phone.png");
+}
+
+#gpa {
+    padding-left: 3.3rem;
+    background-image: url("resources/grade.png");
+}
+
+#gpa::-webkit-inner-spin-button,
+#gpa::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    background-color: #458F6C;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+}

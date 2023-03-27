@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <title>Edit Student Data</title>
+    <link rel="stylesheet" href="editStudent.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
+    <nav id="navbar">
+        <a class="navbarItems" href="index.html">Home</a>
+        <a class="navbarItems" href="newStudent.html">Add New Student</a>
+        <a class="navbarItems" id="current" href="editStudent.html">Edit Student Data</a>
+        <a class="navbarItems" href="search.html">Search Active Students</a>
+        <a class="navbarItems" href="viewAll.html">View All Students</a>
+        <a class="navbarItems" href="deptAssign.html">Assign Department</a>
+        <img style="float:right;" src="resources/FCAI-Logo.png" alt="FCAI Logo" width="70" height="65">
+    </nav>
+</head>
+
+<body>
+    <form onsubmit="alert('Student data updated successfully!'); return false">
+        <table>
+            <tr>
+                <td>
+                    <div class="leftAlign">
+                        <label for="name" class="label">Student Name</label><br>
+                        <input type="text" id="name" class="inputFields" value="David Malan" required>
+                    </div>
+                </td>
+                <td>
+                    <div class="rightAlign">
+                        <label for="date" class="label">Date of Birth</label><br>
+                        <input type="date" id="date" class="inputFields" value="2003-08-27" required>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="leftAlign">
+                        <label for="id" class="label">Student ID</label><br>
+                        <input minlength="8" maxlength="8" id="id" class="inputFields" value="20160830" required>
+                    </div>
+                </td>
+                <td class="radio">
+                    <div class="rightAlign">
+                        <label for="gender" class="label">Gender</label>
+                        <input type="radio" name="gender" id="male" value="m" checked>
+                        <label for="male" class="gender">Male</label>
+                        <input type="radio" name="gender" id="female" value="f">
+                        <label for="female" class="gender">Female</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="leftAlign">
+                        <label for="email" class="label">Student Email</label><br>
+                        <input type="email" id="email" class="inputFields" value="d.malan@fci-cu.edu.eg" required>
+                    </div>
+                </td>
+                <td>
+                    <div class="rightAlign">
+                        <label for="phone" class="label">Phone Number</label><br>
+                        <input type="tel" id="phone" maxlength="11" class="inputFields" value="01234567890" required>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="leftAlign">
+                        <label for="gpa" class="label">Student GPA</label><br>
+                        <input type="number" id="gpa" max="4" value="3.4" step="0.01" class="inputFields" required>
+                    </div>
+                </td>
+                <td>
+                    <div class="rightAlign">
+                        <label for="dept" class="label">Department</label><br>
+                        <select id="dept" class="inputFields" disabled>
+                            <option value="CS" selected>Computer Science</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="radio">
+                    <div class="leftAlign">
+                        <label for="status" class="label">Status</label>
+                        <input type="radio" name="status" id="active" value="a" checked>
+                        <label for="active" class="status">Active</label>
+                        <input type="radio" name="status" id="inactive" value="i">
+                        <label for="inactive" class="status">Inactive</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="rightAlign">
+                        <label for="level" class="label">Student Level</label><br>
+                        <select id="level" class="inputFields">
+                            <option value="first">First Level</option>
+                            <option value="second" selected>Second Level</option>
+                            <option value="third">Third Level</option>
+                            <option value="fourth">Fourth Level</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div id="buttons">
+            <button type="submit" class="buttons">Confirm Edit</button>
+            <button type="reset" class="buttons" onclick="if(confirm('Are you sure you want to delete this student?')){
+            location.href='index.html'; alert('Student deleted successfully!')}">Delete Student</button>
+        </div>
+    </form>
+</body>
+
+</html>
