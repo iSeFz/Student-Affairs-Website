@@ -60,6 +60,10 @@ input[type="radio"]:checked+label {
     font-size: 18px;
 }
 
+.radio{
+    margin: 15px 15px 25px;
+}
+
 #level {
     appearance: none;
     background-image: url("../resources/chevron.png");
