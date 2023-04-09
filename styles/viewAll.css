@@ -1,13 +1,44 @@
-.hidden {
-    display: none;
-}
-
-
 table {
     margin: calc((100% - 80%)/2);
     width: 80%;
     text-align: center;
-    border-spacing: 0px;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: 'Rubik', sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+    background-color: #458F6C;
+    color: #ffffff;
+    text-align: center;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    background-color: #ffffff;
+}
+
+table tbody tr:nth-child(4n+3),
+table tbody tr:nth-child(4n+4) {
+    background-color: #f3f3f3;
+}
+
+span {
+    margin: calc((100% - 80%)/5);
+    width : 80%;
+    text-align: center;
+}
+
+
+.hidden {
+    display: none;
 }
 
 .arrow {
@@ -22,26 +53,23 @@ table {
     transition-duration: 0.4s;
 }
 
-span {
-    margin: calc((100% - 80%)/3);
-    width: 80%;
-}
-
 input[type='checkbox'] {
-    opacity: 0;
-
+    display: none;
 }
 
 input[type='checkbox']+label {
     position: relative;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    width: 32px;
+
 }
 
 input[type='checkbox']:checked+label {
     position: relative;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    width: 32px;
 }
 
 
@@ -69,7 +97,7 @@ input[type='checkbox']+label::after {
     background-color: #ff1a1a;
     border-radius: 31px;
     position: absolute;
-    left: 0.9em;
+    left: 0px;
     transition: background-color 0.3s ease-in-out, left 0.5s ease-in-out;
 }
 
@@ -80,7 +108,7 @@ input[type='checkbox']:checked+label::after {
     background-color: #00b33c;
     border-radius: 31px;
     position: absolute;
-    left: 0em;
+    left: 16px;
     transition: background-color 0.3s ease-in-out, left 0.5s ease-in-out;
 }
 
@@ -94,6 +122,12 @@ body {
     padding: 10px;
     overflow: hidden;
     border-radius: 30px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbarItems {
