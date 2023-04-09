@@ -9,6 +9,8 @@ table {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
+
+
 table thead tr {
     background-color: #458F6C;
     color: #ffffff;
@@ -27,13 +29,16 @@ table tbody tr {
 
 table tbody tr:nth-child(4n+3),
 table tbody tr:nth-child(4n+4) {
-    background-color: #f3f3f3;
+    background-color: #d2ffc265;
 }
 
 span {
     margin: calc((100% - 80%)/5);
     width : 80%;
     text-align: center;
+}
+table tbody tr:nth-child(2n+1) :first-child{
+    text-align: left;
 }
 
 
@@ -49,8 +54,9 @@ span {
 }
 
 .mainrow:hover {
-    background: #cccccc;
+    background: #677b70;
     transition-duration: 0.4s;
+    color: white;
 }
 
 input[type='checkbox'] {
@@ -85,7 +91,7 @@ input[type='checkbox']:checked+label::before {
     content: "";
     width: 2em;
     height: 1em;
-    background-color: #b3ff99;
+    background-color: #aafe8e;
     border-radius: 31px;
 }
 
@@ -118,10 +124,9 @@ body {
 
 #navbar {
     background-color: white;
-    margin: 10px;
+    margin: -10px;
     padding: 10px;
     overflow: hidden;
-    border-radius: 30px;
 }
 
 .checkbox {
