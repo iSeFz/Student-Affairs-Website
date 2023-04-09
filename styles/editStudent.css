@@ -2,42 +2,12 @@ body {
     background-color: #EFEFEF;
 }
 
-#navbar {
-    background-color: white;
-    margin: 10px;
-    padding: 10px;
-    overflow: hidden;
-    border-radius: 30px;
-}
-
-.navbarItems {
-    float: left;
-    display: block;
-    margin: 5px;
-    padding: 14px 16px;
-    color: black;
-    text-align: center;
-    font-size: 20px;
-    text-decoration: none;
-    font-family: 'Rubik', sans-serif;
-    border-radius: 30px;
-}
-
-a.navbarItems:hover {
-    background-color: #B6D6C7;
-}
-
-#current {
-    color: white;
-    background-color: #458F6C;
-    font-weight: bold;
-}
-
 table {
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Rubik', sans-serif;
+    margin: 40px 10px 20px;
 }
 
 div {
@@ -61,11 +31,6 @@ div {
     background-repeat: no-repeat;
     background-position: left 1rem center;
     background-size: 1em;
-}
-
-#dept {
-    cursor: not-allowed;
-    appearance: none;
 }
 
 input[type="radio"] {
@@ -95,6 +60,10 @@ input[type="radio"]:checked+label {
     font-size: 18px;
 }
 
+.radio{
+    margin: 15px 15px 25px;
+}
+
 #level {
     appearance: none;
     background-image: url("../resources/chevron.png");
@@ -119,6 +88,11 @@ input[type="radio"]:checked+label {
 #phone {
     padding-left: 3.3rem;
     background-image: url("../resources/phone.png");
+}
+
+#dept {
+    cursor: not-allowed;
+    appearance: none;
 }
 
 #gpa {

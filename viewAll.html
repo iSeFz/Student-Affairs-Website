@@ -3,11 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ViewAll</title>
-    <script src="scripts/viewAll.js"></script>
+    <title>View All Students</title>
+    <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/viewAll.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+    <script src="scripts/viewAll.js"></script>
     <nav id="navbar">
         <a class="navbarItems" href="index.html">Home</a>
         <a class="navbarItems" href="newStudent.html">Add New Student</a>
@@ -15,7 +17,7 @@
         <a class="navbarItems" href="search.html">Search Active Students</a>
         <a class="navbarItems" id="current" href="viewAll.html">View All Students</a>
         <a class="navbarItems" href="deptAssign.html">Assign Department</a>
-        <img style="float:right;" src="resources/FCAI-Logo.png" alt="FCAI Logo" width="70" height="65">
+        <img id="logo" src="resources/FCAI-Logo.png" alt="FCAI Logo">
     </nav>
 </head>
 
@@ -44,14 +46,19 @@
                         <label for="check1"></label>
                     </div>
                 </td>
-                <td onclick="collapse('1', 'arrow1')"><img src="resources/arrow.png" class="arrow" id="arrow1"></td>
+                <td><button data-modal-target="#modal1"></button></td>
             </tr>
-            <tr id="1" class="hidden">
-                <td colspan="6">
-                    <span><b>Gender:</b> Male</span><span><b>Birth Date:</b> 16-05-2002</span><span><b>Phone:</b>
-                            01206212820</span> <span><b>Email:</b> Amgad12345@gmail.com</span>
-                </td>
-            </tr>
+            <div class="modal active" id="modal1">
+                <div class="modal-head">
+                    <div class="title">MoreInfo</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <span><b>Gender:</b> Male</span><br><span><b>Birth Date:</b> 16-05-2002</span><br><span><b>Phone:</b>
+                        01206212820</span><br><span><b>Email:</b> Amgad12345@gmail.com</span>
+                </div>
+            </div>
+            <div class="active" id="overlay"></div>
             <tr class="mainrow">
                 <td>Omar Elgammal</td>
                 <td>20210271</td>
@@ -65,12 +72,16 @@
                 </td>
                 <td onclick="collapse('2', 'arrow2')"><img src="resources/arrow.png" class="arrow" id="arrow2"></td>
             </tr>
-            <tr id="2" class="hidden">
-                <td colspan="6">
-                    <span>Gender: Male</span><span>Birth Date: 16-05-2002</span><span>Phone:
-                            01206212820</span> <span>Email: Amgad12345@gmail.com</span>
-                </td>
-            </tr>
+            <div class="modal" id="modal2">
+                <div class="modal-head">
+                    <div class="title">MoreInfo</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <span><b>Gender:</b> Male</span><br><span><b>Birth Date:</b> 16-05-2002</span><br><span><b>Phone:</b>
+                        01206212820</span><br><span><b>Email:</b> Amgad12345@gmail.com</span>
+                </div>
+            </div>
             <tr class="mainrow">
                 <td>Seif Yahia</td>
                 <td>20210172</td>
@@ -84,12 +95,16 @@
                 </td>
                 <td onclick="collapse('3', 'arrow3')"><img src="resources/arrow.png" class="arrow" id="arrow3"></td>
             </tr>
-            <tr id="3" class="hidden">
-                <td colspan="6">
-                    <span>Gender: Male</span><span>Birth Date: 16-05-2002</span><span>Phone:
-                            01206212820</span> <span>Email: Amgad12345@gmail.com</span>
-                </td>
-            </tr>
+            <div class="modal" id="modal3">
+                <div class="modal-head">
+                    <div class="title">MoreInfo</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <span><b>Gender:</b> Male</span><br><span><b>Birth Date:</b> 16-05-2002</span><br><span><b>Phone:</b>
+                        01206212820</span><br><span><b>Email:</b> Amgad12345@gmail.com</span>
+                </div>
+            </div>
             <tr class="mainrow">
                 <td>Yousef Alzayat</td>
                 <td>20210460</td>
@@ -103,12 +118,16 @@
                 <td onclick="collapse('4', 'arrow4')"><img src="resources/arrow.png" class="arrow" id="arrow4"></td>
                 </td>
             </tr>
-            <tr id="4" class="hidden">
-                <td colspan="6">
-                    <span>Gender: Male</span><span>Birth Date: 16-05-2002</span><span>Phone:
-                            01206212820</span> <span>Email: Amgad12345@gmail.com</span>
-                </td>
-            </tr>
+            <div class="modal" id="modal4">
+                <div class="modal-head">
+                    <div class="title">MoreInfo</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <span><b>Gender:</b> Male</span><br><span><b>Birth Date:</b> 16-05-2002</span><br><span><b>Phone:</b>
+                        01206212820</span><br><span><b>Email:</b> Amgad12345@gmail.com</span>
+                </div>
+            </div>
             <tr class="mainrow">
                 <td>Yahya Ehab</td>
                 <td>20220432</td>
@@ -122,12 +141,16 @@
                 <td onclick="collapse('5', 'arrow5')"><img src="resources/arrow.png" class="arrow" id="arrow5"></td>
                 </td>
             </tr>
-            <tr id="5" class="hidden">
-                <td colspan="6">
-                    <span>Gender: Male</span><span>Birth Date: 16-05-2002</span><span>Phone:
-                            01206212820</span> <span>Email: Amgad12345@gmail.com</span>
-                </td>
-            </tr>
+            <div class="modal" id="modal5">
+                <div class="modal-head">
+                    <div class="title">MoreInfo</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <span><b>Gender:</b> Male</span><br><span><b>Birth Date:</b> 16-05-2002</span><br><span><b>Phone:</b>
+                        01206212820</span><br><span><b>Email:</b> Amgad12345@gmail.com</span>
+                </div>
+            </div>
         </tbody>
     </table>
 

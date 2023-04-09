@@ -1,7 +1,9 @@
 <html>
-<header>
-    <link rel="stylesheet" href="styles/newStudent.css">
+
+<head>
     <title>Add New Student</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/newStudent.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
     <nav id="navbar">
         <a class="navbarItems" href="index.html">Home</a>
@@ -10,19 +12,18 @@
         <a class="navbarItems" href="search.html">Search Active Students</a>
         <a class="navbarItems" href="viewAll.html">View All Students</a>
         <a class="navbarItems" href="deptAssign.html">Assign Department</a>
-        <img style="float:right;" src="resources/FCAI-Logo.png" alt="FCAI Logo" width="70" height="65">
-        <!-- <button style="float:right"> Toggle Dark Mode</button> -->
+        <img id="logo" src="resources/FCAI-Logo.png" alt="FCAI Logo">
     </nav>
-</header>
+</head>
+
 <body>
-    <br><br><br>
     <form onsubmit="alert('Student created successfully!'); return false">
-        <table align="center">
+        <table>
             <tr>
                 <td>
                     <div class="leftAlign">
                         <label for="name" class="label">Student Name</label><br>
-                        <input type="text" id="name" class="inputFields" required>
+                        <input type="text" id="name" class="inputFields" placeholder="Enter your name" required>
                     </div>
                 </td>
                 <td>
@@ -35,25 +36,22 @@
 
             <tr>
                 <td>
-                    <div class="rightAlign">
-                        <label for="phone" class="label">Phone Number</label><br>
-                        <input type="tel" id="phone" maxlength="11" class="inputFields" required>
-                    </div>
-                </td>
-                
-                <td>
                     <div class="leftAlign">
-                        <label for="email" class="label">Student Email</label><br>
-                        <input type="email" id="email" class="inputFields" required>
+                        <label for="phone" class="label">Phone Number</label><br>
+                        <input type="tel" id="phone" class="inputFields" maxlength="11" placeholder="Enter your phone number" required>
                     </div>
                 </td>
-                
+                <td>
+                    <div class="rightAlign">
+                        <label for="email" class="label">Student Email</label><br>
+                        <input type="email" id="email" class="inputFields" placeholder="Enter your email" required>
+                    </div>
+                </td>
             </tr>
 
             <tr>
-                
-                <td class="radio">
-                    <div class="rightAlign">
+                <td>
+                    <div class="leftAlign radio">
                         <label for="gender" class="label">Gender</label>
                         <input type="radio" name="gender" id="male" value="m" checked>
                         <label for="male" class="gender">Male</label>
@@ -61,8 +59,8 @@
                         <label for="female" class="gender">Female</label>
                     </div>
                 </td>
-                <td class="radio">
-                    <div class="leftAlign">
+                <td>
+                    <div class="rightAlign radio">
                         <label for="status" class="label">Status</label>
                         <input type="radio" name="status" id="active" value="a" checked>
                         <label for="active" class="status">Active</label>
@@ -70,14 +68,13 @@
                         <label for="inactive" class="status">Inactive</label>
                     </div>
                 </td>
-                
             </tr>
+
             <tr>
-                
                 <td>
                     <div class="leftAlign">
                         <label for="id" class="label">Student ID</label><br>
-                        <input minlength="8" maxlength="8" id="id" class="inputFields" required>
+                        <input id="id" class="inputFields" minlength="8" maxlength="8" placeholder="Enter your ID" required>
                     </div>
                 </td>
                 <td>
@@ -92,14 +89,14 @@
                     </div>
                 </td>
             </tr>
+
             <tr>
                 <td>
                     <div class="leftAlign">
                         <label for="gpa" class="label">Student GPA</label><br>
-                        <input type="number" id="gpa" max="4" min="0" step="0.01" class="inputFields" required>
+                        <input type="number" id="gpa" class="inputFields" min="0" max="4" placeholder="Enter your GPA" required>
                     </div>
                 </td>
-
                 <td>
                     <div class="rightAlign">
                         <label for="dept" class="label">Department</label><br>
@@ -115,14 +112,11 @@
                 </td>
             </tr>
 
-            
-
             <tr>
                 <td align="right"><button type="reset" class="buttons" onclick="location.href='index.html'">Go Back</button></td>
                 <td align="left"><button type="submit" class="buttons">Create Student</button></td>    
             </tr>
-
-    </table>
+        </table>
     </form>
 </body>
 
