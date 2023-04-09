@@ -4,37 +4,6 @@ body {
     font-size: 20px;
 }
 
-#navbar {
-    background-color: white;
-    margin: 10px;
-    padding: 10px;
-    overflow: hidden;
-    border-radius: 30px;
-}
-
-.navbarItems {
-    float: left;
-    display: block;
-    margin: 5px;
-    padding: 14px 16px;
-    color: black;
-    text-align: center;
-    font-size: 20px;
-    text-decoration: none;
-    font-family: 'Rubik', sans-serif;
-    border-radius: 30px;
-}
-
-a.navbarItems:hover {
-    background-color: #B6D6C7;
-}
-
-#current {
-    background-color: #458F6C;
-    color: white;
-    font-weight: bold;
-}
-
 table {
     width: 300px;
     color: black;
