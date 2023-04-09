@@ -14,90 +14,110 @@
         <!-- <button style="float:right"> Toggle Dark Mode</button> -->
     </nav>
 </header>
-
 <body>
-    <center>
-        <form onsubmit="alert('Student Created Successfully'); return false">
-            <table>
-                <tr>
-                    <td>Student ID</td>
-                    <td><input type="text" placeholder="Enter ID"></td>
-                </tr>
+    <form onsubmit="alert('Student created successfully!'); return false">
+        <table>
+            <tr>
+                <td>
+                    <div class="leftAlign">
+                        <label for="name" class="label">Student Name</label><br>
+                        <input type="text" id="name" class="inputFields" required>
+                    </div>
+                </td>
+                <td>
+                    <div class="rightAlign">
+                        <label for="date" class="label">Date of Birth</label><br>
+                        <input type="date" id="date" class="inputFields" required>
+                    </div>
+                </td>
+            </tr>
 
-                <tr>
-                    <td>Student Name</td>
-                    <td><input type="text" placeholder="Enter Name"></td>
-                </tr>
+            <tr>
+                <td>
+                    <div class="leftAlign">
+                        <label for="id" class="label">Student ID</label><br>
+                        <input minlength="8" maxlength="8" id="id" class="inputFields" required>
+                    </div>
+                </td>
+                <td class="radio">
+                    <div class="rightAlign">
+                        <label for="gender" class="label">Gender</label>
+                        <input type="radio" name="gender" id="male" value="m" checked>
+                        <label for="male" class="gender">Male</label>
+                        <input type="radio" name="gender" id="female" value="f">
+                        <label for="female" class="gender">Female</label>
+                    </div>
+                </td>
+            </tr>
 
-                <tr>
-                    <td>Date of Birth</td>
-                    <td><input type="date" name="Date"></td>
-                </tr>
+            <tr>
+                <td>
+                    <div class="leftAlign">
+                        <label for="email" class="label">Student Email</label><br>
+                        <input type="email" id="email" class="inputFields" required>
+                    </div>
+                </td>
+                <td>
+                    <div class="rightAlign">
+                        <label for="phone" class="label">Phone Number</label><br>
+                        <input type="tel" id="phone" maxlength="11" class="inputFields" required>
+                    </div>
+                </td>
+            </tr>
 
-                <tr>
-                    <td>Student GPA</td>
-                    <td><input type="number" placeholder="Enter GPA" max="4" step="0.01"></td>
-                </tr>
+            <tr>
+                <td>
+                    <div class="leftAlign">
+                        <label for="gpa" class="label">Student GPA</label><br>
+                        <input type="number" id="gpa" max="4" min="0" step="0.01" class="inputFields" required>
+                    </div>
+                </td>
 
-                <tr>
-                    <td>Gender</td>
-                    <td><input type="radio" id="male" name="gender" value="m">
-                        <label for="male">Male</label>
+                <td>
+                    <div class="rightAlign">
+                        <label for="dept" class="label">Department</label><br>
+                        <select id="dept" class="inputFields">
+                            <option value="General" selected>General</option>
+                            <option value="CS">Computer Science</option>
+                            <option value="IS">Information Systems</option>
+                            <option value="IT">Information Technology</option>
+                            <option value="AI">Artificial Intelligence</option>
+                            <option value="DS">Decision Support</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
 
-                        <input type="radio" id="female" name="gender" value="f">
-                        <label for="female">Female</label><br>
-                    </td>
-                </tr>
+            <tr>
+                <td class="radio">
+                    <div class="leftAlign">
+                        <label for="status" class="label">Status</label>
+                        <input type="radio" name="status" id="active" value="a" checked>
+                        <label for="active" class="status">Active</label>
+                        <input type="radio" name="status" id="inactive" value="i">
+                        <label for="inactive" class="status">Inactive</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="rightAlign">
+                        <label for="level" class="label">Student Level</label><br>
+                        <select id="level" class="inputFields">
+                            <option value="first" selected>First Level</option>
+                            <option value="second">Second Level</option>
+                            <option value="third">Third Level</option>
+                            <option value="fourth">Fourth Level</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
 
-                <tr>
-                    <td><label for="level">Student Level</label></td>
-                    <td><select name="level" id="level">
-                            <option value="1">First Level</option>
-                            <option value="2">Second Level</option>
-                            <option value="3">Third Level</option>
-                            <option value="4">Fourth Level</option>
-                        </select></td>
-                </tr>
+            <tr>
+                <td align="right"><button type="reset" class="buttons" onclick="location.href='index.html'">Go Back</button></td>
+                <td align="left"><button type="submit" class="buttons">Create Student</button></td>    
+            </tr>
 
-                <tr>
-                    <td>Status</td>
-                    <td><input type="radio" id="active" name="status" value="active">
-                        <label for="active">Active</label>
-
-                        <input type="radio" id="inactive" name="status" value="inactive">
-                        <label for="inactive">Inactive</label><br>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td><label for="department">Department</label></td>
-                    <td><select name="department" id="department">
-                            <option value="0">General</option>
-                            <option value="1">Computer Science</option>
-                            <option value="4">Artificial Intelligence</option>
-                            <option value="2">Information Systems</option>
-                            <option value="3">Information Technology</option>
-                            <option value="4">Decision Support</option>
-                        </select></td>
-                </tr>
-
-                <tr>
-                    <td>Email</td>
-                    <td><input type="email" placeholder="Enter Student Email"></td>
-                </tr>
-
-                <tr>
-                    <td>Phone Number</td>
-                    <td><input type="phone" placeholder="Enter Student Phone"></td>
-                </tr>
-
-                <tr>
-                    <td><input type="reset" value="Go back" onclick="location.href='index.html'"></td>
-                    <td><input type="submit" value="Create Student"></td>
-                </tr>
-            </table>
-        </form>
-    </center>
+    </table>
+    </form>
 </body>
 
 </html>
