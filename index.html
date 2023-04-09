@@ -1,12 +1,10 @@
 <html>
 
-<header>
-    <link rel="stylesheet" href="/CSS/index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
-    <title>Student Affairs</title>
-</header>
-
 <head>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
+    <script src="scripts/index.js"></script>
+    <title>Student Affairs</title>
     <nav id="navbar">
         <a class="navbarItems" id="current" href="index.html">Home</a>
         <a class="navbarItems" href="newStudent.html">Add New Student</a>
@@ -18,22 +16,6 @@
         <button class="DMSwitch" onclick="lightSwitch()">Dark Mode</button>
     </nav>
 </head>
-
-<script>
-    function testFun(item) {
-        item.classList.toggle("dark-mode-td");
-    }
-
-    function lightSwitch() {
-        var element = document.body;
-        element.classList.toggle("dark-mode");
-        element = document.getElementById("navbar");
-        element.classList.toggle("dark-mode-nav");
-
-        var items = document.getElementsByTagName("td");
-        items.foreach(testFun)
-    }
-</script>
 
 <body>
     <br><br><br><br><br><br><br><br>

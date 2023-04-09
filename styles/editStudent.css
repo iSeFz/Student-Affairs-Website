@@ -97,33 +97,33 @@ input[type="radio"]:checked+label {
 
 #level {
     appearance: none;
-    background-image: url("resources/chevron.png");
+    background-image: url("../resources/chevron.png");
     background-position: right 1rem center;
 }
 
 #name {
     padding-left: 3.3rem;
-    background-image: url("resources/user.png");
+    background-image: url("../resources/user.png");
 }
 
 #id {
     padding-left: 3.3rem;
-    background-image: url("resources/id.png");
+    background-image: url("../resources/id.png");
 }
 
 #email {
     padding-left: 3.3rem;
-    background-image: url("resources/email.png");
+    background-image: url("../resources/email.png");
 }
 
 #phone {
     padding-left: 3.3rem;
-    background-image: url("resources/phone.png");
+    background-image: url("../resources/phone.png");
 }
 
 #gpa {
     padding-left: 3.3rem;
-    background-image: url("resources/grade.png");
+    background-image: url("../resources/grade.png");
 }
 
 #gpa::-webkit-inner-spin-button,
