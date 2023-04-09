@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    
+    <div class="overlay"></div>
     <table>
         <thead>
             <tr>
@@ -46,19 +46,18 @@
                         <label for="check1"></label>
                     </div>
                 </td>
-                <td><button data-modal-target="#modal1"></button></td>
+                <td onclick="popUp('modal1');"><img src="resources/more.png"></td>
             </tr>
-            <div class="modal active" id="modal1">
+            <div class="modal" id="modal1">
                 <div class="modal-head">
                     <div class="title">MoreInfo</div>
-                    <button data-close-button class="close-button">&times;</button>
+                    <button class="close-button" onclick="closePopUp('modal1')">&times;</button>
                 </div>
                 <div class="modal-body">
                     <span><b>Gender:</b> Male</span><br><span><b>Birth Date:</b> 16-05-2002</span><br><span><b>Phone:</b>
                         01206212820</span><br><span><b>Email:</b> Amgad12345@gmail.com</span>
                 </div>
             </div>
-            <div class="active" id="overlay"></div>
             <tr class="mainrow">
                 <td>Omar Elgammal</td>
                 <td>20210271</td>
@@ -70,12 +69,12 @@
                         <label for="check2"></label>
                     </div>
                 </td>
-                <td onclick="collapse('2', 'arrow2')"><img src="resources/arrow.png" class="arrow" id="arrow2"></td>
+                <td onclick="popUp('modal2');"><img src="resources/more.png"></td>
             </tr>
             <div class="modal" id="modal2">
                 <div class="modal-head">
                     <div class="title">MoreInfo</div>
-                    <button data-close-button class="close-button">&times;</button>
+                    <button class="close-button" onclick="closePopUp('modal2')">&times;</button>
                 </div>
                 <div class="modal-body">
                     <span><b>Gender:</b> Male</span><br><span><b>Birth Date:</b> 16-05-2002</span><br><span><b>Phone:</b>
@@ -93,12 +92,12 @@
                         <label for="check3"></label>
                     </div>
                 </td>
-                <td onclick="collapse('3', 'arrow3')"><img src="resources/arrow.png" class="arrow" id="arrow3"></td>
+                <td onclick="popUp('modal3');"><img src="resources/more.png"></td>
             </tr>
             <div class="modal" id="modal3">
                 <div class="modal-head">
                     <div class="title">MoreInfo</div>
-                    <button data-close-button class="close-button">&times;</button>
+                    <button class="close-button" onclick="closePopUp('modal3')">&times;</button>
                 </div>
                 <div class="modal-body">
                     <span><b>Gender:</b> Male</span><br><span><b>Birth Date:</b> 16-05-2002</span><br><span><b>Phone:</b>
@@ -115,13 +114,13 @@
                         <input type="checkbox" value="Active" id="check4">
                         <label for="check4"></label>
                     </div>
-                <td onclick="collapse('4', 'arrow4')"><img src="resources/arrow.png" class="arrow" id="arrow4"></td>
                 </td>
+                <td onclick="popUp('modal4');"><img src="resources/more.png"></td>
             </tr>
             <div class="modal" id="modal4">
                 <div class="modal-head">
                     <div class="title">MoreInfo</div>
-                    <button data-close-button class="close-button">&times;</button>
+                    <button class="close-button" onclick="closePopUp('modal4')">&times;</button>
                 </div>
                 <div class="modal-body">
                     <span><b>Gender:</b> Male</span><br><span><b>Birth Date:</b> 16-05-2002</span><br><span><b>Phone:</b>
@@ -138,13 +137,13 @@
                         <input type="checkbox" value="Active" id="check5">
                         <label for="check5"></label>
                     </div>
-                <td onclick="collapse('5', 'arrow5')"><img src="resources/arrow.png" class="arrow" id="arrow5"></td>
                 </td>
+                <td onclick="popUp('modal5');"><img src="resources/more.png"></td>
             </tr>
             <div class="modal" id="modal5">
                 <div class="modal-head">
                     <div class="title">MoreInfo</div>
-                    <button data-close-button class="close-button">&times;</button>
+                    <button class="close-button" onclick="closePopUp('modal5')">&times;</button>
                 </div>
                 <div class="modal-body">
                     <span><b>Gender:</b> Male</span><br><span><b>Birth Date:</b> 16-05-2002</span><br><span><b>Phone:</b>

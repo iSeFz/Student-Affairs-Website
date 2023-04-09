@@ -1,116 +1,71 @@
 body {
     background-color: #EFEFEF;
+    color: black;
     font-size: 20px;
-    min-height: calc(100vh - 60px);
-    /* background-color: red; */
 }
 
-#navbar {
-    margin: -8px;
-    padding: 10px;
-    overflow: hidden;
+table {
+    width: 300px;
+    color: black;
+}
+
+td {
+    padding: 7px 10px 10px 10px;
+    font-size: 20px;
+}
+
+tr.even {
     background-color: white;
-
 }
 
-.navbarItems {
-    float: left;
+tr.odd {
+    background-color: #B6C3C7;
+}
+
+.choiceButtons {
+    background-color: #458F6C;
+    border: 0px solid #458F6C;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 100;
+    padding: 10px 25px;
+    text-align: center;
+    transition: transform 100ms;
+    align-self: center;
+}
+
+.choiceButtons:hover {
+    box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+    transform: translateY(-2px);
+}
+
+.DMSwitch {
+    float: right;
     display: block;
     margin: 5px;
     padding: 14px 16px;
     color: black;
     text-align: center;
     font-size: 20px;
-    text-decoration: none;
     font-family: 'Rubik', sans-serif;
-    border-radius: 20px;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
-a.navbarItems:hover {
-    background-color: #B6D6C7;
-}
-
-#current {
+.dark-mode {
+    background-color: #15202B;
     color: white;
-    background-color: #458F6C;
-    font-weight: bold;
 }
 
-.cards{
-    /* background-color: red; */
-    width: 97%;
-    padding: 40px 25px 25px 25px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
+.dark-mode-nav {
+    background-color: #22303C;
+    color: white;
+    outline-color: #8899A6;
+    color: white;
 }
 
-.cards .card{
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
-}
-
-.cards .card4{
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
-    grid-column: span 4;
-
-}
-
-.number{
-    font-size: 35px;
-    font-weight: 500;
-    color: #458F6C;
-}
-
-.card_name{
-    color: black;
-    font-weight: 600;
-}
-
-.icon_place {
-    font-size: 45px;
-    color: #B6D6C7;
-}
-
-.cards .chart {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
-    grid-column: span 2;
-}
-
-.cards .chart2 {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
-    grid-column: span 1;
-}
-
-.cards .chart2 h2 {
-    margin-bottom: 5px;
-    font-size: 20px;
-    color: black;
-    text-align: center;
-    font-weight: 600;
-}
-
-.cards .chart h2 {
-    margin-bottom: 5px;
-    font-size: 20px;
-    color: black;
-    text-align: center;
-    font-weight: 600;
+.dark-mode-td {
+    border: 2px solid #8899A6;
 }
