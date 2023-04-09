@@ -15,8 +15,9 @@
     </nav>
 </header>
 <body>
+    <br><br><br>
     <form onsubmit="alert('Student created successfully!'); return false">
-        <table>
+        <table align="center">
             <tr>
                 <td>
                     <div class="leftAlign">
@@ -34,11 +35,23 @@
 
             <tr>
                 <td>
-                    <div class="leftAlign">
-                        <label for="id" class="label">Student ID</label><br>
-                        <input minlength="8" maxlength="8" id="id" class="inputFields" required>
+                    <div class="rightAlign">
+                        <label for="phone" class="label">Phone Number</label><br>
+                        <input type="tel" id="phone" maxlength="11" class="inputFields" required>
                     </div>
                 </td>
+                
+                <td>
+                    <div class="leftAlign">
+                        <label for="email" class="label">Student Email</label><br>
+                        <input type="email" id="email" class="inputFields" required>
+                    </div>
+                </td>
+                
+            </tr>
+
+            <tr>
+                
                 <td class="radio">
                     <div class="rightAlign">
                         <label for="gender" class="label">Gender</label>
@@ -48,23 +61,37 @@
                         <label for="female" class="gender">Female</label>
                     </div>
                 </td>
+                <td class="radio">
+                    <div class="leftAlign">
+                        <label for="status" class="label">Status</label>
+                        <input type="radio" name="status" id="active" value="a" checked>
+                        <label for="active" class="status">Active</label>
+                        <input type="radio" name="status" id="inactive" value="i">
+                        <label for="inactive" class="status">Inactive</label>
+                    </div>
+                </td>
+                
             </tr>
-
             <tr>
+                
                 <td>
                     <div class="leftAlign">
-                        <label for="email" class="label">Student Email</label><br>
-                        <input type="email" id="email" class="inputFields" required>
+                        <label for="id" class="label">Student ID</label><br>
+                        <input minlength="8" maxlength="8" id="id" class="inputFields" required>
                     </div>
                 </td>
                 <td>
                     <div class="rightAlign">
-                        <label for="phone" class="label">Phone Number</label><br>
-                        <input type="tel" id="phone" maxlength="11" class="inputFields" required>
+                        <label for="level" class="label">Student Level</label><br>
+                        <select id="level" class="inputFields">
+                            <option value="first" selected>First Level</option>
+                            <option value="second">Second Level</option>
+                            <option value="third">Third Level</option>
+                            <option value="fourth">Fourth Level</option>
+                        </select>
                     </div>
                 </td>
             </tr>
-
             <tr>
                 <td>
                     <div class="leftAlign">
@@ -88,28 +115,7 @@
                 </td>
             </tr>
 
-            <tr>
-                <td class="radio">
-                    <div class="leftAlign">
-                        <label for="status" class="label">Status</label>
-                        <input type="radio" name="status" id="active" value="a" checked>
-                        <label for="active" class="status">Active</label>
-                        <input type="radio" name="status" id="inactive" value="i">
-                        <label for="inactive" class="status">Inactive</label>
-                    </div>
-                </td>
-                <td>
-                    <div class="rightAlign">
-                        <label for="level" class="label">Student Level</label><br>
-                        <select id="level" class="inputFields">
-                            <option value="first" selected>First Level</option>
-                            <option value="second">Second Level</option>
-                            <option value="third">Third Level</option>
-                            <option value="fourth">Fourth Level</option>
-                        </select>
-                    </div>
-                </td>
-            </tr>
+            
 
             <tr>
                 <td align="right"><button type="reset" class="buttons" onclick="location.href='index.html'">Go Back</button></td>
