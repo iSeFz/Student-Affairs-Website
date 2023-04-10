@@ -17,25 +17,56 @@
 </head>
 
 <body>
-    <br><br>
-    <center>
-        <h1>Department Assignment</h1>
-        <form>
-            <p>Full Name <input type="text" name="name"></p>
-            <p>ID <input type="number" name="id"></p>
-            <p><b>Choose your Department</b></p>
-            <select name="department">
-                <option selected hidden value="">Select Department</option>
-                <option value="ai">Artificial Intelligence</option>
-                <option value="cs">Computer Science</option>
-                <option value="is">Information Systems</option>
-                <option value="it">Information Technology</option>
-                <option value="ds">Decision Support</option>
-            </select><br><br>
-            <input type="submit" value="Confirm Choice">
-
-        </form>
-    </center>
+    <form onsubmit="alert('Student created successfully!'); return false">
+        <table>
+            <tr>
+                <td>
+                    <div class="leftAlign">
+                        <label for="id" class="label">Student ID</label><br>
+                        <input id="id" class="inputFields" minlength="8" maxlength="8" placeholder="Enter your ID" required>
+                    </div>
+                </td>
+                <td>
+                    <div class="rightAlign">
+                        <label for="level" class="label">Student Level</label><br>
+                        <select id="level" class="inputFields">
+                            <option value="first" selected>First Level</option>
+                            <option value="second">Second Level</option>
+                            <option value="third">Third Level</option>
+                            <option value="fourth">Fourth Level</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <div class="leftAlign">
+                        <label for="gpa" class="label">Student GPA</label><br>
+                        <input type="number" id="gpa" class="inputFields" min="0" max="4" placeholder="Enter your GPA" required>
+                    </div>
+                </td>
+                <td>
+                    <div class="rightAlign">
+                        <label for="dept" class="label">Department</label><br>
+                        <select id="dept" class="inputFields">
+                            <option value="General" selected>General</option>
+                            <option value="CS">Computer Science</option>
+                            <option value="IS">Information Systems</option>
+                            <option value="IT">Information Technology</option>
+                            <option value="AI">Artificial Intelligence</option>
+                            <option value="DS">Decision Support</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+    
+            <tr>
+                <td align="right"><button type="reset" class="buttons" onclick="location.href='index.html'">Go Back</button></td>
+                <td align="left"><button type="submit" class="buttons">Submit</button></td>    
+            </tr>
+        </table>
+    </form>
 </body>
 
 </html>
