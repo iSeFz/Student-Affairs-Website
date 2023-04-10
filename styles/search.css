@@ -1,3 +1,134 @@
 body {
     background-color: #EFEFEF;
 }
+
+table {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    width: 90%;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: 'Rubik', sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+    background-color: #458F6C;
+    color: #ffffff;
+    text-align: center;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    background-color: #ffffff;
+}
+
+table tbody tr:nth-child(even){
+    background-color: #d2ffc265;
+}
+
+table tbody tr:nth-child(n) :first-child{
+    text-align: left;
+}
+
+img {
+    width: 35px;
+}
+
+img:hover {
+    cursor: pointer;
+    width: 38px;
+    transition-duration: 0.5s;
+}
+
+.modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 300ms ease-in-out;
+    z-index: 10;
+    background-color: #EFEFEF;
+    width: 350px;
+    max-width: 80%;
+    height: 250px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-head {
+    padding:10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid ffffff;
+    background-color: #458F6C;
+    color: #ffffff;
+    border-radius: 9px 9px 0px 0px;
+}
+
+.modal-head .title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.modal-head .close-button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.modal-head .close-button:hover {
+    color: #000;
+}
+
+.modal-body {
+    padding: 10px 15px;
+}
+
+.modal-body span {
+    display: flex;
+}
+
+.overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 300ms ease-in-out;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+.mainrow:hover {
+    background: #677b70;
+    transition-duration: 0.4s;
+    color: white;
+}

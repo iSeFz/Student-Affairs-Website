@@ -79,9 +79,9 @@ function handleClick(event) {
         }
     });
     if (document.querySelectorAll('[id^="modal"].active').length > 0) {
-      targetOverlay[0].classList.add('active');
+        targetOverlay[0].classList.add('active');
     } else {
-      targetOverlay[0].classList.remove('active');
+        targetOverlay[0].classList.remove('active');
     }
 }
 
