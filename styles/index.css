@@ -1,71 +1,104 @@
+*{
+    font-family: 'Rubik', sans-serif;
+}
 body {
     background-color: #EFEFEF;
     color: black;
     font-size: 20px;
 }
 
-table {
-    width: 300px;
-    color: black;
-}
-
-td {
-    padding: 7px 10px 10px 10px;
-    font-size: 20px;
-}
-
-tr.even {
+#navbar {
     background-color: white;
+    margin: -8px -8px 0px;
+    padding: 10px;
+    overflow: hidden;
 }
 
-tr.odd {
-    background-color: #B6C3C7;
+.cards{
+    /* background-color: red; */
+    width: 98%;
+    padding: 20px 0px 20px 15px; 
+    /*  top bottom right left */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
 }
 
-.choiceButtons {
-    background-color: #458F6C;
-    border: 0px solid #458F6C;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 100;
-    padding: 10px 25px;
+.cardStack{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.cards .cardStack .card{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.cards .card4{
+    padding: 20px;
     text-align: center;
-    transition: transform 100ms;
-    align-self: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    grid-column: span 4;
+
 }
 
-.choiceButtons:hover {
-    box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
-    transform: translateY(-2px);
+.card4 h1{
+    font-weight: 700;
 }
 
-.DMSwitch {
-    float: right;
-    display: block;
-    margin: 5px;
-    padding: 14px 16px;
+.number{
+    font-size: 35px;
+    font-weight: 500;
+    color: #458F6C;
+}
+
+.card_name{
+    color: black;
+    font-weight: 600;
+}
+
+.icon_place {
+    font-size: 45px;
+    color: #B6D6C7;
+}
+
+.cards .chart {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    grid-column: span 2;
+}
+
+.cards .chart2 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    grid-column: span 1;
+}
+
+.cards .chart2 h2 {
+    margin-bottom: 5px;
+    font-size: 20px;
     color: black;
     text-align: center;
+    font-weight: 600;
+}
+
+.cards .chart h2 {
+    margin-bottom: 5px;
     font-size: 20px;
-    font-family: 'Rubik', sans-serif;
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-.dark-mode {
-    background-color: #15202B;
-    color: white;
-}
-
-.dark-mode-nav {
-    background-color: #22303C;
-    color: white;
-    outline-color: #8899A6;
-    color: white;
-}
-
-.dark-mode-td {
-    border: 2px solid #8899A6;
+    color: black;
+    text-align: center;
+    font-weight: 600;
 }

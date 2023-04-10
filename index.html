@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
-    <script src="scripts/index.js"></script>
     <nav id="navbar">
         <a class="navbarItems" id="current" href="index.html">Home</a>
         <a class="navbarItems" href="newStudent.html">Add New Student</a>
@@ -14,13 +13,75 @@
         <a class="navbarItems" href="viewAll.html">View All Students</a>
         <a class="navbarItems" href="deptAssign.html">Assign Department</a>
         <img id="logo" src="resources/FCAI-Logo.png" alt="FCAI Logo">
-        <!-- <button class="DMSwitch" onclick="lightSwitch()">Dark Mode</button> -->
     </nav>
 </head>
 
 <body>
-    <br><br><br><br><br><br><br><br>
-    <center>
+    <div class="cards">
+        <div class="card4">
+            <h1>Student Affairs</h1>
+            <h3>fuck you</h3>
+            <h3>fuck you x2</h3>
+        </div>
+
+        <div class="cardStack">
+
+
+            <div class="card">
+                <div class="card_content">
+                    <div class="card_name">Number of Students</div>
+                    <div class="number">5</div>
+                </div>
+                <div class="icon_place">
+                    <img src="resources/smalluser.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_content">
+                    <div class="card_name">Active Students</div>
+                    <div class="number">4</div>
+                </div>
+                <div class="icon_place">
+                    <img src="resources/smalluser.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_content">
+                    <div class="card_name">Inactive Students</div>
+                    <div class="number">1</div>
+                </div>
+                <div class="icon_place">
+                    <img src="resources/smalluser.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_content">
+                    <div class="card_name">Average GPA</div>
+                    <div class="number">3.21</div>
+                </div>
+                <div class="icon_place">
+                    <img src="resources/smallgrade.png">
+                </div>
+            </div>
+
+
+        </div>
+        <div class="chart2">
+            <h2>Number of Students / Department</h2>
+            <div id="chartContainer">
+                <canvas id="doughnut"></canvas>
+            </div>
+        </div>
+        <div class="chart">
+            <h2>Average GPA / Department</h2>
+            <div id="chartContainer">
+                <canvas id="bar"></canvas>
+            </div>
+        </div>
+        
+        
+    </div>
+    <!-- <center>
         <table>
             <tr class="even">
                 <td class="test">
@@ -73,7 +134,9 @@
             <br>
 
         </table>
-    </center>
+    </center> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="scripts/deptChart.js"></script>
 </body>
 
 </html>
