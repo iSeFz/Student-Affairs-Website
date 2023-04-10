@@ -1,3 +1,102 @@
 body {
-    background-color: #EFEFEF;
+    background-color: #efefef;
+}
+
+table {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+    margin: 40px 10px 20px;
+}
+
+div {
+    margin: 15px;
+}
+
+.label {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px;
+}
+
+.inputFields {
+    width: 95%;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: 1px solid #68797B;
+    border-radius: 15px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+    background-size: 1em;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]+label {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+input[type="radio"]:hover+label {
+    background-color: #B6D6C7;
+}
+
+input[type="radio"]:checked+label {
+    color: white;
+    font-weight: bold;
+    background-color: #458F6C;
+}
+
+.radio{
+    margin: 15px 15px 25px;
+}
+
+#level {
+    appearance: none;
+    background-image: url("../resources/chevron.png");
+    background-position: right 1rem center;
+}
+
+#dept {
+    appearance: none;
+    background-image: url("../resources/chevron.png");
+    background-position: right 1rem center;
+}
+
+
+#id {
+    padding-left: 3.3rem;
+    background-image: url("../resources/id.png");
+}
+
+#gpa::-webkit-inner-spin-button,
+#gpa::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    background-color: #458F6C;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
 }
