@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/editStudent.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
+    <script src="scripts/editStudent.js"></script>
     <nav id="navbar">
         <a class="navbarItems" href="index.html">Home</a>
         <a class="navbarItems" href="newStudent.html">Add New Student</a>
@@ -17,7 +18,7 @@
 </head>
 
 <body>
-    <form onsubmit="alert('Student data updated successfully!'); return false">
+    <form method="post" onsubmit="confirmEdit()">
         <table>
             <tr>
                 <td>
@@ -29,7 +30,7 @@
                 <td>
                     <div class="rightAlign">
                         <label for="date" class="label">Date of Birth</label><br>
-                        <input type="date" id="date" class="inputFields" value="2003-08-27" required>
+                        <input type="date" id="dob" class="inputFields" value="2003-08-27" required>
                     </div>
                 </td>
             </tr>
@@ -53,18 +54,18 @@
                 <td>
                     <div class="leftAlign radio">
                         <label for="gender" class="label">Gender</label>
-                        <input type="radio" name="gender" id="male" value="m" checked>
+                        <input type="radio" name="gender" id="male" value="male" checked>
                         <label for="male" class="gender">Male</label>
-                        <input type="radio" name="gender" id="female" value="f">
+                        <input type="radio" name="gender" id="female" value="female">
                         <label for="female" class="gender">Female</label>
                     </div>
                 </td>
                 <td>
                     <div class="rightAlign radio">
                         <label for="status" class="label">Status</label>
-                        <input type="radio" name="status" id="active" value="a" checked>
+                        <input type="radio" name="status" id="active" value="active" checked>
                         <label for="active" class="status">Active</label>
-                        <input type="radio" name="status" id="inactive" value="i">
+                        <input type="radio" name="status" id="inactive" value="inactive">
                         <label for="inactive" class="status">Inactive</label>
                     </div>
                 </td>
@@ -94,7 +95,8 @@
                 <td>
                     <div class="leftAlign">
                         <label for="gpa" class="label">Student GPA</label><br>
-                        <input type="number" id="gpa" class="inputFields" min="0" max="4" value="3.4" required>
+                        <input type="number" id="gpa" class="inputFields" min="0" max="4" value="3.4" step="0.01"
+                            required>
                     </div>
                 </td>
                 <td>
@@ -106,12 +108,19 @@
                     </div>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <div id="edit">
+                        <button type="submit" class="buttons">Confirm Edit</button>
+                    </div>
+                </td>
+                <td>
+                    <div id="delete">
+                        <button type="reset" id="delete" class="buttons" onclick="confirmDelete()">Delete Student</button>
+                    </div>
+                </td>
+            </tr>
         </table>
-        <div id="buttons">
-            <button type="submit" class="buttons">Confirm Edit</button>
-            <button type="reset" class="buttons" onclick="if(confirm('Are you sure you want to delete this student?')){
-            location.href='index.html'; alert('Student deleted successfully!')}">Delete Student</button>
-        </div>
     </form>
 </body>
 

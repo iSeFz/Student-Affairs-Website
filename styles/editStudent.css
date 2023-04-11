@@ -106,14 +106,20 @@ input[type="radio"]:checked+label {
     margin: 0;
 }
 
-#buttons {
+#edit {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: right;
+    align-items: right;
+}
+
+#delete {
+    display: flex;
+    justify-content: left;
+    align-items: left;
 }
 
 .buttons {
-    margin: 20px;
+    margin: 5px;
     padding: 10px 20px;
     font-size: 20px;
     font-family: 'Rubik', sans-serif;
