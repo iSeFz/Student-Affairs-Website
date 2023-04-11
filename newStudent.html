@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/newStudent.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
+    <script src="scripts/newStudent.js"></script>
     <nav id="navbar">
         <a class="navbarItems" href="index.html">Home</a>
         <a class="navbarItems" id="current" href="newStudent.html">Add New Student</a>
@@ -17,7 +18,7 @@
 </head>
 
 <body>
-    <form onsubmit="alert('Student created successfully!'); return false">
+    <form method="post" onsubmit="createStudent()">
         <table>
             <tr>
                 <td>
@@ -29,7 +30,7 @@
                 <td>
                     <div class="rightAlign">
                         <label for="date" class="label">Date of Birth</label><br>
-                        <input type="date" id="date" class="inputFields" required>
+                        <input type="date" id="dob" class="inputFields" required>
                     </div>
                 </td>
             </tr>
@@ -38,7 +39,8 @@
                 <td>
                     <div class="leftAlign">
                         <label for="phone" class="label">Phone Number</label><br>
-                        <input type="tel" id="phone" class="inputFields" maxlength="11" placeholder="Enter your phone number" required>
+                        <input type="tel" id="phone" class="inputFields" maxlength="11"
+                            placeholder="Enter your phone number" required>
                     </div>
                 </td>
                 <td>
@@ -53,18 +55,18 @@
                 <td>
                     <div class="leftAlign radio">
                         <label for="gender" class="label">Gender</label>
-                        <input type="radio" name="gender" id="male" value="m" checked>
+                        <input type="radio" name="gender" id="male" value="male" checked>
                         <label for="male" class="gender">Male</label>
-                        <input type="radio" name="gender" id="female" value="f">
+                        <input type="radio" name="gender" id="female" value="female">
                         <label for="female" class="gender">Female</label>
                     </div>
                 </td>
                 <td>
                     <div class="rightAlign radio">
                         <label for="status" class="label">Status</label>
-                        <input type="radio" name="status" id="active" value="a" checked>
+                        <input type="radio" name="status" id="active" value="active" checked>
                         <label for="active" class="status">Active</label>
-                        <input type="radio" name="status" id="inactive" value="i">
+                        <input type="radio" name="status" id="inactive" value="inactive">
                         <label for="inactive" class="status">Inactive</label>
                     </div>
                 </td>
@@ -94,14 +96,15 @@
                 <td>
                     <div class="leftAlign">
                         <label for="gpa" class="label">Student GPA</label><br>
-                        <input type="number" id="gpa" class="inputFields" min="0" max="4" placeholder="Enter your GPA" required>
+                        <input type="number" id="gpa" class="inputFields" min="0" max="4" step="0.01"
+                            placeholder="Enter your GPA" required>
                     </div>
                 </td>
                 <td>
                     <div class="rightAlign">
                         <label for="dept" class="label">Department</label><br>
                         <select id="dept" class="inputFields">
-                            <option value="General" selected>General</option>
+                            <option value="All" selected>General</option>
                             <option value="CS">Computer Science</option>
                             <option value="IS">Information Systems</option>
                             <option value="IT">Information Technology</option>
@@ -113,8 +116,16 @@
             </tr>
 
             <tr>
-                <td align="right"><button type="reset" class="buttons" onclick="location.href='index.html'">Go Back</button></td>
-                <td align="left"><button type="submit" class="buttons">Create Student</button></td>    
+                <td>
+                    <div id="back">
+                        <button type="reset" class="buttons" onclick="location.href='index.html'">Go Back</button>
+                    </div>
+                </td>
+                <td>
+                    <div id="create">
+                        <button type="submit" class="buttons">Create Student</button>
+                    </div>
+                </td>
             </tr>
         </table>
     </form>
