@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
-    <script src="scripts/viewAll.js"></script>
-    <nav id="navbar">
+        <nav id="navbar">
         <a class="navbarItems" href="index.html">Home</a>
         <a class="navbarItems" href="newStudent.html">Add New Student</a>
         <a class="navbarItems" href="editStudent.html">Edit Student Data</a>
@@ -23,7 +22,7 @@
 
 <body>
     <div class="overlay"></div>
-    <table>
+    <table id="Table">
         <thead>
             <tr>
                 <th>Name</th>
@@ -58,101 +57,9 @@
                         01206212820</span><br><span><b>Email:</b> Amgad12345@gmail.com</span>
                 </div>
             </div>
-            <tr class="mainrow">
-                <td>Omar Elgammal</td>
-                <td>20210271</td>
-                <td>4</td>
-                <td>2</td>
-                <td>
-                    <div class="checkbox">
-                        <input type="checkbox" value="Active" id="check2">
-                        <label for="check2"></label>
-                    </div>
-                </td>
-                <td onclick="popUp('modal2');"><img src="resources/more.png"></td>
-            </tr>
-            <div class="modal" id="modal2">
-                <div class="modal-head">
-                    <div class="title">MoreInfo</div>
-                    <button class="close-button" onclick="closePopUp('modal2')">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <span><b>Gender:</b> Male</span><br><span><b>Birth Date:</b> 16-05-2002</span><br><span><b>Phone:</b>
-                        01206212820</span><br><span><b>Email:</b> Amgad12345@gmail.com</span>
-                </div>
-            </div>
-            <tr class="mainrow">
-                <td>Seif Yahia</td>
-                <td>20210172</td>
-                <td>4</td>
-                <td>2</td>
-                <td>
-                    <div class="checkbox">
-                        <input type="checkbox" value="Active" id="check3">
-                        <label for="check3"></label>
-                    </div>
-                </td>
-                <td onclick="popUp('modal3');"><img src="resources/more.png"></td>
-            </tr>
-            <div class="modal" id="modal3">
-                <div class="modal-head">
-                    <div class="title">MoreInfo</div>
-                    <button class="close-button" onclick="closePopUp('modal3')">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <span><b>Gender:</b> Male</span><br><span><b>Birth Date:</b> 16-05-2002</span><br><span><b>Phone:</b>
-                        01206212820</span><br><span><b>Email:</b> Amgad12345@gmail.com</span>
-                </div>
-            </div>
-            <tr class="mainrow">
-                <td>Yousef Alzayat</td>
-                <td>20210460</td>
-                <td>4</td>
-                <td>2</td>
-                <td>
-                    <div class="checkbox">
-                        <input type="checkbox" value="Active" id="check4">
-                        <label for="check4"></label>
-                    </div>
-                </td>
-                <td onclick="popUp('modal4');"><img src="resources/more.png"></td>
-            </tr>
-            <div class="modal" id="modal4">
-                <div class="modal-head">
-                    <div class="title">MoreInfo</div>
-                    <button class="close-button" onclick="closePopUp('modal4')">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <span><b>Gender:</b> Male</span><br><span><b>Birth Date:</b> 16-05-2002</span><br><span><b>Phone:</b>
-                        01206212820</span><br><span><b>Email:</b> Amgad12345@gmail.com</span>
-                </div>
-            </div>
-            <tr class="mainrow">
-                <td>Yahya Ehab</td>
-                <td>20220432</td>
-                <td>4</td>
-                <td>2</td>
-                <td>
-                    <div class="checkbox">
-                        <input type="checkbox" value="Active" id="check5">
-                        <label for="check5"></label>
-                    </div>
-                </td>
-                <td onclick="popUp('modal5');"><img src="resources/more.png"></td>
-            </tr>
-            <div class="modal" id="modal5">
-                <div class="modal-head">
-                    <div class="title">MoreInfo</div>
-                    <button class="close-button" onclick="closePopUp('modal5')">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <span><b>Gender:</b> Male</span><br><span><b>Birth Date:</b> 16-05-2002</span><br><span><b>Phone:</b>
-                        01206212820</span><br><span><b>Email:</b> Amgad12345@gmail.com</span>
-                </div>
-            </div>
         </tbody>
     </table>
-
+    <script src="scripts/viewAll.js"></script>
 </body>
 
 </html>
