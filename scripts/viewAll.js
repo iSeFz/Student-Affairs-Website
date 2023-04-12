@@ -36,7 +36,7 @@ document.addEventListener('click', handleClick);
 
 let students = JSON.parse(localStorage.getItem('students'));
 
-function createModal(student,table,idx){
+function createModal(student,tbody,idx){
     let modal = document.createElement('div');
     modalHead = document.createElement('div');
     title = document.createElement('div');
@@ -54,13 +54,31 @@ function createModal(student,table,idx){
     existButton.setAttribute('onclick',`popUp('${modalId}')`)
     //customize modal body
     modalBody.classList.add('modal-body')
+    let span1 = document.createElement('span');
+    let span2 = document.createElement('span');
+    let span3 = document.createElement('span');
+    let span4 = document.createElement('span');
+
+
+    span1.innerHTML = '<b>Gender: </b>'+ student.gender;
+    span2.innerHTML = '<b>Date of Birth: </b>'+ student.dob;
+    span3.innerHTML = '<b>Phone: </b>'+ student.phone;
+    span4.innerHTML = '<b>Email: </b>'+ student.email;
 
 
     modalHead.appendChild(title);
     modalHead.appendChild(existButton);
+    modalBody.appendChild(span1);
+    modalBody.appendChild(span2);
+    modalBody.appendChild(span3);
+    modalBody.appendChild(span4);
+
+
+
+    let body = document.getElementsByTagName("body")[0];
     modal.appendChild(modalHead);
     modal.appendChild(modalBody);
-    table.appendChild(modal);
+    body.appendChild(modal);
 
 }
 
@@ -83,6 +101,7 @@ function createRow(student,idx){
     
     // creat modal menu button
     let modalId = 'modal' + idx;
+    console.log(modalId);
     cell6.setAttribute('onclick',`popUp('${modalId}')`)
 
     // create checkbox div
@@ -121,3 +140,9 @@ function createRow(student,idx){
 for(var st of students){
     createRow(st,students.indexOf(st));
 }
+
+let body = document.querySelector('body');
+
+let overlay = document.createElement('div');
+overlay.classList.add('overlay');
+body.prepend(overlay);
