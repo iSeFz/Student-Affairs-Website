@@ -16,12 +16,11 @@ function handleClick(event) {
     const targetMenus = document.querySelectorAll('[id^="modal"]');
     const targetOverlay = document.getElementsByClassName('overlay');
     targetMenus.forEach((menu) => {
-        if (event.target.id === menu.dataset.trigger) {
-            popUp(menu.id);
-        } else if (event.target.classList.contains('close')) {
+        if (event.target.classList.contains('close')) {
             closePopUp(event.target.closest('.modal').id);
         } else if (event.target.classList.contains('overlay')) {
-            closePopUp(document.querySelectorAll('[id^="modal"].active')[0].id);
+            if (document.querySelectorAll('[id^="modal"].active').length > 0)
+                closePopUp(document.querySelectorAll('[id^="modal"].active')[0].id);
         }
     });
     if (document.querySelectorAll('[id^="modal"].active').length > 0) {
@@ -53,7 +52,7 @@ function createModal(student,idx){
     exitButton.classList.add('close-button');
     exitButton.textContent = '\u00D7';
     let modalId = 'modal' + idx;
-    exitButton.setAttribute('onclick',`popUp('${modalId}')`)
+    exitButton.setAttribute('onclick',`closePopUp('${modalId}')`)
 
     //customize modal body
     modalBody.classList.add('modal-body')
