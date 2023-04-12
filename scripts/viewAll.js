@@ -1,3 +1,7 @@
+// global variables
+let students = JSON.parse(localStorage.getItem('students'));
+
+// this function open modal menu 
 function popUp(modalId){
     const targetMenu = document.getElementById(modalId);
     const targetOverlay = document.getElementsByClassName('overlay');
@@ -5,6 +9,7 @@ function popUp(modalId){
     targetOverlay[0].classList.add('active');
 }
 
+// this function close modal menu when clicked on close button
 function closePopUp(modalId){
     const targetMenu = document.getElementById(modalId);
     const targetOverlay = document.getElementsByClassName('overlay');
@@ -12,6 +17,7 @@ function closePopUp(modalId){
     targetOverlay[0].classList.remove('active');
 }
 
+// this function close modal menu when clicked outside it
 function handleClick(event) {
     const targetMenus = document.querySelectorAll('[id^="modal"]');
     const targetOverlay = document.getElementsByClassName('overlay');
@@ -32,10 +38,7 @@ function handleClick(event) {
 
 document.addEventListener('click', handleClick);
 
-
-let students = JSON.parse(localStorage.getItem('students'));
-
-
+// this function load data stored in local storage to modal menu
 function createModal(student,idx){
     let modal = document.createElement('div');
     let modalHead = document.createElement('div');
@@ -82,7 +85,7 @@ function createModal(student,idx){
     body.appendChild(modal);
 }
 
-
+// this function is creating row with data stored in local storage
 function createRow(student,idx){
     let tbody = document.querySelector('tbody');
     let newRow = document.createElement('tr');
@@ -134,16 +137,33 @@ function createRow(student,idx){
     createModal(student,idx);
 }
 
+// this function load info from localStorage to table
 function loadInfoToPage(){
     // create row for each student
     for(var st of students){
         createRow(st,students.indexOf(st));
     }
-
+    // create overlay
     let body = document.querySelector('body');
     let overlay = document.createElement('div');
     overlay.classList.add('overlay');
     body.prepend(overlay);
+
+    // select all checkboxs buttons
+    let checkboxs = document.getElementsByClassName('checkbox');
+    for(let checkbox of checkboxs){
+        checkbox.addEventListener('click',changeStatus);
+    }
+}
+
+// this function changeStatus of students in localStorage when change in table
+function changeStatus(){
+    let buttons = document.querySelectorAll('input[type="checkbox"]');
+    for(let i = 0; i < students.length;i++){
+        students[i].status = (buttons[i].checked == true) ? 'active' : 'inactive';
+    }
+    localStorage.clear;
+    localStorage.setItem("students", JSON.stringify(students));
 }
 
 loadInfoToPage();
