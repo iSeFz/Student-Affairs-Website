@@ -10,7 +10,7 @@ table {
     width: 90%;
     text-align: center;
     border-collapse: collapse;
-    font-size: 0.9em;
+    font-size: 1.2em;
     font-family: 'Rubik', sans-serif;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -40,17 +40,16 @@ table tbody tr:nth-child(n) :first-child{
     text-align: left;
 }
 
-img {
-    width: 35px;
-}
 
-img:hover {
-    cursor: pointer;
-    width: 38px;
-    transition-duration: 0.5s;
+tr td:nth-child(n + 6) {
+    background-image: url(/resources/three-dots.png);
+    background-size: 42px 42px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .modal {
+    font-family: 'Rubik', sans-serif;
     position: fixed;
     left: 50%;
     top: 50%;
@@ -106,6 +105,7 @@ img:hover {
 
 .modal-body span {
     display: flex;
+    justify-content: center;
 }
 
 .overlay {

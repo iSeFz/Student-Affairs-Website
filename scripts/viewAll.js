@@ -36,73 +36,74 @@ document.addEventListener('click', handleClick);
 
 let students = JSON.parse(localStorage.getItem('students'));
 
-function createModal(student,tbody,idx){
+
+function createModal(student,idx){
     let modal = document.createElement('div');
-    modalHead = document.createElement('div');
-    title = document.createElement('div');
-    existButton = document.createElement('button');
-    modalBody = document.createElement('div');
+    let modalHead = document.createElement('div');
+    let title = document.createElement('div');
+    let exitButton = document.createElement('button');
+    let modalBody = document.createElement('div');
     // customize modal menu
     modal.classList.add('modal');
     modal.id = 'modal' + idx;
     // customize modal head
     modalHead.classList.add('modal-head');
     title.classList.add('title');
-    existButton.classList.add('close-button');
-    existButton.textContent = '\u00D7';
+    title.textContent = "MoreInfo";
+    exitButton.classList.add('close-button');
+    exitButton.textContent = '\u00D7';
     let modalId = 'modal' + idx;
-    existButton.setAttribute('onclick',`popUp('${modalId}')`)
+    exitButton.setAttribute('onclick',`popUp('${modalId}')`)
+
     //customize modal body
     modalBody.classList.add('modal-body')
-    let span1 = document.createElement('span');
-    let span2 = document.createElement('span');
-    let span3 = document.createElement('span');
-    let span4 = document.createElement('span');
+    let spans = [];
+    spans[0] = document.createElement('span');
+    spans[1] = document.createElement('span');
+    spans[2] = document.createElement('span');
+    spans[3] = document.createElement('span');
 
 
-    span1.innerHTML = '<b>Gender: </b>'+ student.gender;
-    span2.innerHTML = '<b>Date of Birth: </b>'+ student.dob;
-    span3.innerHTML = '<b>Phone: </b>'+ student.phone;
-    span4.innerHTML = '<b>Email: </b>'+ student.email;
+    spans[0].innerHTML = '<b>Gender: </b>'+ student.gender;
+    spans[1].innerHTML = '<b>Date of Birth: </b>'+ student.dob;
+    spans[2].innerHTML = '<b>Phone: </b>'+ student.phone;
+    spans[3].innerHTML = '<b>Email: </b>'+ student.email;
 
 
     modalHead.appendChild(title);
-    modalHead.appendChild(existButton);
-    modalBody.appendChild(span1);
-    modalBody.appendChild(span2);
-    modalBody.appendChild(span3);
-    modalBody.appendChild(span4);
-
-
+    modalHead.appendChild(exitButton);
+    spans.forEach((span)=>{
+        modalBody.appendChild(span);
+        modalBody.appendChild(document.createElement('br'));
+    });
 
     let body = document.getElementsByTagName("body")[0];
     modal.appendChild(modalHead);
     modal.appendChild(modalBody);
     body.appendChild(modal);
-
 }
 
 
 function createRow(student,idx){
     let tbody = document.querySelector('tbody');
     let newRow = document.createElement('tr');
+    let cells = [];
 
     // table cells
-    let cell1 = document.createElement('td');
-    cell1.textContent = student.name;   
-    let cell2 = document.createElement('td');
-    cell2.textContent = student.id;
-    let cell3 = document.createElement('td');
-    cell3.textContent = student.gpa;
-    let cell4 = document.createElement('td');
-    cell4.textContent = student.level;
-    let cell5 = document.createElement('td');
-    let cell6 = document.createElement('td');
+    cells[0] = document.createElement('td');
+    cells[0].textContent = student.name;   
+    cells[1] = document.createElement('td');
+    cells[1].textContent = student.id;
+    cells[2] = document.createElement('td');
+    cells[2].textContent = student.gpa;
+    cells[3] = document.createElement('td');
+    cells[3].textContent = student.level;
+    cells[4] = document.createElement('td');
+    cells[5] = document.createElement('td');
     
     // creat modal menu button
     let modalId = 'modal' + idx;
-    console.log(modalId);
-    cell6.setAttribute('onclick',`popUp('${modalId}')`)
+    cells[5].setAttribute('onclick',`popUp('${modalId}')`)
 
     // create checkbox div
     let checkbox = document.createElement('div');
@@ -124,25 +125,26 @@ function createRow(student,idx){
     // insert each element at it's proper position
     checkbox.appendChild(input);
     checkbox.appendChild(label);
-    cell5.appendChild(checkbox);
+    cells[4].appendChild(checkbox);
 
     // append children to newRow
-    newRow.appendChild(cell1);
-    newRow.appendChild(cell2);
-    newRow.appendChild(cell3);
-    newRow.appendChild(cell4);
-    newRow.appendChild(cell5);
-    newRow.appendChild(cell6);
+    cells.forEach((cell)=>{
+        newRow.appendChild(cell);
+    });
     tbody.appendChild(newRow);
-    createModal(student,tbody,idx);
+    createModal(student,idx);
 }
 
-for(var st of students){
-    createRow(st,students.indexOf(st));
+function loadInfoToPage(){
+    // create row for each student
+    for(var st of students){
+        createRow(st,students.indexOf(st));
+    }
+
+    let body = document.querySelector('body');
+    let overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    body.prepend(overlay);
 }
 
-let body = document.querySelector('body');
-
-let overlay = document.createElement('div');
-overlay.classList.add('overlay');
-body.prepend(overlay);
+loadInfoToPage();
