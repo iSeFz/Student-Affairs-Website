@@ -1,10 +1,14 @@
 // Initialize students array
 let students = [];
 
+// get index of student from search
+const urlParams = new URLSearchParams(window.location.search);
+const studentIdx = urlParams.get('index');
+
 // Confirm the deletion of a student
 function confirmDelete() {
     if (confirm('Are you sure you want to delete this student?')) {
-        students.splice(0, 1);
+        students.splice(studentIdx, 1);
         alert('Student deleted successfully!');
         if (students.length === 0) {
             alert('No current student data found!\nCreate a new student!');
@@ -21,7 +25,7 @@ function confirmDelete() {
 
 // Confirm the update of student data
 function confirmEdit() {
-    updateStudentData(students[0]);
+    updateStudentData(students[studentIdx]);
     alert('Student data updated successfully!');
     event.preventDefault();
 }
@@ -60,7 +64,7 @@ function updateStudentData(student) {
 if (localStorage.getItem("students")) {
     // Get students array from local storage
     students = JSON.parse(localStorage.getItem("students"));
-    displayStudentData(students[0]);
+    displayStudentData(students[studentIdx]);
 }
 else {
     // If no students array exists in local storage

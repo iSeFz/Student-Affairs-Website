@@ -159,7 +159,7 @@ input[type='checkbox']+label::before {
     content: "";
     width: 2em;
     height: 1em;
-    background-color: #ff9999;
+    background-color: #d7d6d6;
     border-radius: 31px;
 }
 
@@ -176,7 +176,7 @@ input[type='checkbox']+label::after {
     content: "";
     width: 1em;
     height: 1em;
-    background-color: #ff1a1a;
+    background-color: #8f8f8f;
     border-radius: 31px;
     position: absolute;
     left: 0px;
