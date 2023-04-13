@@ -42,7 +42,7 @@ table tbody tr:nth-child(n) :first-child{
 
 
 tr td:nth-child(n + 6) {
-    background-image: url(/resources/three-dots.png);
+    background-image: url(../resources/three-dots.png);
     background-size: 42px 42px;
     background-position: center;
     background-repeat: no-repeat;
