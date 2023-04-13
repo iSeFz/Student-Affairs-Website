@@ -51,7 +51,7 @@ function createModal(student,idx){
     // customize modal head
     modalHead.classList.add('modal-head');
     title.classList.add('title');
-    title.textContent = "MoreInfo";
+    title.textContent = "More Information";
     exitButton.classList.add('close-button');
     exitButton.textContent = '\u00D7';
     let modalId = 'modal' + idx;
@@ -66,10 +66,10 @@ function createModal(student,idx){
     spans[3] = document.createElement('span');
 
 
-    spans[0].innerHTML = '<b>Gender: </b>'+ student.gender;
-    spans[1].innerHTML = '<b>Date of Birth: </b>'+ student.dob;
-    spans[2].innerHTML = '<b>Phone: </b>'+ student.phone;
-    spans[3].innerHTML = '<b>Email: </b>'+ student.email;
+    spans[0].innerHTML = '<b>Gender: &nbsp</b>'+ student.gender;
+    spans[1].innerHTML = '<b>Date of Birth: &nbsp</b>'+ student.dob;
+    spans[2].innerHTML = '<b>Phone: &nbsp</b>'+ student.phone;
+    spans[3].innerHTML = '<b>Email: &nbsp</b>'+ student.email;
 
 
     modalHead.appendChild(title);
@@ -113,7 +113,7 @@ function createRow(student,idx){
     // create input element
     let input = document.createElement('input');
     input.type = 'checkbox';
-    input.value = 'Active';
+    input.value = 'active';
     input.id = 'check' + idx;
 
     // check status
@@ -162,7 +162,6 @@ function changeStatus(){
     for(let i = 0; i < students.length;i++){
         students[i].status = (buttons[i].checked == true) ? 'active' : 'inactive';
     }
-    localStorage.clear;
     localStorage.setItem("students", JSON.stringify(students));
 }
 
