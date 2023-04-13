@@ -22,7 +22,7 @@ function createRow(student,idx){
     cells[4] = document.createElement('td');
     cells[4].innerHTML = "<a href='deptAssign.html?index=" + idx + "'>" + student.dept + "</a>";
     cells[5] = document.createElement('td');
-    cells[5].innerHTML = "<a href='editStudent.html?index=" + idx + "'>" + "<img src='/resources/edit.png'>" + "</a>" ;
+    cells[5].innerHTML = "<a href='editStudent.html?index=" + idx + "'>" + "<img src='resources/edit.png'>" + "</a>" ;
 
     // append children to newRow
     cells.forEach((cell)=>{
