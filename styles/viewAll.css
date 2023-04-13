@@ -30,11 +30,11 @@ table tbody tr {
     background-color: #ffffff;
 }
 
-table tbody tr:nth-child(even){
+table tbody tr:nth-child(even) {
     background-color: #d2ffc265;
 }
 
-table tbody tr:nth-child(n) :first-child{
+table tbody tr:nth-child(n) :first-child {
     text-align: left;
 }
 
@@ -44,6 +44,10 @@ tr td:nth-child(n + 6) {
     background-size: 42px 42px;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 3px solid #458F6C;
 }
 
 .modal {
@@ -68,7 +72,7 @@ tr td:nth-child(n + 6) {
 }
 
 .modal-head {
-    padding:10px 15px;
+    padding: 10px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -19,7 +19,6 @@ table thead tr {
     background-color: #458F6C;
     color: #ffffff;
     text-align: center;
-    border: 1px solid #458F6C;
 }
 
 table th,
@@ -40,8 +39,13 @@ table tbody tr:nth-child(n) :first-child{
     text-align: left;
 }
 
-td{
-    border: none;
+table tbody tr:last-of-type {
+    border-bottom: 3px solid #458F6C;
+}
+
+td a img {
+    margin: auto;
+    width: 25px;
 }
 
 .mainRow:hover {
