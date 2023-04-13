@@ -4,7 +4,8 @@ body {
 
 table {
     position: absolute;
-    margin-left: 5%;
+    margin: calc((100% - 90%)/2);
+    margin-top: 5px;
     width: 90%;
     text-align: center;
     border-collapse: collapse;
