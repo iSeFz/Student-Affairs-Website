@@ -10,9 +10,10 @@ table {
     width: 90%;
     text-align: center;
     border-collapse: collapse;
-    font-size: 0.9em;
+    font-size: 1.2em;
     font-family: 'Rubik', sans-serif;
     min-width: 400px;
+    border : 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -20,6 +21,7 @@ table thead tr {
     background-color: #458F6C;
     color: #ffffff;
     text-align: center;
+    border: 1px solid #458F6C;
 }
 
 table th,
@@ -32,7 +34,7 @@ table tbody tr {
     background-color: #ffffff;
 }
 
-table tbody tr:nth-child(even){
+tr:nth-child(even){
     background-color: #d2ffc265;
 }
 
@@ -40,95 +42,39 @@ table tbody tr:nth-child(n) :first-child{
     text-align: left;
 }
 
-img {
-    width: 35px;
-}
-
-img:hover {
-    cursor: pointer;
-    width: 38px;
-    transition-duration: 0.5s;
-}
-
-.modal {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: 300ms ease-in-out;
-    z-index: 10;
-    background-color: #EFEFEF;
-    width: 350px;
-    max-width: 80%;
-    height: 250px;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.modal.active {
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.modal-head {
-    padding:10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid ffffff;
-    background-color: #458F6C;
-    color: #ffffff;
-    border-radius: 9px 9px 0px 0px;
-}
-
-.modal-head .title {
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.modal-head .close-button {
-    cursor: pointer;
-    outline: none;
+td{
     border: none;
-    background: none;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #ffffff;
 }
 
-.modal-head .close-button:hover {
-    color: #000;
-}
-
-.modal-body {
-    padding: 10px 15px;
-}
-
-.modal-body span {
-    display: flex;
-}
-
-.overlay {
-    position: fixed;
-    opacity: 0;
-    transition: 300ms ease-in-out;
-    z-index: 9;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    pointer-events: none;
-}
-
-.overlay.active {
-    opacity: 1;
-    pointer-events: all;
-}
-
-
-.mainrow:hover {
-    background: #677b70;
+.mainRow:hover {
+    background-color: #677b70 !important;
     transition-duration: 0.4s;
     color: white;
+}
+
+#studentName {
+    width: 50%;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: 1px solid #68797B;
+    border-radius: 15px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+    background-size: 1em;
+    padding-left: 3.3rem;
+    background-image: url("../resources/search.png");
+}
+
+#searchButton {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    background-color: #458F6C;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
 }

@@ -22,20 +22,20 @@
     <center>
         <!-- search bar -->
         <form action="Search.html" method="post">
-            <input type="text" name="search" placeholder="Enter student name">
-            <input type="submit" value="Search">
+            <input type="text" name="search" placeholder="Enter student name" id="studentName">
+            <input type="button" value="Search" onclick="searchName()" id="searchButton">
                 <table border="1px">
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Id</th>
+                        <th>ID</th>
                         <th>GPA</th>
                         <th>Level</th>
                         <th>Department</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <td>
                             Mohamed Amgad
                         </td>
@@ -51,8 +51,8 @@
                         <td>
                             <a href="deptAssign.html">AI</a>
                         </td>
-                    </tr>
-                    <tr>
+                    </tr> -->
+                    <!-- <tr>
                         <td>
                             Omar Elgammal
                         </td>
@@ -102,10 +102,12 @@
                         <td>
                             <a href="deptAssign.html">IT</a>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
     </center>
+    <script src="scripts/search.js"></script>
+
 </body>
 
 </html>
