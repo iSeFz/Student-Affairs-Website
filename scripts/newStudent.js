@@ -52,4 +52,5 @@ function createStudent() {
     localStorage.setItem("students", JSON.stringify(students));
     // Display success message
     alert('Student created successfully!');
+    window.location.href = 'index.html';
 }
