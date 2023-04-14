@@ -22,6 +22,7 @@ if (localStorage.getItem("students")) {
 
 // Create student when the form is submitted
 function createStudent() {
+    event.preventDefault();
     // Get form values
     let name = document.getElementById("name").value;
     let dob = document.getElementById("dob").value;
@@ -52,5 +53,5 @@ function createStudent() {
     localStorage.setItem("students", JSON.stringify(students));
     // Display success message
     alert('Student created successfully!');
-    window.location.href = 'index.html';
+    window.location.href = 'viewAll.html';
 }
