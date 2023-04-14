@@ -23,13 +23,13 @@
                 <td>
                     <div class="leftAlign">
                         <label for="name" class="label">Student Name</label><br>
-                        <input type="text" id="name" class="inputFields">
+                        <input type="text" id="name" class="inputFields" disabled>
                     </div>
                 </td>
                 <td>
                     <div class="rightAlign">
                         <label for="id" class="label">Student ID</label><br>
-                        <input id="id" class="inputFields" minlength="8" maxlength="8">
+                        <input id="id" class="inputFields" minlength="8" maxlength="8" disabled>
                     </div>
                 </td>
             </tr>
@@ -38,11 +38,8 @@
                 <td>
                     <div class="leftAlign">
                         <label for="level" class="label">Student Level</label><br>
-                        <select id="level" class="inputFields">
-                            <option value="First">First Level</option>
-                            <option value="Second">Second Level</option>
+                        <select id="level" class="inputFields" disabled>
                             <option value="Third">Third Level</option>
-                            <option value="Fourth">Fourth Level</option>
                         </select>
                     </div>
                 </td>
@@ -50,7 +47,6 @@
                     <div class="rightAlign">
                         <label for="dept" class="label">Department</label><br>
                         <select id="dept" class="inputFields">
-                            <option value="General" selected>General</option>
                             <option value="CS">Computer Science</option>
                             <option value="IS">Information Systems</option>
                             <option value="IT">Information Technology</option>
@@ -62,7 +58,7 @@
             </tr>
     
             <tr>
-                <td align="right"><button type="reset" class="buttons" onclick="location.href='index.html'">Go Back</button></td>
+                <td align="right"><button type="reset" class="buttons" onclick="location.href='search.html'">Go Back</button></td>
                 <td align="left"><button type="submit" class="buttons">Submit</button></td>    
             </tr>
         </table>

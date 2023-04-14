@@ -1,32 +1,32 @@
-// intializing the student array 
+// Get students array from local storage
 let students = JSON.parse(localStorage.getItem("students"));
 
-//get index from the search page
+// Retrieve the index of student from search page
 const urlParams = new URLSearchParams(window.location.search);
 const studentIdx = urlParams.get('index');
 
-// Load student data from local storage into page without editing
-function displayStudentData(student)
-{
-    document.getElementByID('name').value = student.name;
-    document.getElementByID('id').value = student.id;
-    document.getElementByID('level').value = student.level;
-    document.getElementByID('dept').value = student.dept;
+// Load student data from local storage into page
+function displayStudentData(student) {
+    document.getElementById('name').value = student.name;
+    document.getElementById('id').value = student.id;
+    document.getElementById('level').value = student.level;
+    document.getElementById('dept').value = student.dept;
 }
 
+// Assign department to student
 function confirmAssign(){
-    students[studentIdx].dept = document.getElementByID('dept').value;
-    // Update student array in local storage
+    students[studentIdx].dept = document.getElementById('dept').value;
+    // Update students array in local storage
     localStorage.setItem('students', JSON.stringify(students));
-    alert('Department Chosen Successfully');
+    alert('Department Assigned Successfully');
     event.preventDefault();
+    location.href = 'search.html';
 }
 
-// Creating a condition to check if student reached third level
-if(students[studentIdx].level === 'Third'){
+// Check if student is in third level
+if (students[studentIdx].level !== "Third"){
+    alert('Cannot assign department to a student who is not in third level!');
+    location.href = 'search.html';
+} else {
     displayStudentData(students[studentIdx]);
-}
-else{
-    alert('Cannot assign department to a student who is not in third level');
-    location.href = "search.html";
 }

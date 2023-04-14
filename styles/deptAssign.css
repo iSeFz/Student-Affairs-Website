@@ -59,28 +59,27 @@ input[type="radio"]:checked+label {
     margin: 15px 15px 25px;
 }
 
+#name {
+    cursor: not-allowed;
+    padding-left: 3.3rem;
+    background-image: url("../resources/user.png");
+}
+
+#id {
+    cursor: not-allowed;
+    padding-left: 3.3rem;
+    background-image: url("../resources/id.png");
+}
+
 #level {
+    cursor: not-allowed;
     appearance: none;
-    background-image: url("../resources/chevron.png");
-    background-position: right 1rem center;
 }
 
 #dept {
     appearance: none;
     background-image: url("../resources/chevron.png");
     background-position: right 1rem center;
-}
-
-
-#id {
-    padding-left: 3.3rem;
-    background-image: url("../resources/id.png");
-}
-
-#gpa::-webkit-inner-spin-button,
-#gpa::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
 }
 
 #buttons {
