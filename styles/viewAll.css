@@ -15,15 +15,15 @@ table {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
+table th,
+table td {
+    padding: 12px 15px;
+}
+
 table thead tr {
     background-color: #458F6C;
     color: #ffffff;
     text-align: center;
-}
-
-table th,
-table td {
-    padding: 12px 15px;
 }
 
 table tbody tr {
@@ -200,3 +200,10 @@ input[type='checkbox']:checked+label::after {
     align-items: center;
     justify-content: center;
 }
+
+.mainRow:hover {
+    background-color: #677b70 !important;
+    transition-duration: 0.4s;
+    color: white;
+}
+

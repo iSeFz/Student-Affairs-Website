@@ -124,6 +124,8 @@ function createRow(student,idx){
     let label = document.createElement('label');
     label.htmlFor = 'check' + idx;
 
+    newRow.classList.add('mainRow');
+
     // insert each element at it's proper position
     checkbox.appendChild(input);
     checkbox.appendChild(label);
