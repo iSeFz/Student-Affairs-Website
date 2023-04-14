@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/editStudent.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
+</head>
+
+<body>
     <nav id="navbar">
         <a class="navbarItems" href="index.html">Home</a>
         <a class="navbarItems" href="newStudent.html">Add New Student</a>
@@ -14,126 +17,119 @@
         <a class="navbarItems" href="deptAssign.html">Assign Department</a>
         <img id="logo" src="resources/FCAI-Logo.png" alt="FCAI Logo">
     </nav>
-</head>
-
-<body>
-
-    
     <div class="main">
-        
         <div class="formDiv">
+            <form id="editStudentForm" method="post" onsubmit="confirmEdit()">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="leftAlign">
+                                <label for="name" class="label">Student Name</label><br>
+                                <input type="text" id="name" class="inputFields" required>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="rightAlign">
+                                <label for="date" class="label">Date of Birth</label><br>
+                                <input type="date" id="dob" class="inputFields" required>
+                            </div>
+                        </td>
+                    </tr>
 
+                    <tr>
+                        <td>
+                            <div class="leftAlign">
+                                <label for="phone" class="label">Phone Number</label><br>
+                                <input type="tel" id="phone" class="inputFields" maxlength="11" required>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="rightAlign">
+                                <label for="email" class="label">Student Email</label><br>
+                                <input type="email" id="email" class="inputFields" required>
+                            </div>
+                        </td>
+                    </tr>
 
-        <form method="post" onsubmit="confirmEdit()">
-            <table>
-                <tr>
-                    <td>
-                        <div class="leftAlign">
-                            <label for="name" class="label">Student Name</label><br>
-                            <input type="text" id="name" class="inputFields" required>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="rightAlign">
-                            <label for="date" class="label">Date of Birth</label><br>
-                            <input type="date" id="dob" class="inputFields" required>
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <div class="leftAlign radio">
+                                <label for="gender" class="label">Gender</label>
+                                <input type="radio" name="gender" id="male" value="Male" checked>
+                                <label for="male" class="gender">Male</label>
+                                <input type="radio" name="gender" id="female" value="Female">
+                                <label for="female" class="gender">Female</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="rightAlign radio">
+                                <label for="status" class="label">Status</label>
+                                <input type="radio" name="status" id="active" value="active" checked>
+                                <label for="active" class="status">Active</label>
+                                <input type="radio" name="status" id="inactive" value="inactive">
+                                <label for="inactive" class="status">Inactive</label>
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <div class="leftAlign">
-                            <label for="phone" class="label">Phone Number</label><br>
-                            <input type="tel" id="phone" class="inputFields" maxlength="11" required>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="rightAlign">
-                            <label for="email" class="label">Student Email</label><br>
-                            <input type="email" id="email" class="inputFields" required>
-                        </div>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            <div class="leftAlign">
+                                <label for="id" class="label">Student ID</label><br>
+                                <input id="id" class="inputFields" minlength="8" maxlength="8" required>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="rightAlign">
+                                <label for="level" class="label">Student Level</label><br>
+                                <select id="level" class="inputFields">
+                                    <option value="First">First Level</option>
+                                    <option value="Second">Second Level</option>
+                                    <option value="Third">Third Level</option>
+                                    <option value="Fourth">Fourth Level</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td>
-                        <div class="leftAlign radio">
-                            <label for="gender" class="label">Gender</label>
-                            <input type="radio" name="gender" id="male" value="Male" checked>
-                            <label for="male" class="gender">Male</label>
-                            <input type="radio" name="gender" id="female" value="Female">
-                            <label for="female" class="gender">Female</label>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="rightAlign radio">
-                            <label for="status" class="label">Status</label>
-                            <input type="radio" name="status" id="active" value="active" checked>
-                            <label for="active" class="status">Active</label>
-                            <input type="radio" name="status" id="inactive" value="inactive">
-                            <label for="inactive" class="status">Inactive</label>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <div class="leftAlign">
-                            <label for="id" class="label">Student ID</label><br>
-                            <input id="id" class="inputFields" minlength="8" maxlength="8" required>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="rightAlign">
-                            <label for="level" class="label">Student Level</label><br>
-                            <select id="level" class="inputFields">
-                                <option value="First">First Level</option>
-                                <option value="Second">Second Level</option>
-                                <option value="Third">Third Level</option>
-                                <option value="Fourth">Fourth Level</option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <div class="leftAlign">
-                            <label for="gpa" class="label">Student GPA</label><br>
-                            <input type="number" id="gpa" class="inputFields" min="0" max="4" step="0.01" required>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="rightAlign">
-                            <label for="dept" class="label">Department</label><br>
-                            <select id="dept" class="inputFields" disabled>
-                                <option value="All">General</option>
-                                <option value="CS">Computer Science</option>
-                                <option value="IS">Information Systems</option>
-                                <option value="IT">Information Technology</option>
-                                <option value="AI">Artificial Intelligence</option>
-                                <option value="DS">Decision Support</option>
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div id="edit">
-                            <button type="submit" class="buttons">Confirm Edit</button>
-                        </div>
-                    </td>
-                    <td>
-                        <div id="delete">
-                            <button type="reset" id="delete" class="buttons" onclick="confirmDelete()">Delete Student</button>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </form>
+                    <tr>
+                        <td>
+                            <div class="leftAlign">
+                                <label for="gpa" class="label">Student GPA</label><br>
+                                <input type="number" id="gpa" class="inputFields" min="0" max="4" step="0.01" required>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="rightAlign">
+                                <label for="dept" class="label">Department</label><br>
+                                <select id="dept" class="inputFields" disabled>
+                                    <option value="General">General</option>
+                                    <option value="CS">Computer Science</option>
+                                    <option value="IS">Information Systems</option>
+                                    <option value="IT">Information Technology</option>
+                                    <option value="AI">Artificial Intelligence</option>
+                                    <option value="DS">Decision Support</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="edit">
+                                <button type="submit" class="buttons">Confirm Edit</button>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="delete">
+                                <button type="reset" id="delete" class="buttons" onclick="confirmDelete()">Delete
+                                    Student</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
-</div>
     <script src="scripts/editStudent.js"></script>
 </body>
 

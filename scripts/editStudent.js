@@ -1,7 +1,7 @@
-// Initialize students array
-let students = [];
+// Get students array from local storage
+let students = JSON.parse(localStorage.getItem("students"));
 
-// get index of student from search
+// Retrieve the index of student from search page
 const urlParams = new URLSearchParams(window.location.search);
 const studentIdx = urlParams.get('index');
 
@@ -28,6 +28,7 @@ function confirmEdit() {
     updateStudentData(students[studentIdx]);
     alert('Student data updated successfully!');
     event.preventDefault();
+    location.href = 'viewAll.html';
 }
 
 // Load student data from local storage into page
@@ -60,15 +61,22 @@ function updateStudentData(student) {
     localStorage.setItem('students', JSON.stringify(students));
 }
 
-// Check if students array exists in local storage
-if (localStorage.getItem("students")) {
-    // Get students array from local storage
-    students = JSON.parse(localStorage.getItem("students"));
+// Check if student index is specified
+if (window.location.href.indexOf("index") > -1) {
+    // Load student data into page
     displayStudentData(students[studentIdx]);
 }
 else {
-    // If no students array exists in local storage
-    alert('No current student data found!\nCreate a new student!');
-    localStorage.clear();
-    location.href = 'newStudent.html';
+    // Store the html form element
+    const editStudentForm = document.getElementById('editStudentForm');
+    // Create alert box
+    let alertBox = document.createElement('h3');
+    alertBox.setAttribute('id', 'alertBox');
+    alertBox.innerHTML = `
+        <h1>No student specified for editing !!<br><br>
+            <a href=\'search.html\'>Select specific student to edit</a>
+        </h1>
+    `;
+    // Replace form with alert box
+    editStudentForm.parentElement.replaceChild(alertBox, editStudentForm);
 }
