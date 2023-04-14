@@ -17,19 +17,19 @@
 </head>
 
 <body>
-    <form onsubmit="alert('Department Chosen Successfully'); return false">
+    <form onsubmit="confirmAssign();">
         <table>
             <tr>
                 <td>
                     <div class="leftAlign">
-                        <label for="id" class="label">Student Name</label><br>
-                        <input id="id" class="inputFields" minlength="8" maxlength="8" placeholder="Enter your Name" readonly>
+                        <label for="name" class="label">Student Name</label><br>
+                        <input type="text" id="name" class="inputFields">
                     </div>
                 </td>
                 <td>
                     <div class="rightAlign">
                         <label for="id" class="label">Student ID</label><br>
-                        <input id="id" class="inputFields" minlength="8" maxlength="8" placeholder="Enter your ID" readonly>
+                        <input id="id" class="inputFields" minlength="8" maxlength="8">
                     </div>
                 </td>
             </tr>
@@ -37,8 +37,13 @@
             <tr>
                 <td>
                     <div class="leftAlign">
-                        <label for="gpa" class="label">Student GPA</label><br>
-                        <input type="number" id="gpa" class="inputFields" min="0" max="4" placeholder="Enter your GPA" required>
+                        <label for="level" class="label">Student Level</label><br>
+                        <select id="level" class="inputFields">
+                            <option value="First">First Level</option>
+                            <option value="Second">Second Level</option>
+                            <option value="Third">Third Level</option>
+                            <option value="Fourth">Fourth Level</option>
+                        </select>
                     </div>
                 </td>
                 <td>
@@ -62,6 +67,7 @@
             </tr>
         </table>
     </form>
+    <script src="scripts/deptAssign.js"></script>
 </body>
 
 </html>
