@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/deptAssign.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
+</head>
+
+<body>
     <nav id="navbar">
         <a class="navbarItems" href="index.html">Home</a>
         <a class="navbarItems" href="newStudent.html">Add New Student</a>
@@ -14,9 +17,6 @@
         <a class="navbarItems" id="current" href="deptAssign.html">Assign Department</a>
         <img id="logo" src="resources/FCAI-Logo.png" alt="FCAI Logo">
     </nav>
-</head>
-
-<body>
     <form onsubmit="confirmAssign();">
         <table>
             <tr>
@@ -33,7 +33,7 @@
                     </div>
                 </td>
             </tr>
-            
+
             <tr>
                 <td>
                     <div class="leftAlign">
@@ -47,6 +47,7 @@
                     <div class="rightAlign">
                         <label for="dept" class="label">Department</label><br>
                         <select id="dept" class="inputFields">
+                            <option value="General" hidden>Choose Department</option>
                             <option value="CS">Computer Science</option>
                             <option value="IS">Information Systems</option>
                             <option value="IT">Information Technology</option>
@@ -56,10 +57,10 @@
                     </div>
                 </td>
             </tr>
-    
+
             <tr>
                 <td align="right"><button type="reset" class="buttons" onclick="location.href='search.html'">Go Back</button></td>
-                <td align="left"><button type="submit" class="buttons">Submit</button></td>    
+                <td align="left"><button type="submit" class="buttons">Submit</button></td>
             </tr>
         </table>
     </form>
