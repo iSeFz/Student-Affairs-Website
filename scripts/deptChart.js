@@ -6,7 +6,7 @@ var myChart = new Chart(ctx, {
         datasets: [{
             
             label: 'Number of Students',
-            data: [1, 1, 1, 1, 1, 1],
+            data: [1, 2, 3, 4, 5, 6],
             backgroundColor: [
                 'rgba(41, 155, 99, 1)',
                 'rgba(54, 162, 235, 1)',
