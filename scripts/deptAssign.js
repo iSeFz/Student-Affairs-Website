@@ -23,10 +23,27 @@ function confirmAssign(){
     location.href = 'search.html';
 }
 
-// Check if student is in third level
-if (students[studentIdx].level !== "Third"){
-    alert('Cannot assign department to a student who is not in third level!');
-    location.href = 'search.html';
-} else {
+// Check if student index is specified
+if (window.location.href.indexOf("index") > -1) {
+    // Check if student is in third level
+    if (students[studentIdx].level !== "Third"){
+        alert('Cannot assign department to a student not in the third level!');
+        location.href = 'search.html';
+    }
+    // Load student data into page
     displayStudentData(students[studentIdx]);
+}
+else {
+    // Store the html form element
+    const deptAssignForm = document.getElementById('deptAssignForm');
+    // Create alert box
+    let alertBox = document.createElement('h3');
+    alertBox.setAttribute('id', 'alertBox');
+    alertBox.innerHTML = `
+        <h1>No student specified for assigning !!<br><br>
+            <a href=\'search.html\'>Select specific student to assign</a>
+        </h1>
+    `;
+    // Replace form with alert box
+    deptAssignForm.parentElement.replaceChild(alertBox, deptAssignForm);
 }

@@ -17,53 +17,58 @@
         <a class="navbarItems" id="current" href="deptAssign.html">Assign Department</a>
         <img id="logo" src="resources/FCAI-Logo.png" alt="FCAI Logo">
     </nav>
-    <form onsubmit="confirmAssign();">
-        <table>
-            <tr>
-                <td>
-                    <div class="leftAlign">
-                        <label for="name" class="label">Student Name</label><br>
-                        <input type="text" id="name" class="inputFields" disabled>
-                    </div>
-                </td>
-                <td>
-                    <div class="rightAlign">
-                        <label for="id" class="label">Student ID</label><br>
-                        <input id="id" class="inputFields" minlength="8" maxlength="8" disabled>
-                    </div>
-                </td>
-            </tr>
+    <div class="main">
+        <div class="formDiv">
+            <form id="deptAssignForm" onsubmit="confirmAssign()">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="leftAlign">
+                                <label for="name" class="label">Student Name</label><br>
+                                <input type="text" id="name" class="inputFields" disabled>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="rightAlign">
+                                <label for="id" class="label">Student ID</label><br>
+                                <input id="id" class="inputFields" minlength="8" maxlength="8" disabled>
+                            </div>
+                        </td>
+                    </tr>
 
-            <tr>
-                <td>
-                    <div class="leftAlign">
-                        <label for="level" class="label">Student Level</label><br>
-                        <select id="level" class="inputFields" disabled>
-                            <option value="Third">Third Level</option>
-                        </select>
-                    </div>
-                </td>
-                <td>
-                    <div class="rightAlign">
-                        <label for="dept" class="label">Department</label><br>
-                        <select id="dept" class="inputFields">
-                            <option value="General" hidden>Choose Department</option>
-                            <option value="CS">Computer Science</option>
-                            <option value="IS">Information Systems</option>
-                            <option value="IT">Information Technology</option>
-                            <option value="AI">Artificial Intelligence</option>
-                            <option value="DS">Decision Support</option>
-                        </select>
-                    </div>
-                </td>
-            </tr>
+                    <tr>
+                        <td>
+                            <div class="leftAlign">
+                                <label for="level" class="label">Student Level</label><br>
+                                <select id="level" class="inputFields" disabled>
+                                    <option value="Third">Third Level</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="rightAlign">
+                                <label for="dept" class="label">Department</label><br>
+                                <select id="dept" class="inputFields">
+                                    <option value="General" hidden>Choose Department</option>
+                                    <option value="CS">Computer Science</option>
+                                    <option value="IS">Information Systems</option>
+                                    <option value="IT">Information Technology</option>
+                                    <option value="AI">Artificial Intelligence</option>
+                                    <option value="DS">Decision Support</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
 
-            <tr>
-                <td align="right"><button type="reset" class="buttons" onclick="location.href='search.html'">Go Back</button></td>
-                <td align="left"><button type="submit" class="buttons">Submit</button></td>
-            </tr>
-        </table>
-    </form>
+                    <tr>
+                        <td align="right"><button type="reset" class="buttons" onclick="location.href='search.html'">Go
+                                Back</button></td>
+                        <td align="left"><button type="submit" class="buttons">Submit</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
     <script src="scripts/deptAssign.js"></script>
 </body>
 
