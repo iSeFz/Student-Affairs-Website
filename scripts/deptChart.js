@@ -38,11 +38,12 @@ new Chart(ctx2, {
     type: 'bar',
     data: {
         
-        labels: ['Computer Sciences', 'Information Systems', 'Information Technology', 'Artificial Intelligence', 'Decision Support', 'General'],
+        labels: ['Average GPA', 'Computer Sciences', 'Information Systems', 'Information Technology', 'Artificial Intelligence', 'Decision Support', 'General'],
         datasets: [{
             label: 'Average GPA',
-            data: [2.9, 3.7, 2.4, 3.2, 3.1, 3.5],
+            data: [3.2, 2.9, 3.7, 2.4, 3.2, 3.1, 3.5],
             backgroundColor: [
+                '#8f9897',
                 'rgba(41, 155, 99, 1)',
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
@@ -51,6 +52,7 @@ new Chart(ctx2, {
                 'rgba(55, 71, 133, 1)'
             ],
             borderColor: [
+                '#8f9897',
                 'rgba(41, 155, 99, 1)',
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
