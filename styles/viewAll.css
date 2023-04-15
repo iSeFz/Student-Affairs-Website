@@ -168,7 +168,7 @@ input[type='checkbox']:checked+label::before {
     content: "";
     width: 2em;
     height: 1em;
-    background-color: #aafe8e;
+    background-color: #a5f080;
     border-radius: 31px;
 }
 
@@ -188,7 +188,7 @@ input[type='checkbox']:checked+label::after {
     content: "";
     width: 1em;
     height: 1em;
-    background-color: #00b33c;
+    background-color: #458F6C;
     border-radius: 31px;
     position: absolute;
     left: 16px;
