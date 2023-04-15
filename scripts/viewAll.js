@@ -142,7 +142,7 @@ function createRow(student,idx){
 // this function load info from localStorage to table
 function loadInfoToPage(){
 
-    if(students.length > 0){
+    if(localStorage.key(0) != null && students.length > 0){
         // create row for each student
         for(var st of students){
             createRow(st,students.indexOf(st));

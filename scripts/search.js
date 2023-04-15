@@ -3,7 +3,7 @@ let students = JSON.parse(localStorage.getItem('students'));
 
 
 // this function is creating row with data stored in local storage
-function createRow(student,idx){
+function createRow(student, idx) {
     let tbody = document.querySelector('tbody');
     let newRow = document.createElement('tr');
     newRow.classList.add('mainRow');
@@ -12,7 +12,7 @@ function createRow(student,idx){
 
     // table cells
     cells[0] = document.createElement('td');
-    cells[0].textContent = student.name;   
+    cells[0].textContent = student.name;
     cells[1] = document.createElement('td');
     cells[1].textContent = student.id;
     cells[2] = document.createElement('td');
@@ -22,33 +22,33 @@ function createRow(student,idx){
     cells[4] = document.createElement('td');
     cells[4].innerHTML = "<a href='deptAssign.html?index=" + idx + "'>" + student.dept + "</a>";
     cells[5] = document.createElement('td');
-    cells[5].innerHTML = "<a href='editStudent.html?index=" + idx + "'>" + "<img src='resources/edit.png'>" + "</a>" ;
+    cells[5].innerHTML = "<a href='editStudent.html?index=" + idx + "'>" + "<img src='resources/edit.png'>" + "</a>";
 
     // append children to newRow
-    cells.forEach((cell)=>{
+    cells.forEach((cell) => {
         newRow.appendChild(cell);
     });
     tbody.appendChild(newRow);
 }
 
 // this function load info from localStorage to table
-function loadInfoToPage(){
-    if(students.length > 0){
+function loadInfoToPage() {
+    if (localStorage.key(0) != null && students.length > 0) {
         // create row for each student
-        for(var st of students){
-            if(st.status == 'active')
-                createRow(st,students.indexOf(st));
+        for (var st of students) {
+            if (st.status == 'active')
+                createRow(st, students.indexOf(st));
         }
     }
-    else{
+    else {
         // Store the html table element
         const table = document.getElementById('Table');
         // Create alert box
         let alertBox = document.createElement('h3');
         alertBox.setAttribute('id', 'alertBox');
         alertBox.innerHTML = `
-        <h1>No student exist to view !!<br><br>
-        <a href=\'newStudent.html\'>Add Student to view</a>
+        <h1>No student exist to search !!<br><br>
+        <a href=\'newStudent.html\'>Add Student to search</a>
         </h1>
         `;
         // Create alertBox container
@@ -60,30 +60,34 @@ function loadInfoToPage(){
     }
 }
 
-function searchName(){
+function searchName() {
     let searchValue = document.getElementById("studentName").value;
     let rows = document.querySelectorAll("tbody > tr");
     let count = 0;
-    rows.forEach((row)=>{
-        if(row.firstElementChild.textContent.toLowerCase().startsWith(searchValue.toLowerCase())){
+    rows.forEach((row) => {
+        if (row.firstElementChild.textContent.toLowerCase().startsWith(searchValue.toLowerCase())) {
             row.style.display = "table-row";
-            if(count % 2 == 1)
-                row.style.backgroundColor ="#d2ffc265";
+            if (count % 2 == 1)
+                row.style.backgroundColor = "#d2ffc265";
             else
-                row.style.backgroundColor ="#FFFFFF";
+                row.style.backgroundColor = "#FFFFFF";
             count++;
         }
-        else{
+        else {
             row.style.display = "none";
         }
     });
+    if (count == 0) {
+        alert('There are no students with that name!');
+        location.href = 'search.html';
+    }
 }
 
 loadInfoToPage();
 
 let searchField = document.getElementById("studentName");
-if(searchField != null){
-    searchField.addEventListener("keypress", function(event) {
+if (searchField != null) {
+    searchField.addEventListener("keypress", function (event) {
         // If the user presses the "Enter" key on the keyboard
         if (event.key === "Enter") {
             // Cancel the default action, if needed
