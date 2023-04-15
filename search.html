@@ -19,25 +19,27 @@
         <a class="navbarItems" href="deptAssign.html">Assign Department</a>
         <img id="logo" src="resources/FCAI-Logo.png" alt="FCAI Logo">
     </nav>
-    <center>
-        <!-- search bar -->
-        <form action="Search.html" method="post">
-            <input type="text" name="search" placeholder="Enter student name" id="studentName">
-            <input type="button" value="Search" onclick="searchName()" id="searchButton">
-    </center>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>ID</th>
-                    <th>GPA</th>
-                    <th>Level</th>
-                    <th>Department</th>
-                    <th>Edit</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+    <div id="Table">
+        <center>
+            <!-- search bar -->
+            <form action="Search.html" method="post">
+                <input type="text" name="search" placeholder="Enter student name" id="studentName">
+                <input type="button" value="Search" onclick="searchName()" id="searchButton">
+        </center>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>ID</th>
+                        <th>GPA</th>
+                        <th>Level</th>
+                        <th>Department</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+    </div>
     <script src="scripts/search.js"></script>
 
 </body>

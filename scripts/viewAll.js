@@ -141,20 +141,41 @@ function createRow(student,idx){
 
 // this function load info from localStorage to table
 function loadInfoToPage(){
-    // create row for each student
-    for(var st of students){
-        createRow(st,students.indexOf(st));
-    }
-    // create overlay
-    let body = document.querySelector('body');
-    let overlay = document.createElement('div');
-    overlay.classList.add('overlay');
-    body.prepend(overlay);
 
-    // select all checkboxs buttons
-    let checkboxs = document.getElementsByClassName('checkbox');
-    for(let checkbox of checkboxs){
-        checkbox.addEventListener('click',changeStatus);
+    if(students.length > 0){
+        // create row for each student
+        for(var st of students){
+            createRow(st,students.indexOf(st));
+        }
+        // create overlay
+        let body = document.querySelector('body');
+        let overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+        body.prepend(overlay);
+
+        // select all checkboxs buttons
+        let checkboxs = document.getElementsByClassName('checkbox');
+        for(let checkbox of checkboxs){
+            checkbox.addEventListener('click',changeStatus);
+        }
+    }
+    else{
+        // Store the html table element
+        const table = document.getElementById('Table');
+        // Create alert box
+        let alertBox = document.createElement('h3');
+        alertBox.setAttribute('id', 'alertBox');
+        alertBox.innerHTML = `
+        <h1>No student exist to view !!<br><br>
+        <a href=\'newStudent.html\'>Add Student to view</a>
+        </h1>
+        `;
+        // Create alertBox container
+        let container = document.createElement('div');
+        container.classList.add("alertDiv");
+        container.appendChild(alertBox);
+        // Replace table with alert box
+        table.parentElement.replaceChild(container, table);
     }
 }
 
