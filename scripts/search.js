@@ -56,7 +56,13 @@ function searchName(){
         else{
             row.style.display = "none";
         }
-    });
+    })
+
+    if(count == 0){
+        alert('There are no students with that name!');
+        location.href = 'search.html';
+    }
+    ;
 }
 
 loadInfoToPage();
