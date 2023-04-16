@@ -41,22 +41,12 @@ function loadInfoToPage() {
         }
     }
     else {
-        // Store the html table element
-        const table = document.getElementById('Table');
-        // Create alert box
-        let alertBox = document.createElement('h3');
-        alertBox.setAttribute('id', 'alertBox');
-        alertBox.innerHTML = `
-        <h1>No student exist to search !!<br><br>
-        <a href=\'newStudent.html\'>Add Student to search</a>
-        </h1>
-        `;
-        // Create alertBox container
-        let container = document.createElement('div');
-        container.classList.add("alertDiv");
-        container.appendChild(alertBox);
-        // Replace table with alert box
-        table.parentElement.replaceChild(container, table);
+        if(confirm("No Student exist to search\n Do you want to add Student")){
+            location.href = 'newStudent.html';
+        }
+        else{
+            location.href = 'index.html';
+        }
     }
 }
 
