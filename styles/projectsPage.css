@@ -1,0 +1,120 @@
+*{
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: #EFEFEF;
+    color: black;
+    font-size: 20px;
+}
+
+.cards{
+    /* background-color: red; */
+    width: 98%;
+    padding: 40px 0px 40px 30px; 
+    /*  top bottom right left */
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-gap: 20px;
+                          
+}
+
+.cards .card1{
+    padding: 5px;
+    text-align: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    grid-column: 2/ span 1  ;
+}
+
+.cards .card2{
+    padding: 5px;
+    text-align: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    grid-column: 3 / span 1 ;
+}
+
+.cards .card3{
+    padding: 5px;
+    text-align: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    grid-column: 2 / span 1  ;
+}
+
+.cards .card4{
+    padding: 5px;
+    text-align: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    grid-column: 3 / span 1 ;
+}
+
+.cards .card1 a {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    background-color: #458F6C;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.cards .card2 a{
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    background-color: #458F6C;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.cards .card3 a{
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    background-color: #458F6C;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.cards .card4 a{
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    background-color: #458F6C;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+a.projectLink:hover {
+    background-color: #B6D6C7;
+}
+
+
+
+
