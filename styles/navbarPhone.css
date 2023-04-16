@@ -1,16 +1,15 @@
 #navbar {
     background-color: white;
-    margin: -8px -8px 20px;
+    /* margin: -8px -8px 20px; */
     padding: 10px;
     overflow: hidden;
     box-shadow: 0 7px 25px rgba(0,0,0,0.08);
 }
 
 .navbarItems {
-    float: left;
     display: block;
     margin: 5px;
-    padding: 14px 16px;
+    padding: 14px;
     color: black;
     text-align: center;
     font-size: 20px;
@@ -31,9 +30,10 @@ a.navbarItems:hover {
 
 #logo{
     float: right;
-    width: 70px;
-    height: 65px;
-    margin-right: 10px;
+    /* width: 70px; */
+    /* height: 65px; */
+    margin-top: -65px;
+    /* margin-right: 10px; */
 }
 
 input[type=checkbox]{
@@ -43,5 +43,37 @@ input[type=checkbox]{
 .checkboxLabel{
     display: none;
     font-size: 24px;
+    user-select: none;
+}
+.menu {
+    display: none;
+    background-color: white;
+    text-align: center;
+    padding: 16px 0;
+}
+
+.menu a:hover{
+    display: inline-block;
+    background-color: #B6D6C7;
+}
+
+.menu a + a{
+    margin-top: 12px;
+}
+
+#logo{
+    float: right;
+    width: 70px;
+    height: 65px;
+    margin-right: 10px;
+}
+
+input[type=checkbox]:checked ~ .menu{
+    display: block;
+}
+
+.checkboxLabel{
+    display: block;
+    font-size: 56px;
     user-select: none;
 }

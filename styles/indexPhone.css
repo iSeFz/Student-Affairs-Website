@@ -1,0 +1,100 @@
+*{
+    font-family: 'Rubik', sans-serif;
+}
+body {
+    background-color: #EFEFEF;
+    color: black;
+    font-size: 20px;
+}
+
+#navbar {
+    background-color: white;
+    margin: -8px -8px 0px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.cards{
+    padding: 10px 0px 10px 0px; 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.cardStack{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.cards .cardStack .card{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.cards .card4{
+    padding: 20px;
+    text-align: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    grid-row: span 1;
+
+}
+
+.card4 h1{
+    font-weight: 700;
+}
+
+.number{
+    font-size: 35px;
+    font-weight: 500;
+    color: #458F6C;
+}
+
+.card_name{
+    color: black;
+    font-weight: 600;
+}
+
+.icon_place {
+    font-size: 45px;
+    color: #B6D6C7;
+}
+
+.cards .chart {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.cards .chart2 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.cards .chart2 h2 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    font-weight: 600;
+}
+
+.cards .chart h2 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    font-weight: 600;
+}
