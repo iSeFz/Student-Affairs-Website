@@ -21,29 +21,26 @@ if (localStorage.getItem("students")) {
 }
 
 function checkNumber(phoneNumber) {
+    const phoneNumberRegex = /^(012|011|015|010)\d{8}$/;
 
-    if(phoneNumber[0] != '0') 
-        return "Phone number format incorrect, please enter a phone number starting with 010, 011, 012, 015, or 02.";
-    
-    
-    if(phoneNumber[1] != '2' && (phoneNumber[1] != '1' || 
-        (phoneNumber[2] != '0' && phoneNumber[2] != '1' &&
-            phoneNumber[2] != '2' && phoneNumber[2] != '5'))) 
-                return "Phone number format incorrect, please enter a phone number starting with 010, 011, 012, 015, or 02.";
+    if(!phoneNumberRegex.test(phoneNumber))
+        return "Phone number format incorrect, please enter a phone number starting with 010, 011, 012, 015, or 02.\n";
 
     if(students.some(student => student.phone === phoneNumber)){
         return "This phone number is already in use, please enter another number.\n";
     }
 
     return "";
-
 }
 
 function checkID(ID) {
+    const IDRegex = /^(202)\d{5}$/;
+    if(!IDRegex.test(ID))
+        return "Student ID format incorrect, please enter a student ID starting with 202.\n";
     students.forEach(student =>{
 
         if(student['id'] == ID){
-            return "This ID has already been used before...";
+            return "This ID has already been used before...\n";
         }
 
     })
@@ -61,7 +58,7 @@ function checkEmail(email) {
     students.forEach(student =>{
 
         if(student['email'] == email){
-            return "This email has already been used before...";
+            return "This email has already been used before...\n";
         }
 
     })
