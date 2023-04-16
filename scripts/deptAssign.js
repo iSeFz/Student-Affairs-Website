@@ -25,25 +25,39 @@ function confirmAssign(){
 
 // Check if student index is specified
 if (window.location.href.indexOf("index") > -1) {
-    // Check if student is in third level
-    if (students[studentIdx].level !== "Third"){
-        alert('Cannot assign department to a student not in the third level!');
-        location.href = 'search.html';
-    }
-    // Load student data into page
-    displayStudentData(students[studentIdx]);
+    const promise = new Promise((resolve, reject) => {
+        // Load student data from local storage
+        displayStudentData(students[studentIdx]);
+        // Check if student is in third level
+        if (students[studentIdx].level !== "Third") {
+            reject('Cannot assign department to a student not in the third level!');
+        } else {
+            resolve("Department Assigned Successfully");
+        }
+    });
+    promise.catch(error => {
+        setTimeout(() => {
+            alert(error);
+            location.href = 'search.html';
+        }, 20);
+    })
+       
 }
 else {
-    // Store the html form element
-    const deptAssignForm = document.getElementById('deptAssignForm');
-    // Create alert box
-    let alertBox = document.createElement('h3');
-    alertBox.setAttribute('id', 'alertBox');
-    alertBox.innerHTML = `
-        <h1>No student specified for assigning !!<br><br>
-            <a href=\'search.html\'>Select specific student to assign</a>
-        </h1>
-    `;
-    // Replace form with alert box
-    deptAssignForm.parentElement.replaceChild(alertBox, deptAssignForm);
+    let emptyStudent = {
+        name: "",
+        id: "",
+        level: "",
+        dept: ""
+    };
+    displayStudentData(emptyStudent);
+    setTimeout(() => {
+        const response = confirm("No student specified for assigning department\n Do you want to specify Student")
+        if(response){
+            location.href = 'search.html';
+        }
+        else{
+            location.href = 'index.html';
+        }
+    }, 20);
 }
