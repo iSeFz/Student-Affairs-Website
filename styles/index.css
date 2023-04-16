@@ -7,13 +7,6 @@ body {
     font-size: 20px;
 }
 
-#navbar {
-    background-color: white;
-    margin: -8px -8px 0px;
-    padding: 10px;
-    overflow: hidden;
-}
-
 .cards{
     /* background-color: red; */
     width: 98%;

@@ -9,14 +9,11 @@ table {
     background-color: white;
 }
 
-div {
-    margin: 15px;
-}
-
 .main{
     width: 99%;
     /* padding: 20px 0px 20px 15px;  */
     /*  top bottom right left */
+    margin: 15px;
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr;
     /* grid-gap: 0px; */
