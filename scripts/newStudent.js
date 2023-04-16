@@ -20,6 +20,60 @@ if (localStorage.getItem("students")) {
     students = JSON.parse(localStorage.getItem("students"));
 }
 
+function checkNumber(phoneNumber) {
+
+    if(phoneNumber[0] != '0') 
+        return "Phone number format incorrect, please enter a phone number starting with 010, 011, 012, 015, or 02.";
+    
+    
+    if(phoneNumber[1] != '2' && (phoneNumber[1] != '1' || 
+        (phoneNumber[2] != '0' && phoneNumber[2] != '1' &&
+            phoneNumber[2] != '2' && phoneNumber[2] != '5'))) 
+                return "Phone number format incorrect, please enter a phone number starting with 010, 011, 012, 015, or 02.";
+
+    if(students.some(student => student.phone === phoneNumber)){
+        return "This phone number is already in use, please enter another number.\n";
+    }
+
+    return "";
+
+}
+
+function checkID(ID) {
+    students.forEach(student =>{
+
+        if(student['id'] == ID){
+            return "This ID has already been used before...";
+        }
+
+    })
+
+    if(students.some(student => student.id === ID)){
+        return "This StudentID is already in use, please enter another ID.\n";
+    }
+
+
+    return "";
+
+}
+
+function checkEmail(email) {
+    students.forEach(student =>{
+
+        if(student['email'] == email){
+            return "This email has already been used before...";
+        }
+
+    })
+
+    if(students.some(student => student.email === email)){
+        return "This email is already in use, please enter another email.\n";
+    }
+
+    return "";
+
+}
+
 // Create student when the form is submitted
 function createStudent() {
     event.preventDefault();
@@ -47,6 +101,17 @@ function createStudent() {
         gpa: gpa,
         dept: dept
     };
+
+    let errors = "";
+    errors += checkNumber(phone);
+    errors += checkEmail(email);
+    errors += checkID(id);
+
+    if(errors != "") {
+        alert(errors);
+        return;
+    }
+
     // Add student object to students array
     students.push(student);
     // Save students array to local storage

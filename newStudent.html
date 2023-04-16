@@ -42,7 +42,7 @@
                         <td>
                             <div class="leftAlign">
                                 <label for="phone" class="label">Phone Number</label><br>
-                                <input type="tel" id="phone" class="inputFields" maxlength="11"
+                                <input type="tel" id="phone" class="inputFields" maxlength="11" minlength="11"
                                     placeholder="Enter student phone" required>
                             </div>
                         </td>
@@ -88,8 +88,8 @@
                             <div class="rightAlign">
                                 <label for="level" class="label">Student Level</label><br>
                                 <select id="level" class="inputFields">
-                                    <option value="null" selected disabled hidden>Select Level</option>
-                                    <option value="First">First Level</option>
+                                    <option value="null" disabled hidden>Select Level</option>
+                                    <option value="First" selected>First Level</option>
                                     <option value="Second">Second Level</option>
                                     <option value="Third">Third Level</option>
                                     <option value="Fourth">Fourth Level</option>
@@ -110,8 +110,8 @@
                             <div class="rightAlign">
                                 <label for="dept" class="label">Department</label><br>
                                 <select id="dept" class="inputFields">
-                                    <option value="null" selected disabled hidden>Choose Department</option>
-                                    <option value="General">General</option>
+                                    <option value="null" disabled hidden>Choose Department</option>
+                                    <option value="General" selected>General</option>
                                     <option value="CS">Computer Science</option>
                                     <option value="IS">Information Systems</option>
                                     <option value="IT">Information Technology</option>
