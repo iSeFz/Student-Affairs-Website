@@ -67,16 +67,10 @@ if (window.location.href.indexOf("index") > -1) {
     displayStudentData(students[studentIdx]);
 }
 else {
-    // Store the html form element
-    const editStudentForm = document.getElementById('editStudentForm');
-    // Create alert box
-    let alertBox = document.createElement('h3');
-    alertBox.setAttribute('id', 'alertBox');
-    alertBox.innerHTML = `
-        <h1>No student specified for editing !!<br><br>
-            <a href=\'search.html\'>Select specific student to edit</a>
-        </h1>
-    `;
-    // Replace form with alert box
-    editStudentForm.parentElement.replaceChild(alertBox, editStudentForm);
+    if(confirm("No student specified for editing\n Do you want to specify Student")){
+        location.href = 'search.html';
+    }
+    else{
+        location.href = 'index.html';
+    }
 }
