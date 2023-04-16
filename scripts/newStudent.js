@@ -99,15 +99,28 @@ function createStudent() {
         dept: dept
     };
 
-    let errors = "";
-    errors += checkNumber(phone);
-    errors += checkEmail(email);
-    errors += checkID(id);
+
+    let errors = checkNumber(phone);
 
     if(errors != "") {
         alert(errors);
         return;
     }
+
+    errors = checkEmail(email);
+
+    if(errors != "") {
+        alert(errors);
+        return;
+    }
+
+    errors = checkID(id);
+
+    if(errors != "") {
+        alert(errors);
+        return;
+    }
+
 
     // Add student object to students array
     students.push(student);

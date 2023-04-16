@@ -7,18 +7,34 @@ table {
     justify-content: center;
     align-items: center;
     background-color: white;
+    width: 100%;
+    table-layout: fixed;
 }
 
 div {
     margin: 15px;
 }
 
+td{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+}
+
+#navbar {
+    background-color: white;
+    margin: -8px -8px 0px;
+    padding: 10px;
+    overflow: hidden;
+}
+
 .main{
-    width: 99%;
-    /* padding: 20px 0px 20px 15px;  */
-    /*  top bottom right left */
-    display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr;
+    padding: 0px 10px 10px 10px;
+    margin: 0px 0px 10px 0px; 
+    /* display: grid;
+    grid-template-columns: 1fr;  */
     /* grid-gap: 0px; */
 }
 
@@ -31,7 +47,6 @@ div {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 7px 25px rgba(0,0,0,0.08);
-    grid-column-start: 2;
 }
 
 .label {
@@ -63,8 +78,8 @@ input[type="radio"] {
 }
 
 input[type="radio"]+label {
-    margin: 10px 10px 10px 10px;
-    padding: 10px 20px 10px 20px;
+    margin: 10px;
+    padding: 10px 20px;
     border-radius: 30px;
     cursor: pointer;
     transition: all 200ms ease;
@@ -133,15 +148,16 @@ input[type="radio"]:checked+label {
 }
 
 #back {
-    display: flex;
-    justify-content: right;
-    align-items: right;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
 }
 
 #create {
     display: flex;
-    justify-content: left;
-    align-items: left;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttons {
@@ -155,3 +171,4 @@ input[type="radio"]:checked+label {
     cursor: pointer;
     border-radius: 30px;
 }
+

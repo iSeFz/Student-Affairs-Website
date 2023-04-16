@@ -2,21 +2,29 @@
 
 <head>
     <title>Add New Student</title>
-    <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/newStudent.css">
+    <link rel="stylesheet" media="screen and (min-device-width: 768px)" href="styles/navbar.css">
+    <link rel="stylesheet" media="screen and (max-device-width: 768px)" href="styles/navbarPhone.css">
+
+    <link rel="stylesheet" media="screen and (min-device-width: 1400px)" href="styles/newStudent.css">
+    <link rel="stylesheet" media="screen and (max-device-width: 1400px)" href="styles/newStudentPhone.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
     <script src="scripts/newStudent.js"></script>
 </head>
 
 <body>
     <nav id="navbar">
-        <a class="navbarItems" href="index.html">Home</a>
-        <a class="navbarItems" id="current" href="newStudent.html">Add New Student</a>
-        <a class="navbarItems" href="editStudent.html">Edit Student Data</a>
-        <a class="navbarItems" href="search.html">Search Active Students</a>
-        <a class="navbarItems" href="viewAll.html">View All Students</a>
-        <a class="navbarItems" href="deptAssign.html">Assign Department</a>
+        <input type="checkbox" id="checkboxToggle">
+        <label for="checkboxToggle" class="checkboxLabel">&#9776;</label>
         <img id="logo" src="resources/FCAI-Logo.png" alt="FCAI Logo">
+        <div class="menu">
+            <a class="navbarItems" href="index.html">Home</a>
+            <a class="navbarItems" id="current" href="newStudent.html">Add New Student</a>
+            <a class="navbarItems" href="editStudent.html">Edit Student Data</a>
+            <a class="navbarItems" href="search.html">Search Active Students</a>
+            <a class="navbarItems" href="viewAll.html">View All Students</a>
+            <a class="navbarItems" href="deptAssign.html">Assign Department</a>
+        </div> 
     </nav>
     <div class="main">
         <div class="formDiv">
@@ -58,7 +66,7 @@
                     <tr>
                         <td>
                             <div class="leftAlign radio">
-                                <label for="gender" class="label">Gender</label>
+                                <label for="gender" class="label">Gender</label><br><br>
                                 <input type="radio" name="gender" id="male" value="Male" checked>
                                 <label for="male" class="gender">Male</label>
                                 <input type="radio" name="gender" id="female" value="Female">
@@ -67,7 +75,7 @@
                         </td>
                         <td>
                             <div class="rightAlign radio">
-                                <label for="status" class="label">Status</label>
+                                <label for="status" class="label">Status</label><br><br>
                                 <input type="radio" name="status" id="active" value="active" checked>
                                 <label for="active" class="status">Active</label>
                                 <input type="radio" name="status" id="inactive" value="inactive">
