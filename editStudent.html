@@ -11,13 +11,17 @@
 
 <body>
     <nav id="navbar">
-        <a class="navbarItems" href="index.html">Home</a>
-        <a class="navbarItems" href="newStudent.html">Add New Student</a>
-        <a class="navbarItems" id="current" href="editStudent.html">Edit Student Data</a>
-        <a class="navbarItems" href="search.html">Search Active Students</a>
-        <a class="navbarItems" href="viewAll.html">View All Students</a>
-        <a class="navbarItems" href="deptAssign.html">Assign Department</a>
+        <input type="checkbox" id="checkboxToggle">
+        <label for="checkboxToggle" class="checkboxLabel">&#9776;</label>
         <img id="logo" src="resources/FCAI-Logo.png" alt="FCAI Logo">
+        <div class="menu">
+            <a class="navbarItems" id="current" href="index.html">Home</a>
+            <a class="navbarItems" href="newStudent.html">Add New Student</a>
+            <a class="navbarItems" href="editStudent.html">Edit Student Data</a>
+            <a class="navbarItems" href="search.html">Search Active Students</a>
+            <a class="navbarItems" href="viewAll.html">View All Students</a>
+            <a class="navbarItems" href="deptAssign.html">Assign Department</a>
+        </div>    
     </nav>
     <div class="main">
         <div class="formDiv">
@@ -56,7 +60,7 @@
                     <tr>
                         <td>
                             <div class="leftAlign radio">
-                                <label for="gender" class="label">Gender</label>
+                                <label for="gender" class="label">Gender</label><br><br>
                                 <input type="radio" name="gender" id="male" value="Male" checked>
                                 <label for="male" class="gender">Male</label>
                                 <input type="radio" name="gender" id="female" value="Female">
@@ -65,7 +69,7 @@
                         </td>
                         <td>
                             <div class="rightAlign radio">
-                                <label for="status" class="label">Status</label>
+                                <label for="status" class="label">Status</label><br><br>
                                 <input type="radio" name="status" id="active" value="active" checked>
                                 <label for="active" class="status">Active</label>
                                 <input type="radio" name="status" id="inactive" value="inactive">
