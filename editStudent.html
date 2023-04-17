@@ -2,9 +2,14 @@
 
 <head>
     <title>Edit Student Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" media="screen and (min-device-width: 768px)" href="styles/navbar.css">
     <link rel="stylesheet" media="screen and (max-device-width: 768px)" href="styles/navbarPhone.css">
-    <link rel="stylesheet" href="styles/editStudent.css">
+
+    <link rel="stylesheet" media="screen and (min-device-width: 1400px)" href="styles/editStudent.css">
+    <link rel="stylesheet" media="screen and (max-device-width: 1400px)" href="styles/newStudentPhone.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
     <link rel="icon" href="favicon.ico">
 </head>
@@ -25,7 +30,7 @@
     </nav>
     <div class="main">
         <div class="formDiv">
-            <form id="editStudentForm" method="post" onsubmit="confirmEdit()">
+            <form method="post" onsubmit="confirmEdit()">
                 <table>
                     <tr>
                         <td>
@@ -127,8 +132,7 @@
                         </td>
                         <td>
                             <div id="delete">
-                                <button type="reset" id="delete" class="buttons" onclick="confirmDelete()">Delete
-                                    Student</button>
+                                <button type="reset" class="buttons" onclick="confirmDelete()">Delete Student</button>
                             </div>
                         </td>
                     </tr>
