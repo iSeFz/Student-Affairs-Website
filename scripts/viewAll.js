@@ -171,7 +171,7 @@ function loadInfoToPage(){
 
 // this function changeStatus of students in localStorage when change in table
 function changeStatus(){
-    let buttons = document.querySelectorAll('input[type="checkbox"]');
+    let buttons = document.querySelectorAll('div input[type="checkbox"]');
     for(let i = 0; i < students.length;i++){
         students[i].status = (buttons[i].checked == true) ? 'active' : 'inactive';
     }
