@@ -20,10 +20,6 @@ a {
     display: block;
 }
 
-a.projectLink:hover {
-    background-color: #B6D6C7;
-}
-
 .cards{
     width: 100%;
     height: 100%;
@@ -124,6 +120,9 @@ a.projectLink:hover {
     width: 1em;
     margin-left: -1em;
 }
+#sAffairs .top-half .inner-right a.projectLink:hover {
+    background-color: #B6D6C7;
+}
 
 
 #labManagement{
@@ -161,6 +160,10 @@ a.projectLink:hover {
     width: 1em;
     margin-left: -1em;
 }
+#labManagement .top-half .inner-right a.projectLink:hover {
+    background-color: #98D4EE;
+}
+
 
 
 #higherStudies{
@@ -202,6 +205,9 @@ a.projectLink:hover {
     width: 1em;
     margin-left: -1em;
 }
+#higherStudies .top-half .inner-right a.projectLink:hover {
+    background-color: #AFBFFF;
+}
 
 
 #humanResources{
@@ -242,4 +248,7 @@ a.projectLink:hover {
     display: inline-block;
     width: 1em;
     margin-left: -1em;
+}
+#humanResources .top-half .inner-right a.projectLink:hover {
+    background-color: #FFCCCC;
 }

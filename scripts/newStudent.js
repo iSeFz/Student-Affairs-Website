@@ -78,6 +78,13 @@ function checkDate(date){
     return "";
 }
 
+function checkDept(dept, level){
+    if(dept !== "General" && (level === "First" || level === "Second")){
+        return "Cannot assign department to a student in first or second year.";
+    }
+    return "";
+}
+
 // Create student when the form is submitted
 function createStudent() {
     event.preventDefault();
@@ -134,7 +141,12 @@ function createStudent() {
         return;
     }
 
+    errors = checkDept(dept, level);
 
+    if(errors != "") {
+        alert(errors);
+        return;
+    }
 
 
     // Add student object to students array
