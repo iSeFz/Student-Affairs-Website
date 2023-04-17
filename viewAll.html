@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>View All Students</title>
-    <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/viewAll.css">
+    <link rel="stylesheet" media="screen and (min-device-width: 768px)" href="styles/navbar.css">
+    <link rel="stylesheet" media="screen and (max-device-width: 768px)" href="styles/navbarPhone.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
@@ -13,13 +14,17 @@
 
 <body>
     <nav id="navbar">
-        <a class="navbarItems" href="index.html">Home</a>
-        <a class="navbarItems" href="newStudent.html">Add New Student</a>
-        <a class="navbarItems" href="editStudent.html">Edit Student Data</a>
-        <a class="navbarItems" href="search.html">Search Active Students</a>
-        <a class="navbarItems" id="current" href="viewAll.html">View All Students</a>
-        <a class="navbarItems" href="deptAssign.html">Assign Department</a>
+        <input type="checkbox" id="checkboxToggle">
+        <label for="checkboxToggle" class="checkboxLabel">&#9776;</label>
         <img id="logo" src="resources/FCAI-Logo.png" alt="FCAI Logo">
+        <div class="menu">
+            <a class="navbarItems" id="current" href="index.html">Home</a>
+            <a class="navbarItems" href="newStudent.html">Add New Student</a>
+            <a class="navbarItems" href="editStudent.html">Edit Student Data</a>
+            <a class="navbarItems" href="search.html">Search Active Students</a>
+            <a class="navbarItems" href="viewAll.html">View All Students</a>
+            <a class="navbarItems" href="deptAssign.html">Assign Department</a>
+        </div>    
     </nav>
     <table id="Table">
         <thead>
