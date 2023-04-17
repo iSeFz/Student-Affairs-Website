@@ -10,14 +10,12 @@ table {
     margin: 40px 10px 20px;
 }
 
-div {
-    margin: 15px;
+.leftAlign , .rightAlign {
+    margin: 0px 15px 15px 0px;
 }
 
 .main{
     width: 99%;
-    /* padding: 20px 0px 20px 15px;  */
-    /*  top bottom right left */
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr;
     grid-gap: 20px;
