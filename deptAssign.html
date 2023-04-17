@@ -2,7 +2,6 @@
 
 <head>
     <title>Department Assignment</title>
-
     <link rel="stylesheet" media="screen and (min-device-width: 768px)" href="styles/navbar.css">
     <link rel="stylesheet" media="screen and (max-device-width: 768px)" href="styles/navbarPhone.css">
     <link rel="stylesheet" href="styles/deptAssign.css">
@@ -38,7 +37,7 @@
                         <td>
                             <div class="rightAlign">
                                 <label for="id" class="label">Student ID</label><br>
-                                <input id="id" class="inputFields" minlength="8" maxlength="8" disabled>
+                                <input id="id" class="inputFields" disabled>
                             </div>
                         </td>
                     </tr>
@@ -59,7 +58,7 @@
                             <div class="rightAlign">
                                 <label for="dept" class="label">Department</label><br>
                                 <select id="dept" class="inputFields">
-                                    <option value="General" hidden>Choose Department</option>
+                                    <option value="General" hidden>General</option>
                                     <option value="CS">Computer Science</option>
                                     <option value="IS">Information Systems</option>
                                     <option value="IT">Information Technology</option>
@@ -71,8 +70,7 @@
                     </tr>
 
                     <tr>
-                        <td align="right"><button type="reset" class="buttons" onclick="location.href='search.html'">Go
-                                Back</button></td>
+                        <td align="right"><button type="reset" class="buttons" onclick="location.href='search.html'">Go Back</button></td>
                         <td align="left"><button type="submit" class="buttons">Submit</button></td>
                     </tr>
                 </table>
