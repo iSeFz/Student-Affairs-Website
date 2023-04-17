@@ -129,13 +129,13 @@ input[type="radio"]:checked+label {
     margin: 0;
 }
 
-#back {
+#edit {
     display: flex;
     justify-content: right;
     align-items: right;
 }
 
-#create {
+#delete {
     display: flex;
     justify-content: left;
     align-items: left;
