@@ -71,6 +71,13 @@ function checkEmail(email) {
 
 }
 
+function checkDate(date){
+    if(date > 2007 || date < 1993){
+        return "Invalid age, please choose an age 16 between 30."
+    } 
+    return "";
+}
+
 // Create student when the form is submitted
 function createStudent() {
     event.preventDefault();
@@ -99,8 +106,14 @@ function createStudent() {
         dept: dept
     };
 
+    let errors = checkDate(parseInt(dob.substr(0, 4)));
 
-    let errors = checkNumber(phone);
+    if(errors != "") {
+        alert(errors);
+        return;
+    }
+
+    errors = checkNumber(phone);
 
     if(errors != "") {
         alert(errors);
@@ -120,6 +133,8 @@ function createStudent() {
         alert(errors);
         return;
     }
+
+
 
 
     // Add student object to students array
