@@ -39,7 +39,7 @@ table {
 
 .inputFields {
     width: 95%;
-    margin: 10px;
+    margin: 10px 10px 30px;
     padding: 10px 20px;
     font-size: 20px;
     border: 2px solid #68797B;
@@ -60,8 +60,7 @@ input[type="radio"] {
 }
 
 input[type="radio"]+label {
-    margin: 10px 10px 10px 10px;
-    padding: 10px 20px 10px 20px;
+    margin: 15px;
     border-radius: 30px;
     cursor: pointer;
     transition: all 200ms ease;
@@ -77,13 +76,18 @@ input[type="radio"]:checked+label {
     background-color: #458F6C;
 }
 
-.gender,
+.gender{
+    padding: 10px 58px 10px;
+    font-size: 18px;
+}
+
 .status {
+    padding: 10px 52px 10px;
     font-size: 18px;
 }
 
 .radio{
-    margin: 15px 15px 25px;
+    margin: 0px 0px 40px;
 }
 
 #level {
@@ -142,7 +146,7 @@ input[type="radio"]:checked+label {
 }
 
 .buttons {
-    margin: 5px;
+    margin: 10px 20px;
     padding: 10px 20px;
     font-size: 20px;
     font-family: 'Rubik', sans-serif;
