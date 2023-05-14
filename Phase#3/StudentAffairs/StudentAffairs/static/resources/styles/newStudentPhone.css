@@ -1,0 +1,174 @@
+body {
+    background-color: #EFEFEF;
+}
+
+table {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    table-layout: fixed;
+}
+
+div {
+    margin: 15px;
+}
+
+td{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+}
+
+#navbar {
+    background-color: white;
+    margin: -8px -8px 0px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.main{
+    padding: 0px 10px 10px 10px;
+    margin: 0px 0px 10px 0px; 
+    /* display: grid;
+    grid-template-columns: 1fr;  */
+    /* grid-gap: 0px; */
+}
+
+.formDiv{
+    margin: 30px 0px 0px;
+    font-family: 'Rubik', sans-serif;
+    padding: 30px 0px 0px 10px;
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.label {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px;
+}
+
+.inputFields {
+    width: 95%;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: 2px solid #68797B;
+    border-radius: 15px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+    background-size: 1em;
+}
+
+.inputFields:focus{
+    outline: none;
+    border: 2px solid #458F6C;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]+label {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+input[type="radio"]:hover+label {
+    background-color: #B6D6C7;
+}
+
+input[type="radio"]:checked+label {
+    color: white;
+    font-weight: bold;
+    background-color: #458F6C;
+}
+
+.gender,
+.status {
+    font-size: 18px;
+}
+
+.radio{
+    margin: 15px 15px 25px;
+}
+
+#level {
+    appearance: none;
+    background-image: url("../resources/chevron.png");
+    background-position: right 1rem center;
+}
+
+#name {
+    padding-left: 3.3rem;
+    background-image: url("../resources/user.png");
+}
+
+#id {
+    padding-left: 3.3rem;
+    background-image: url("../resources/id.png");
+}
+
+#email {
+    padding-left: 3.3rem;
+    background-image: url("../resources/email.png");
+}
+
+#phone {
+    padding-left: 3.3rem;
+    background-image: url("../resources/phone.png");
+}
+
+#dept {
+    appearance: none;
+    background-image: url("../resources/chevron.png");
+    background-position: right 1rem center;
+}
+
+#gpa {
+    padding-left: 3.3rem;
+    background-image: url("../resources/grade.png");
+}
+
+#gpa::-webkit-inner-spin-button,
+#gpa::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#back {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#create, #delete, #edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    background-color: #458F6C;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+}
+

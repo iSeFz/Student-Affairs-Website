@@ -1,0 +1,73 @@
+{%extends 'navbar.html'%}
+{%block content%}
+{% load static %}
+<html>
+
+<head>
+    <title>Department Assignment</title>
+    <link rel="stylesheet" media="screen and (min-device-width: 768px)" href="{%static 'styles/navbar.css'%}">
+    <link rel="stylesheet" media="screen and (max-device-width: 768px)" href="{%static 'styles/navbarPhone.css'%}">
+    <link rel="stylesheet" href="{%static 'styles/deptAssign.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
+</head>
+
+<body>
+    <div class="main">
+        <div class="formDiv">
+            <form id="deptAssignForm" onsubmit="confirmAssign()">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="leftAlign">
+                                <label for="name" class="label">Student Name</label><br>
+                                <input type="text" id="name" class="inputFields" disabled>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="rightAlign">
+                                <label for="id" class="label">Student ID</label><br>
+                                <input id="id" class="inputFields" disabled>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="leftAlign">
+                                <label for="level" class="label">Student Level</label><br>
+                                <select id="level" class="inputFields" disabled>
+                                    <option value="First">First Level</option>
+                                    <option value="Second">Second Level</option>
+                                    <option value="Third">Third Level</option>
+                                    <option value="Fourth">Fourth Level</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="rightAlign">
+                                <label for="dept" class="label">Department</label><br>
+                                <select id="dept" class="inputFields">
+                                    <option value="General" hidden>General</option>
+                                    <option value="CS">Computer Science</option>
+                                    <option value="IS">Information Systems</option>
+                                    <option value="IT">Information Technology</option>
+                                    <option value="AI">Artificial Intelligence</option>
+                                    <option value="DS">Decision Support</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><button type="reset" class="buttons" onclick="location.href='search.html'">Go Back</button></td>
+                        <td align="left"><button type="submit" class="buttons">Submit</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <script src="{%static 'scripts/deptAssign.js'%}"></script>
+</body>
+
+</html>
+{%endblock%}

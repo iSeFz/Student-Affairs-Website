@@ -1,0 +1,114 @@
+body {
+    background-color: #EFEFEF;
+}
+
+table {
+    position: absolute;
+    margin: calc((100% - 90%)/2);
+    margin-top: 5px;
+    width: 90%;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 1.2em;
+    font-family: 'Rubik', sans-serif;
+    min-width: 400px;
+    border : 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+    background-color: #458F6C;
+    color: #ffffff;
+    text-align: center;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    background-color: #ffffff;
+}
+
+tr:nth-child(even){
+    background-color: #d2ffc265;
+}
+
+table tbody tr:nth-child(n) :first-child{
+    text-align: left;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 3px solid #458F6C;
+}
+
+td a img {
+    margin: auto;
+    width: 25px;
+}
+
+.mainRow:hover {
+    background-color: #677b70 !important;
+    transition-duration: 0.4s;
+    color: white;
+}
+
+#studentName {
+    width: 50%;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: 1px solid #68797B;
+    border-radius: 15px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+    background-size: 1em;
+    padding-left: 3.3rem;
+    background-image: url("../resources/search.png");
+}
+
+#searchButton {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    background-color: #458F6C;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.alertDiv{
+    margin: calc((100% - 80%)/2);
+    width: 80%;
+    font-family: 'Rubik', sans-serif;
+    padding: 30px 10px 10px 10px;
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+#alertBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: -20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#alertBox a {
+    padding: 10px 20px;
+    font-family: 'Rubik', sans-serif;
+    background-color: #458F6C;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    text-decoration: none;
+}

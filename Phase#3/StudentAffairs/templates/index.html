@@ -1,0 +1,87 @@
+{%extends 'navbar.html'%}
+{%block content%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Affairs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" media="screen and (min-device-width: 768px)" href="{%static 'styles/navbar.css'%}">
+    <link rel="stylesheet" media="screen and (max-device-width: 768px)" href="{%static 'styles/navbarPhone.css'%}">
+
+    <link rel="stylesheet" media="screen and (max-device-width: 768px)" href="{%static 'styles/indexPhone.css'%}">
+    <link rel="stylesheet" media="screen and (min-device-width: 768px)" href="{%static 'styles/index.css'%}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
+</head>
+
+<body>
+    
+    <div class="cards">
+        <div class="card4">
+            <h1>Student Affairs</h1>
+            <h3>The website allows you to manage students through their different information
+                including their GPA, Department, Status, and Academic Level.
+            </h3>
+            <h3>Current version of the website is interactive as it stores the new students
+                created in the local storage and allow you to view all current students.
+            </h3>
+        </div>
+        <div class="cardStack">
+            <div class="card">
+                <div class="card_content">
+                    <div class="card_name">Number of Students</div>
+                    <div class="number">5</div>
+                </div>
+                <div class="icon_place">
+                    <img src="{%static 'resources/smalluser.png'%}">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_content">
+                    <div class="card_name">Active Students</div>
+                    <div class="number">4</div>
+                </div>
+                <div class="icon_place">
+                    <img src="{%static 'resources/smalluser.png'%}">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_content">
+                    <div class="card_name">Inactive Students</div>
+                    <div class="number">1</div>
+                </div>
+                <div class="icon_place">
+                    <img src="{%static 'resources/smalluser.png'%}">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_content">
+                    <div class="card_name">Average GPA</div>
+                    <div class="number">3.2</div>
+                </div>
+                <div class="icon_place">
+                    <img src="{%static 'resources/smallgrade.png'%}">
+                </div>
+            </div>
+        </div>
+        <div class="chart2">
+            <h2>Number of Students / Department</h2>
+            <div id="chartContainer">
+                <canvas id="doughnut"></canvas>
+            </div>
+        </div>
+        <div class="chart">
+            <h2>Average GPA / Department</h2>
+            <div id="chartContainer">
+                <canvas id="bar"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="{%static 'scripts/deptChart.js'%}"></script>
+</body>
+
+</html>
+{%endblock%}

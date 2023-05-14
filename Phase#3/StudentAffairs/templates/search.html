@@ -1,0 +1,43 @@
+{%extends 'navbar.html'%}
+{%block content%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Search Active Students</title>
+    <link rel="stylesheet" media="screen and (min-device-width: 768px)" href="{%static 'styles/navbar.css'%}">
+    <link rel="stylesheet" media="screen and (max-device-width: 768px)" href="{%static 'styles/navbarPhone.css'%}">
+    <link rel="stylesheet" href="{%static 'styles/search.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
+</head>
+
+<body>
+    <div id="Table">
+        <center>
+            <!-- search bar -->
+            <form action="Search.html" method="post">
+                <input type="text" name="search" placeholder="Enter student name" id="studentName">
+                <input type="button" value="Search" onclick="searchName()" id="searchButton">
+        </center>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>ID</th>
+                        <th>GPA</th>
+                        <th>Level</th>
+                        <th>Department</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+    </div>
+    <script src="{%static 'scripts/search.js'%}"></script>
+
+</body>
+
+</html>
+{%endblock%}
