@@ -7,12 +7,12 @@
     <label for="checkboxToggle" class="checkboxLabel">&#9776;</label>
     <img id="logo" src="{%static 'resources/FCAI-Logo.png'%}" alt="FCAI Logo">
     <div class="menu">
-        <a class="navbarItems" id="current" href="{% url 'index' %}">Home</a>
-        <a class="navbarItems" href="{% url 'newStudent' %}">Add New Student</a>
-        <a class="navbarItems" href="{% url 'editStudent' %}">Edit Student Data</a>
-        <a class="navbarItems" href="{% url 'search' %}">Search Active Students</a>
-        <a class="navbarItems" href="{% url 'viewAll' %}">View All Students</a>
-        <a class="navbarItems" href="{% url 'deptAssign' %}">Assign Department</a>
+        <a class="navbarItems" href="{% url 'index' %}" {% if currentPage == 'index' %} id="current" {% endif %}>Home</a>
+        <a class="navbarItems" href="{% url 'newStudent' %}" {% if currentPage == 'newStudent' %} id="current" {% endif %}>Add New Student</a>
+        <a class="navbarItems" href="{% url 'editStudent' %}" {% if currentPage == 'editStudent' %} id="current" {% endif %}>Edit Student Data</a>
+        <a class="navbarItems" href="{% url 'search' %}" {% if currentPage == 'search' %} id="current" {% endif %}>Search Active Students</a>
+        <a class="navbarItems" href="{% url 'viewAll' %}" {% if currentPage == 'viewAll' %} id="current" {% endif %}>View All Students</a>
+        <a class="navbarItems" href="{% url 'deptAssign' %}" {% if currentPage == 'deptAssign' %} id="current" {% endif %}>Assign Department</a>
     </div>    
 </nav>
 {%block content%}
