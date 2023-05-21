@@ -7,17 +7,10 @@ const studentIdx = urlParams.get('index');
 
 // Confirm the deletion of a student
 function confirmDelete() {
+    id = document.getElementById("id").value;
     if (confirm('Are you sure you want to delete this student?')) {
-        students.splice(studentIdx, 1);
+        window.location.href = `/deleteStudent/${id}`;
         alert('Student deleted successfully!');
-        if (students.length === 0) {
-            alert('No current student data found!\nCreate a new student!');
-            localStorage.clear();
-            location.href = 'newStudent.html';
-        } else {
-            localStorage.setItem('students', JSON.stringify(students));
-            location.href = 'viewAll.html';
-        }
     } else {
         event.preventDefault();
     }
@@ -61,16 +54,3 @@ function updateStudentData(student) {
     localStorage.setItem('students', JSON.stringify(students));
 }
 
-// Check if student index is specified
-if (window.location.href.indexOf("index") > -1) {
-    // Load student data into page
-    displayStudentData(students[studentIdx]);
-}
-else {
-    if(confirm("No student specified for editing\n Do you want to specify Student")){
-        location.href = 'search.html';
-    }
-    else{
-        location.href = 'index.html';
-    }
-}

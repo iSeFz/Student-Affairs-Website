@@ -27,8 +27,57 @@
                 <th>More</th>
             </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+            {% for student in students%}
+                <tr>
+                    <td>{{student.name}}</td>
+                    <td>{{student.studNum}}</td>
+                    <td>{{student.gpa}}</td>
+                    <td>{{student.level}}</td>
+                    <td>
+                        <div class="checkbox">
+                            <input type="checkbox" value="Active" id="check{{student.studNum}}">
+                            <label for="check{{student.studNum}}"></label>
+                        </div>
+                    </td>
+                    <td onclick="popUp('modal{{student.studNum}}')"></td>
+                </tr>
+
+            {%endfor%}
+            {%for student in students%}
+                <div class="modal" id="modal{{student.studNum}}">
+                    <div class="modal-head">
+                        <div class="title">More Information</div>
+                        <button class="close-button" onclick="closePopUp('modal{{student.studNum}}')">x</button>
+                    </div>
+                    <div class="modal-body">
+                        <span>
+                            <b>Gender: &nbsp;</b>
+                            {{student.gender}}
+                        </span>
+                        <br>
+                        <span>
+                            <b>Date of Birth: &nbsp;</b>
+                            {{student.dob}}
+                        </span>
+                        <br>
+                        <span>
+                            <b>Phone: &nbsp;</b>
+                            {{student.phone}}
+                        </span>
+                        <br>
+                        <span>
+                            <b>Email: &nbsp;</b>
+                            {{student.email}}
+                        </span>
+                        <br>
+                    </div>
+                </div>
+            {%endfor%}
+
+        </tbody>
     </table>
+        <div class="overlay"></div>
     <script src="{%static 'scripts/viewAll.js'%}"></script>
 </body>
 
