@@ -38,6 +38,11 @@ def editStudent(request):
         data.save()
     return render(request, 'editStudent.html', {'currentPage': 'editStudent'})
 
+def deleteStudent(request, id):
+    data = Student.objects.get(studNum=id)
+    data.delete()
+    return render(request, 'viewAll.html', {'currentPage': 'viewAll'})
+
 def search(request):
     return render(request, 'search.html', {'currentPage': 'search'})
 

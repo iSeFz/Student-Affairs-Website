@@ -9,4 +9,5 @@ urlpatterns = [
     path('search.html', views.search, name='search'),
     path('viewAll.html', views.viewAll, name='viewAll'),
     path('deptAssign.html', views.deptAssign, name='deptAssign'),
+    path('deleteStudent/<id>', views.deleteStudent, name='deleteStudent'),
 ]
