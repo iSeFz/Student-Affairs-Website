@@ -19,20 +19,21 @@
 <body>
     <div class="main">
         <div class="formDiv">
-            <form method="post" onsubmit="createStudent()">
+            <form method="post">
+                {% csrf_token %}
                 <table>
                     <tr>
                         <td>
                             <div class="leftAlign">
                                 <label for="name" class="label">Student Name</label><br>
-                                <input type="text" id="name" class="inputFields" placeholder="Enter student name"
+                                <input type="text" name="name" id="name" class="inputFields" placeholder="Enter student name"
                                     required>
                             </div>
                         </td>
                         <td>
                             <div class="rightAlign">
                                 <label for="date" class="label">Date of Birth</label><br>
-                                <input type="date" id="dob" class="inputFields" required>
+                                <input type="date" name="dob" id="dob" class="inputFields" required>
                             </div>
                         </td>
                     </tr>
@@ -41,14 +42,14 @@
                         <td>
                             <div class="leftAlign">
                                 <label for="phone" class="label">Phone Number</label><br>
-                                <input type="tel" id="phone" class="inputFields" maxlength="11" minlength="11"
+                                <input type="tel" name="phone" id="phone" class="inputFields" maxlength="11" minlength="11"
                                     placeholder="Enter student phone" required>
                             </div>
                         </td>
                         <td>
                             <div class="rightAlign">
                                 <label for="email" class="label">Student Email</label><br>
-                                <input type="email" id="email" class="inputFields" placeholder="Enter student email"
+                                <input type="email" name="email" id="email" class="inputFields" placeholder="Enter student email"
                                     required>
                             </div>
                         </td>
@@ -79,14 +80,14 @@
                         <td>
                             <div class="leftAlign">
                                 <label for="id" class="label">Student ID</label><br>
-                                <input id="id" class="inputFields" minlength="8" maxlength="8"
+                                <input id="id" name="studID" class="inputFields" minlength="8" maxlength="8"
                                     placeholder="Enter student ID" required>
                             </div>
                         </td>
                         <td>
                             <div class="rightAlign">
                                 <label for="level" class="label">Student Level</label><br>
-                                <select id="level" class="inputFields">
+                                <select name="level" id="level" class="inputFields">
                                     <option value="First" selected>First Level</option>
                                     <option value="Second">Second Level</option>
                                     <option value="Third">Third Level</option>
@@ -100,14 +101,14 @@
                         <td>
                             <div class="leftAlign">
                                 <label for="gpa" class="label">Student GPA</label><br>
-                                <input type="number" id="gpa" class="inputFields" min="0" max="4" step="0.01"
+                                <input type="number" name="gpa" id="gpa" class="inputFields" min="0" max="4" step="0.01"
                                     placeholder="Enter student GPA" required>
                             </div>
                         </td>
                         <td>
                             <div class="rightAlign">
                                 <label for="dept" class="label">Department</label><br>
-                                <select id="dept" class="inputFields">
+                                <select name="dept" id="dept" class="inputFields">
                                     <option value="General" selected>General</option>
                                     <option value="CS">Computer Science</option>
                                     <option value="IS">Information Systems</option>
