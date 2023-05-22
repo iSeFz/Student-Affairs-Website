@@ -14,7 +14,7 @@
 <body>
     <div class="main">
         <div class="formDiv">
-            <form id="deptAssignForm" onsubmit="confirmAssign()">
+            <form id="deptAssignForm" method="POST">
                 <table>
                     <tr>
                         <td>
@@ -26,7 +26,7 @@
                         <td>
                             <div class="rightAlign">
                                 <label for="id" class="label">Student ID</label><br>
-                                <input id="id" class="inputFields" disabled>
+                                <input name="studNum" id="id" class="inputFields" disabled>
                             </div>
                         </td>
                     </tr>
@@ -46,7 +46,7 @@
                         <td>
                             <div class="rightAlign">
                                 <label for="dept" class="label">Department</label><br>
-                                <select id="dept" class="inputFields">
+                                <select name="dept" id="dept" class="inputFields">
                                     <option value="General" hidden>General</option>
                                     <option value="CS">Computer Science</option>
                                     <option value="IS">Information Systems</option>
