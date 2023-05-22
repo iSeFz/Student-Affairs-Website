@@ -1,14 +1,26 @@
 // Retrieve the index of student from search page
 const urlParams = new URLSearchParams(window.location.search);
-const studentIdx = urlParams.get('index');
 
 
 // Assign department to student
 function confirmAssign(){
-    students[studentIdx].dept = document.getElementById('dept').value;
-    // Update students array in local storage
-    localStorage.setItem('students', JSON.stringify(students));
     alert('Department Assigned Successfully');
     event.preventDefault();
     location.href = 'search.html';
 }
+
+
+//Sets the values of various HTML elements on the page based on URL parameters.
+
+function loadData(){
+    document.getElementById('name').value = urlParams.get('name');
+    document.getElementById('id').value = urlParams.get('id');
+    document.getElementById('level').value = urlParams.get('level');
+    document.getElementById('dept').value =  urlParams.get('dept');
+}
+
+loadData();
+
+document.getElementById('level').addEventListener('mousedown', function(e) {
+    e.preventDefault();
+  }, false);

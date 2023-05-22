@@ -15,18 +15,19 @@
     <div class="main">
         <div class="formDiv">
             <form id="deptAssignForm" method="POST">
+                {% csrf_token %}
                 <table>
                     <tr>
                         <td>
                             <div class="leftAlign">
                                 <label for="name" class="label">Student Name</label><br>
-                                <input type="text" id="name" class="inputFields" disabled>
+                                <input name="name" type="text" id="name" class="inputFields" readonly>
                             </div>
                         </td>
                         <td>
                             <div class="rightAlign">
                                 <label for="id" class="label">Student ID</label><br>
-                                <input name="studNum" id="id" class="inputFields" disabled>
+                                <input name="id" name="studNum" id="id" class="inputFields" readonly>
                             </div>
                         </td>
                     </tr>
@@ -35,7 +36,7 @@
                         <td>
                             <div class="leftAlign">
                                 <label for="level" class="label">Student Level</label><br>
-                                <select id="level" class="inputFields" disabled>
+                                <select name="level" id="level" class="inputFields">
                                     <option value="First">First Level</option>
                                     <option value="Second">Second Level</option>
                                     <option value="Third">Third Level</option>
@@ -59,8 +60,8 @@
                     </tr>
 
                     <tr>
-                        <td align="right"><button type="reset" class="buttons" onclick="location.href='search.html'">Go Back</button></td>
-                        <td align="left"><button type="submit" class="buttons">Submit</button></td>
+                        <td align="right"><button type="reset" class="buttons" onclick="location.href='/search.html'">Go Back</button></td>
+                        <td align="left"><button class="buttons">Submit</button></td>
                     </tr>
                 </table>
             </form>

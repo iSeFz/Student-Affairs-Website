@@ -33,13 +33,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% csrf_token %}
                     {% for student in students%}
                         <tr class="mainRow">
                             <td>{{student.name}}</td>
                             <td>{{student.studNum}}</td>
                             <td>{{student.gpa}}</td>
                             <td>{{student.level}}</td>
-                            <td><a href="{%url 'deptAssign'%}">{{student.dept}}</a></td>
+                            <td><a href="#" onclick="getData('{{student.studNum}}')">{{student.dept}}</a></td>
                             <td><a href="{%url 'editStudent'%}"><img src="{%static 'resources/edit.png'%}" alt="edit"></a></td>
                         </tr>
                     {%endfor%}
@@ -47,7 +48,6 @@
             </table>
     </div>
     <script src="{%static 'scripts/search.js'%}"></script>
-
 </body>
 
 </html>

@@ -33,3 +33,29 @@ if (searchField != null) {
         }
     });
 }
+// Function take student data from specific row and send it to deptAssign.html
+function getData(studentID){
+    // create request
+    let myRequest = new XMLHttpRequest();
+    myRequest.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            // get response
+            response = this.responseText;
+            // parse response to json
+            response = JSON.parse(response);
+            // create query string in url
+            query = "name=" + response.name + "&id=" + response.id + 
+            "&dept=" + response.dept + "&level=" + response.level;
+            window.location.href = '/deptAssign.html/?' + query;
+        }
+    }
+    // send request to server
+    myRequest.open('POST', '/getStudent', true);
+    // set request header
+    myRequest.setRequestHeader('Content-Type', 'application/json');
+    myRequest.setRequestHeader('x-csrftoken', document.querySelector('[name=csrfmiddlewaretoken]').value);
+    // send request body to server with student id
+    myRequest.send(JSON.stringify({
+        studentID: studentID
+    }));
+}
