@@ -91,14 +91,11 @@ def deptAssign(request):
     if request.method == 'POST':
         student = Student.objects.get(studNum=request.POST.get('id'))
         # edit student data
-        name = request.POST.get('name')
-        studID = request.POST.get('id')
-        level = request.POST.get('level')
         dept = request.POST.get('dept')
         data = Student(
-            name=name, dob=student.dob, phone=student.phone,
+            name=student.name, dob=student.dob, phone=student.phone,
             email=student.email, gender=student.gender,
-            status=student.status, studNum=studID, level=level, gpa=student.gpa,
+            status=student.status, studNum=student.studNum, level=student.level, gpa=student.gpa,
             dept=dept
         )
         data.save()
@@ -110,8 +107,8 @@ def deptAssign(request):
 def getStudent(request):
     if request.method == 'POST':
         # get student id from request body
-        ID = json.loads(request.body)
-        data = Student.objects.get(studNum=ID['studentID'])
+        requestBody = json.loads(request.body)
+        data = Student.objects.get(studNum=requestBody['studentID'])
         # create dictionary of student data
         studDict = {
             'name': data.name,
