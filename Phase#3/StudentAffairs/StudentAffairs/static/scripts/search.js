@@ -1,55 +1,3 @@
-// global variables
-let students = JSON.parse(localStorage.getItem('students'));
-
-
-// this function is creating row with data stored in local storage
-function createRow(student, idx) {
-    let tbody = document.querySelector('tbody');
-    let newRow = document.createElement('tr');
-    newRow.classList.add('mainRow');
-    newRow.style.display = 'table-row';
-    let cells = [];
-
-    // table cells
-    cells[0] = document.createElement('td');
-    cells[0].textContent = student.name;
-    cells[1] = document.createElement('td');
-    cells[1].textContent = student.id;
-    cells[2] = document.createElement('td');
-    cells[2].textContent = student.gpa;
-    cells[3] = document.createElement('td');
-    cells[3].textContent = student.level;
-    cells[4] = document.createElement('td');
-    cells[4].innerHTML = "<a href='deptAssign.html?index=" + idx + "'>" + student.dept + "</a>";
-    cells[5] = document.createElement('td');
-    cells[5].innerHTML = "<a href='editStudent.html?index=" + idx + "'>" + "<img src='static/resources/edit.png'>" + "</a>";
-
-    // append children to newRow
-    cells.forEach((cell) => {
-        newRow.appendChild(cell);
-    });
-    tbody.appendChild(newRow);
-}
-
-// this function load info from localStorage to table
-function loadInfoToPage() {
-    if (localStorage.key(0) != null && students.length > 0) {
-        // create row for each student
-        for (var st of students) {
-            if (st.status == 'active')
-                createRow(st, students.indexOf(st));
-        }
-    }
-    else {
-        if(confirm("No Student exist to search\n Do you want to add Student")){
-            location.href = 'newStudent.html';
-        }
-        else{
-            location.href = 'index.html';
-        }
-    }
-}
-
 function searchName() {
     let searchValue = document.getElementById("studentName").value;
     let rows = document.querySelectorAll("tbody > tr");
@@ -73,8 +21,6 @@ function searchName() {
     }
 }
 
-loadInfoToPage();
-
 let searchField = document.getElementById("studentName");
 if (searchField != null) {
     searchField.addEventListener("keypress", function (event) {
@@ -86,4 +32,40 @@ if (searchField != null) {
             document.getElementById("searchButton").click();
         }
     });
+}
+// Function take student data from specific row and send it to deptAssign.html
+function getData(studentID, extended){
+    // create request
+    let myRequest = new XMLHttpRequest();
+    myRequest.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            // get response
+            response = this.responseText;
+            // parse response to json
+            response = JSON.parse(response);
+            if(extended){
+                // create query string in url
+                query = "name=" + response.name + "&id=" + response.id + 
+                "&dept=" + response.dept + "&level=" + response.level + "&gpa=" + response.gpa
+                + "&dob=" + response.dob + "&phone=" + response.phone + "&email=" + response.email
+                + "&status=" + response.status + "&gender=" + response.gender;
+                window.location.href = '/editStudent.html/?' + query;
+            }
+            else{
+                // create query string in url
+                query = "name=" + response.name + "&id=" + response.id + 
+                "&dept=" + response.dept + "&level=" + response.level;
+                window.location.href = '/deptAssign.html/?' + query;
+            }
+        }
+    }
+    // send request to server
+    myRequest.open('POST', '/getStudent', true);
+    // set request header
+    myRequest.setRequestHeader('Content-Type', 'application/json');
+    myRequest.setRequestHeader('x-csrftoken', document.querySelector('[name=csrfmiddlewaretoken]').value);
+    // send request body to server with student id
+    myRequest.send(JSON.stringify({
+        studentID: studentID
+    }));
 }
