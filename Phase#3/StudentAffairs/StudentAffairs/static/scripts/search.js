@@ -12,6 +12,7 @@ function searchName() {
             count++;
         }
         else {
+            
             row.style.display = "none";
         }
     });
