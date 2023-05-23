@@ -10,6 +10,7 @@ urlpatterns = [
     path('viewAll.html', views.viewAll, name='viewAll'),
     path('deptAssign.html', views.deptAssign, name='deptAssign'),
     path('deptAssign.html/', views.deptAssign, name='deptAssign'),
+    path('editStudent.html/', views.editStudent, name='editStudent'),
     path('deleteStudent/<id>', views.deleteStudent, name='deleteStudent'),
     path('getStudent', views.getStudent, name='sendStudent'),
 ]

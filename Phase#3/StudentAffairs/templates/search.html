@@ -40,8 +40,8 @@
                             <td>{{student.studNum}}</td>
                             <td>{{student.gpa}}</td>
                             <td>{{student.level}}</td>
-                            <td><a href="#" onclick="getData('{{student.studNum}}')">{{student.dept}}</a></td>
-                            <td><a href="{%url 'editStudent'%}"><img src="{%static 'resources/edit.png'%}" alt="edit"></a></td>
+                            <td><a href="#" onclick="getData('{{student.studNum}}',false)">{{student.dept}}</a></td>
+                            <td><a href="#" onclick="getData('{{student.studNum}}',true)"><img src="{%static 'resources/edit.png'%}" alt="edit"></a></td>
                         </tr>
                     {%endfor%}
                 </tbody>

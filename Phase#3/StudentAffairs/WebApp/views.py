@@ -48,11 +48,14 @@ def editStudent(request):
     studID = request.POST.get('studID')
     level = request.POST.get('level')
     gpa = request.POST.get('gpa')
+    dept = request.POST.get('dept')
     data = Student(name=name, dob=dob, phone=phone, email=email,
-                   gender=gender, status=status, studNum=studID, level=level, gpa=gpa)
+                   gender=gender, status=status, studNum=studID, level=level, gpa=gpa
+                   , dept=dept)
     # save data to database
     if request.method == 'POST':
         data.save()
+        return redirect('/search.html')
     return render(request, 'editStudent.html', {'currentPage': 'editStudent'})
 
 # deleteStudent button
@@ -61,7 +64,7 @@ def deleteStudent(request, id):
     # delete data by student id
     data = Student.objects.get(studNum=id)
     data.delete()
-    return render(request, 'viewAll.html', {'currentPage': 'viewAll'})
+    return redirect('/search.html')
 
 # search view
 
@@ -115,6 +118,12 @@ def getStudent(request):
             'id': data.studNum,
             'level': data.level,
             'dept': data.dept,
+            'gpa': data.gpa,
+            'gender':data.gender,
+            'status':data.status,
+            'dob':data.dob,
+            'phone':data.phone,
+            'email':data.email
         }
         # return student data as json response
         return JsonResponse(studDict)

@@ -34,7 +34,7 @@ if (searchField != null) {
     });
 }
 // Function take student data from specific row and send it to deptAssign.html
-function getData(studentID){
+function getData(studentID, extended){
     // create request
     let myRequest = new XMLHttpRequest();
     myRequest.onreadystatechange = function(){
@@ -43,10 +43,20 @@ function getData(studentID){
             response = this.responseText;
             // parse response to json
             response = JSON.parse(response);
-            // create query string in url
-            query = "name=" + response.name + "&id=" + response.id + 
-            "&dept=" + response.dept + "&level=" + response.level;
-            window.location.href = '/deptAssign.html/?' + query;
+            if(extended){
+                // create query string in url
+                query = "name=" + response.name + "&id=" + response.id + 
+                "&dept=" + response.dept + "&level=" + response.level + "&gpa=" + response.gpa
+                + "&dob=" + response.dob + "&phone=" + response.phone + "&email=" + response.email
+                + "&status=" + response.status + "&gender=" + response.gender;
+                window.location.href = '/editStudent.html/?' + query;
+            }
+            else{
+                // create query string in url
+                query = "name=" + response.name + "&id=" + response.id + 
+                "&dept=" + response.dept + "&level=" + response.level;
+                window.location.href = '/deptAssign.html/?' + query;
+            }
         }
     }
     // send request to server
