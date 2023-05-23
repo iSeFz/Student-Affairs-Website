@@ -28,6 +28,7 @@
             </tr>
         </thead>
         <tbody>
+            {% csrf_token %}
             {% for student in students%}
                 <tr class="mainRow">
                     <td>{{student.name}}</td>
@@ -36,13 +37,17 @@
                     <td>{{student.level}}</td>
                     <td>
                         <div class="checkbox">
-                            <input type="checkbox" value="Active" id="check{{student.studNum}}">
-                            <label for="check{{student.studNum}}"></label>
+                            {% if student.status == 'Active'%}
+                                <input type="checkbox" value="Active" id="check{{student.studNum}}" onclick="changeStatus('check{{student.studNum}}')" checked>
+                                <label for="check{{student.studNum}}"></label>
+                            {%else%}
+                                <input type="checkbox" value="Active" id="check{{student.studNum}}" onclick="changeStatus('check{{student.studNum}}')" checked>
+                                <label for="check{{student.studNum}}"></label>
+                            {%endif%}
                         </div>
                     </td>
                     <td onclick="popUp('modal{{student.studNum}}')"></td>
                 </tr>
-
             {%endfor%}
             {%for student in students%}
                 <div class="modal" id="modal{{student.studNum}}">
@@ -77,8 +82,8 @@
 
         </tbody>
     </table>
-        <div class="overlay"></div>
-    <script src="{%static 'scripts/viewAll.js'%}"></script>
+    <div class="overlay"></div>
+    <script src="{%static 'scripts/view.js'%}"></script>
 </body>
 
 </html>

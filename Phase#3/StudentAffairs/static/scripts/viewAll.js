@@ -35,3 +35,8 @@ function handleClick(event) {
 }
 
 document.addEventListener('click', handleClick);
+
+function changeStatus(id){
+    studentID = id.substring(5, id.length);
+    console.log(studentID);
+}

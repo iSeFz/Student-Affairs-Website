@@ -89,16 +89,16 @@ def viewAll(request):
 def deptAssign(request):
     # when click on submit button
     if request.method == 'POST':
-        studPreviousData = Student.objects.get(studNum=request.POST.get('id'))
+        student = Student.objects.get(studNum=request.POST.get('id'))
         # edit student data
         name = request.POST.get('name')
         studID = request.POST.get('id')
         level = request.POST.get('level')
         dept = request.POST.get('dept')
         data = Student(
-            name=name, dob=studPreviousData.dob, phone=studPreviousData.phone,
-            email=studPreviousData.email, gender=studPreviousData.gender,
-            status=studPreviousData.status, studNum=studID, level=level, gpa=studPreviousData.gpa,
+            name=name, dob=student.dob, phone=student.phone,
+            email=student.email, gender=student.gender,
+            status=student.status, studNum=studID, level=level, gpa=student.gpa,
             dept=dept
         )
         data.save()
@@ -128,3 +128,21 @@ def getStudent(request):
         # return student data as json response
         return JsonResponse(studDict)
     return JsonResponse({'message': 'Invalid request method.'})
+# change status of student
+def changeStatus(request):
+    print(request.body)
+    if request.method == 'POST':
+        # get student id, status from request body
+        requestBody = json.loads(request.body)
+        # get student data
+        student = Student.objects.get(studNum=requestBody['studentID'])
+        # change status
+        data = Student(
+            name=student.name, dob=student.dob, phone=student.phone,
+            email=student.email, gender=student.gender,
+            status=requestBody['status'], studNum=student.studNum, level=student.level,
+            gpa=student.gpa,dept=student.dept
+        )
+        # save data
+        data.save()
+        return JsonResponse({'message': 'success'})
