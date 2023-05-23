@@ -12,5 +12,5 @@ class Student(models.Model):
     status = models.CharField(max_length=10, choices=[('Active', 'Active'), ('Inactive', 'Inactive')], default='Active')
     level = models.CharField(max_length=10, choices=[('First', 'First'), ('Second', 'Second'), ('Third', 'Third'), ('Fourth', 'Fourth')],null=True)
     gpa = models.FloatField(null=True)
-    dept = models.CharField(max_length=10, choices=[('CS', 'CS'), ('IT', 'IT'), ('IS', 'IS'), ('DS', 'DS'), ('General', 'General')], default='General')
+    dept = models.CharField(max_length=10, choices=[('CS', 'CS'), ('IT', 'IT'), ('IS', 'IS'), ('DS', 'DS'), ('General', 'General'),('AI', 'AI')], default='General')
     studNum = models.CharField(max_length=8, primary_key=True)

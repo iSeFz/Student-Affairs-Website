@@ -1,7 +1,8 @@
+import json
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
-import json
 from .models import Student
+from django.db.models import Avg
 # Create your views here.
 
 # homepage view
@@ -12,7 +13,16 @@ def homePage(request):
 # index view
 
 def index(request):
-    return render(request, 'index.html', {'currentPage': 'index'})
+    studentCount = Student.objects.all().count()
+    activeCount = Student.objects.filter(status='Active').count()
+    inactiveCount = Student.objects.filter(status='Inactive').count()
+    ctx = {
+        'currentPage': 'index',
+        'studentCount': studentCount,
+        'activeCount': activeCount,
+        'inactiveCount': inactiveCount,
+    }
+    return render(request, 'index.html', ctx)
 
 # newStudent view
 
@@ -143,3 +153,33 @@ def changeStatus(request):
         # save data
         data.save()
         return JsonResponse({'message': 'success'})
+
+def getStatistics(request):
+    studInCS = Student.objects.filter(dept='CS').count()
+    studInIT = Student.objects.filter(dept='IT').count()
+    studInIS = Student.objects.filter(dept='IS').count()
+    studInDS = Student.objects.filter(dept='DS').count()
+    studInAI = Student.objects.filter(dept='AI').count()
+    studInGeneral = Student.objects.filter(dept='General').count()
+    avgCSGPA = Student.objects.filter(dept='CS').aggregate(Avg('gpa'))['gpa__avg']
+    avgITGPA = Student.objects.filter(dept='IT').aggregate(Avg('gpa'))['gpa__avg']
+    avgISGPA = Student.objects.filter(dept='IS').aggregate(Avg('gpa'))['gpa__avg']
+    avgDSPGA = Student.objects.filter(dept='DS').aggregate(Avg('gpa'))['gpa__avg']
+    avgAIGPA = Student.objects.filter(dept='AI').aggregate(Avg('gpa'))['gpa__avg']
+    avgGeneralGPA = Student.objects.filter(dept='General').aggregate(Avg('gpa'))['gpa__avg']
+    resultDict = {
+        'CS': avgCSGPA,
+        'IS': avgISGPA,
+        'IT': avgITGPA,
+        'AI': avgAIGPA,
+        'DS': avgDSPGA,
+        'General': avgGeneralGPA,
+        'countCS': studInCS,
+        'countIT': studInIT,
+        'countIS': studInIS,
+        'countDS': studInDS,
+        'countAI': studInAI,
+        'countGeneral': studInGeneral
+    }
+    return JsonResponse(resultDict)
+        
