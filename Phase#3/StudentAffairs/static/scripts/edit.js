@@ -66,3 +66,14 @@ loadData();
 document.getElementById('dept').addEventListener('mousedown', function(e) {
     e.preventDefault();
 }, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+    var url = new URL(window.location.href);
+    var path = url.pathname;
+
+    if (path === '/editStudent.html/' && url.search === '') {
+        
+        alert('Please Select a student to edit from search table!');
+        window.location.href = '/search.html';
+    }
+});

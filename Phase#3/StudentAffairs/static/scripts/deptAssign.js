@@ -28,3 +28,14 @@ loadData();
 document.getElementById('level').addEventListener('mousedown', function(e) {
 e.preventDefault();
 }, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+    var url = new URL(window.location.href);
+    var path = url.pathname;
+
+    if (path === '/deptAssign.html/' && url.search === '') {
+        
+        alert('Please Select a student from search table!');
+        window.location.href = '/search.html';
+    }
+});
