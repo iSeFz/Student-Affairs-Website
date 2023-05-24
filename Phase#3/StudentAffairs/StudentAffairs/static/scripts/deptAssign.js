@@ -1,17 +1,7 @@
 // Retrieve the index of student from search page
 const urlParams = new URLSearchParams(window.location.search);
 
-
-// Assign department to student
-function confirmAssign(event){
-    alert('Department Assigned Successfully');
-    event.preventDefault();
-    location.href = 'search.html';
-}
-
-
 //Sets the values of various HTML elements on the page based on URL parameters.
-
 function loadData(){
     document.getElementById('level').value = urlParams.get('level');
     document.getElementById('name').value = urlParams.get('name');
@@ -25,10 +15,6 @@ function loadData(){
 
 loadData();
 
-document.getElementById('level').addEventListener('mousedown', function(e) {
-e.preventDefault();
-}, false);
-
 document.addEventListener('DOMContentLoaded', function() {
     var url = new URL(window.location.href);
     var path = url.pathname;
@@ -38,3 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = '/search.html';
     }
 });
+
+// Confirmation message that the department assignment was successfull
+document.getElementById('submit').addEventListener('click', function() {
+    alert('Department Assigned Successfully!');
+    window.location.href = '/search.html';
+})
