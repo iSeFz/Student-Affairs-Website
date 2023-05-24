@@ -73,9 +73,11 @@ function checkDept(level){
     if(level == 'First' || level == 'Second'){
         deptMenu.options[0].selected = true;
         deptMenu.disabled = true;
+        deptMenu.style.cursor = 'not-allowed';
     }
     else{
         deptMenu.disabled = false;
+        deptMenu.style.cursor = 'default';
     }
 }
 
