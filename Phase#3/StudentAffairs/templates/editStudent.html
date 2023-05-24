@@ -19,7 +19,7 @@
 <body>
     <div class="main">
         <div class="formDiv">
-            <form method="post">
+            <form method="post" action="{%url 'editStudent'%}">
                 {%csrf_token%}
                 <table>
                     <tr>
@@ -42,12 +42,14 @@
                             <div class="leftAlign">
                                 <label for="phone" class="label">Phone Number</label><br>
                                 <input type="tel" name="phone" id="phone" class="inputFields" maxlength="11" required>
+                                <div id="phoneError"></div>
                             </div>
                         </td>
                         <td>
                             <div class="rightAlign">
                                 <label for="email" class="label">Student Email</label><br>
                                 <input type="email" name="email" id="email" class="inputFields" required>
+                                <div id="emailError"></div>
                             </div>
                         </td>
                     </tr>
@@ -99,6 +101,7 @@
                             <div class="leftAlign">
                                 <label for="gpa" class="label">Student GPA</label><br>
                                 <input type="number" name="gpa" id="gpa" class="inputFields" min="0" max="4" step="0.01" required>
+                                <div id="gpaError"></div>
                             </div>
                         </td>
                         <td>
@@ -118,7 +121,7 @@
                     <tr>
                         <td>
                             <div id="edit">
-                                <button type="submit" class="buttons">Confirm Edit</button>
+                                <button type="submit" class="buttons" id="submit">Confirm Edit</button>
                             </div>
                         </td>
                         <td>
