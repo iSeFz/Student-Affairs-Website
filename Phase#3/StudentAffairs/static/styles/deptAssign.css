@@ -82,17 +82,20 @@ input[type="radio"]:checked+label {
     cursor: not-allowed;
     padding-left: 3.3rem;
     background-image: url("../resources/user.png");
+    color: #545454;
 }
 
 #id {
     cursor: not-allowed;
     padding-left: 3.3rem;
     background-image: url("../resources/id.png");
+    color: #545454;
 }
 
 #level {
     cursor: not-allowed;
     appearance: none;
+    color: #545454;
 }
 
 #dept {
