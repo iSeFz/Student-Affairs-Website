@@ -26,7 +26,7 @@
                         <td>
                             <div class="leftAlign">
                                 <label for="name" class="label">Student Name</label><br>
-                            <input type="text" name="name" id="name" class="inputFields" required>
+                                <input type="text" name="name" id="name" class="inputFields" required>
                             </div>
                         </td>
                         <td>
@@ -77,7 +77,8 @@
                         <td>
                             <div class="leftAlign">
                                 <label for="id" class="label">Student ID</label><br>
-                                <input id="id" name="studID" class="inputFields" minlength="8" maxlength="8" required>
+                                <input id="id" name="studID" class="inputFields" minlength="8" maxlength="8"
+                                    onmousedown="return false;" readonly>
                             </div>
                         </td>
                         <td>
@@ -103,7 +104,7 @@
                         <td>
                             <div class="rightAlign">
                                 <label for="dept" class="label">Department</label><br>
-                                <select id="dept" name="dept" class="inputFields">
+                                <select id="dept" name="dept" class="inputFields" onmousedown="return false;">
                                     <option value="General">General</option>
                                     <option value="CS">Computer Science</option>
                                     <option value="IS">Information Systems</option>
