@@ -15,4 +15,6 @@ urlpatterns = [
     path('getStudent', views.getStudent, name='sendStudent'),
     path('changeStatus', views.changeStatus, name='changeStatus'),
     path('getStatistics', views.getStatistics, name='getStatistics'),
+    path('checkID/<ID>', views.checkID, name='checkID'),
+    path('checkEmail/<Email>', views.checkEmail, name='checkEmail'),
 ]

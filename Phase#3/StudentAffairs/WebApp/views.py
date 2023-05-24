@@ -38,6 +38,8 @@ def newStudent(request):
     level = request.POST.get('level')
     gpa = request.POST.get('gpa')
     dept = request.POST.get('dept')
+    if(dept == None):
+        dept = 'General'
     data = Student(name=name, dob=dob, phone=phone, email=email, gender=gender,
                    status=status, studNum=studID, level=level, gpa=gpa, dept=dept)
     # save data to database
@@ -182,4 +184,15 @@ def getStatistics(request):
         'countGeneral': studInGeneral
     }
     return JsonResponse(resultDict)
-        
+
+def checkID(request, ID):
+    if Student.objects.filter(studNum=ID).exists():
+        return JsonResponse({'message': 'true'})
+    else:
+        return JsonResponse({'message': 'false'})
+
+def checkEmail(request, Email):
+    if Student.objects.filter(email=Email).exists():
+        return JsonResponse({'message': 'true'})
+    else:
+        return JsonResponse({'message': 'false'})

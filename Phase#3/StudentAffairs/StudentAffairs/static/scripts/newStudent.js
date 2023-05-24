@@ -1,89 +1,108 @@
-// Check functions for input validation
-// Ensure that the phone number is in the correct format
+function errorMessageAdd(err, message) {
+    document.getElementById(err).textContent = message;
+    document.getElementById(err).style.color = "red";
+    return false;
+}
+
+function errorMessageRemove(err) {
+    document.getElementById(err).textContent = "";
+    return true;
+}
+
+let idValid = false, phoneValid = false, emailValid = false;
+
+function checkID(ID) {
+    if(ID == '')
+        return;
+    const IDRegex = /^(20)\d{6}$/;
+    myRequest = new XMLHttpRequest();
+    myRequest.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            if(JSON.parse(this.responseText)['message'] == 'true'){
+                document.getElementById('id').style.border = '1px solid red';
+                idValid = errorMessageAdd('idError', 'This ID already exists');
+            }
+            else{
+                if(!IDRegex.test(ID)){
+                    document.getElementById('id').style.border = '1px solid red';
+                    idValid = errorMessageAdd('idError', 'Please enter a valid ID');
+                }
+                else{
+                    document.getElementById('id').style.border = '1px solid #68797B';
+                    idValid = errorMessageRemove('idError');
+                }
+            }
+        }
+    }
+    myRequest.open("GET", "/checkID/" + ID, true);
+    myRequest.send();
+}
+
 function checkNumber(phoneNumber) {
     const phoneNumberRegex = /^(012|011|015|010)\d{8}$/;
-    if (!phoneNumberRegex.test(phoneNumber))
-        return "Phone number format incorrect, please enter a phone number starting with 010, 011, 012 or 015.\n";
-
-    if (students.some(student => student.phone === phoneNumber)) {
-        return "This phone number is already in use, please enter another number.\n";
+    if (!phoneNumberRegex.test(phoneNumber)){
+        document.getElementById('phone').style.border = '1px solid red';
+        phoneValid = errorMessageAdd('phoneError', 'Please enter a valid phone number');
     }
-    return "";
+    else{
+        document.getElementById('phone').style.border = '1px solid #68797B';
+        phoneValid = errorMessageRemove('phoneError');
+    }
 }
-// Ensure that the student ID is in the correct format
-function checkID(ID) {
-    const IDRegex = /^(20)\d{6}$/;
-    if (!IDRegex.test(ID))
-        return "Student ID format incorrect, please enter a student ID starting with 20.\n";
-    students.forEach(student => {
 
-        if (student['id'] == ID) {
-            return "This ID has already been used before...\n";
+function checkEmail(email){
+    myRequest = new XMLHttpRequest();
+    myRequest.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            if(JSON.parse(this.responseText)['message'] == 'true'){
+                document.getElementById('email').style.border = '1px solid red';
+                emailValid = errorMessageAdd('emailError', 'This email already exists');
+            }
+            else{
+                document.getElementById('email').style.border = '1px solid #68797B';
+                emailValid = errorMessageRemove('emailError');
+            }
         }
-    })
-
-    if (students.some(student => student.id === ID)) {
-        return "This StudentID is already in use, please enter another ID.\n";
     }
-    return "";
+    myRequest.open("GET", "/checkEmail/" + email, true);
+    myRequest.send();
 }
-// Ensure that the email is in the correct format
-function checkEmail(email) {
-    students.forEach(student => {
-        if (student['email'] == email) {
-            return "This email has already been used before...\n";
-        }
-    })
 
-    if (students.some(student => student.email === email)) {
-        return "This email is already in use, please enter another email.\n";
+function checkDept(level){
+    deptMenu = document.getElementById('dept');
+    if(level == 'First' || level == 'Second'){
+        deptMenu.options[0].selected = true;
+        deptMenu.disabled = true;
     }
-    return "";
-}
-// Ensure that the date is in the correct format
-function checkDate(date) {
-    if (date > 2007 || date < 1993) {
-        return "Invalid age, please choose an age 16 between 30."
+    else{
+        deptMenu.disabled = false;
     }
-    return "";
 }
-// Ensure that the department is in the correct format
-function checkDept(dept, level) {
-    if (dept !== "General" && (level === "First" || level === "Second")) {
-        return "Cannot assign department to a student in first or second level.";
+
+document.getElementById('id').addEventListener('input', function () {
+    checkID(this.value);
+});
+
+document.getElementById('phone').addEventListener('input', function () {
+    checkNumber(this.value);
+})
+
+document.getElementById('email').addEventListener('input', function () {
+    checkEmail(this.value);
+})
+
+document.getElementById('level').addEventListener('input', function () {
+    checkDept(this.value);
+})
+
+const submit = document.getElementById('submit');
+
+submit.addEventListener('click',function(e){
+    if(idValid && phoneValid && emailValid){
+        alert('Student added successfully');
     }
-    return "";
-}
-// Create student when the form is submitted
-function createStudent() {
-    // Get form values
-    let dob = document.getElementById("dob").value;
-    let phone = document.getElementById("phone").value;
-    let email = document.getElementById("email").value;
-    let id = document.getElementById("id").value;
-    let level = document.getElementById("level").value;
-    let dept = document.getElementById("dept").value;
-
-    let errors = checkDate(parseInt(dob.substr(0, 4)));
-
-    if (errors != "") { alert(errors); return; }
-
-    errors = checkNumber(phone);
-
-    if (errors != "") { alert(errors); return; }
-
-    errors = checkEmail(email);
-
-    if (errors != "") { alert(errors); return; }
-
-    errors = checkID(id);
-
-    if (errors != "") { alert(errors); return; }
-
-    errors = checkDept(dept, level);
-
-    if (errors != "") { alert(errors); return; }
-
-    // Display success message
-    alert('Student Created Successfully!');
-}
+    else{
+        e.preventDefault();
+        alert('Please check all the fields are filled correctly');
+    }
+})
