@@ -55,8 +55,7 @@ function checkDept(dept, level) {
     return "";
 }
 // Create student when the form is submitted
-function createStudent(event) {
-    event.preventDefault();
+function createStudent() {
     // Get form values
     let dob = document.getElementById("dob").value;
     let phone = document.getElementById("phone").value;
@@ -86,5 +85,5 @@ function createStudent(event) {
     if (errors != "") { alert(errors); return; }
 
     // Display success message
-    alert('Student created successfully!');
+    alert('Student Created Successfully!');
 }
