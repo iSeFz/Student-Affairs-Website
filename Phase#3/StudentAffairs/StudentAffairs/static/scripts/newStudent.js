@@ -9,7 +9,7 @@ function errorMessageRemove(err) {
     return true;
 }
 
-let idValid = false, phoneValid = false, emailValid = false;
+let idValid = false, phoneValid = false, emailValid = false, gpaValid = false;
 
 function checkID(ID) {
     if(ID == '')
@@ -51,6 +51,7 @@ function checkNumber(phoneNumber) {
 }
 
 function checkEmail(email){
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     myRequest = new XMLHttpRequest();
     myRequest.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -59,8 +60,14 @@ function checkEmail(email){
                 emailValid = errorMessageAdd('emailError', 'This email already exists');
             }
             else{
-                document.getElementById('email').style.border = '1px solid #68797B';
-                emailValid = errorMessageRemove('emailError');
+                if(!emailRegex.test(email)){
+                    document.getElementById('email').style.border = '1px solid red';
+                    emailValid = errorMessageAdd('emailError', 'Please enter a valid email');
+                }
+                else{
+                    document.getElementById('email').style.border = '1px solid #68797B';
+                    emailValid = errorMessageRemove('emailError');
+                }
             }
         }
     }
@@ -81,6 +88,17 @@ function checkDept(level){
     }
 }
 
+function checkGPA(gpa){
+    if(gpa < 1 || gpa > 4){
+        document.getElementById('gpa').style.border = '1px solid red';
+        gpaValid = errorMessageAdd('gpaError', 'Please enter a valid GPA between 1 and 4');
+    }
+    else{
+        document.getElementById('gpa').style.border = '1px solid #68797B';
+        gpaValid = errorMessageRemove('gpaError');
+    }
+}
+
 document.getElementById('id').addEventListener('input', function () {
     checkID(this.value);
 });
@@ -97,10 +115,14 @@ document.getElementById('level').addEventListener('input', function () {
     checkDept(this.value);
 })
 
+document.getElementById('gpa').addEventListener('input', function () {
+    checkGPA(this.value);
+})
+
 const submit = document.getElementById('submit');
 
 submit.addEventListener('click',function(e){
-    if(idValid && phoneValid && emailValid){
+    if(idValid && phoneValid && emailValid && gpaValid){
         alert('Student added successfully');
     }
     else{

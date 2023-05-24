@@ -139,7 +139,6 @@ def getStudent(request):
     return JsonResponse({'message': 'Invalid request method.'})
 # change status of student
 def changeStatus(request):
-    print(request.body)
     if request.method == 'POST':
         # get student id, status from request body
         requestBody = json.loads(request.body)
