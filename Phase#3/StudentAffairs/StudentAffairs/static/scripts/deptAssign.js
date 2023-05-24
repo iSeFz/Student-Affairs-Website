@@ -3,7 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 
 
 // Assign department to student
-function confirmAssign(){
+function confirmAssign(event){
     alert('Department Assigned Successfully');
     event.preventDefault();
     location.href = 'search.html';
@@ -28,3 +28,13 @@ loadData();
 document.getElementById('level').addEventListener('mousedown', function(e) {
 e.preventDefault();
 }, false);
+
+document.addEventListener('DOMContentLoaded', function() {
+    var url = new URL(window.location.href);
+    var path = url.pathname;
+
+    if (path === '/deptAssign.html/' && url.search === '') {
+        alert('Please choose a specific student to assign!');
+        window.location.href = '/search.html';
+    }
+});

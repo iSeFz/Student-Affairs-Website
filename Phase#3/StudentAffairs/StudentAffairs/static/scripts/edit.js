@@ -29,3 +29,14 @@ loadData();
 // Prevent the user from editing the department field
 document.getElementById('dept').addEventListener('mousedown',
     function (e) { e.preventDefault(); }, false);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var url = new URL(window.location.href);
+    var path = url.pathname;
+
+    if (path === '/editStudent.html/' && url.search === '') {
+        alert('Please choose a specific student to edit!');
+        window.location.href = '/search.html';
+    }
+});
