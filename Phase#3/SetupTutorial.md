@@ -26,7 +26,7 @@ You should now see (projectenv) at the beginning of your command prompt, indicat
 
 6- Install packages from a requirements.txt file using the following command:
 ```sh
-pip install --upgrade pip && pip install -r Web-Project\Phase#3\requirements.txt
+pip install -r Web-Project\Phase#3\requirements.txt
 ```
 This will install all the packages listed in the requirements.txt file into your virtual environment.
 
