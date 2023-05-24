@@ -35,6 +35,7 @@
                 <tbody>
                     {% csrf_token %}
                     {% for student in students%}
+                        {% if student.status == 'Active' %}
                         <tr class="mainRow">
                             <td>{{student.name}}</td>
                             <td>{{student.studNum}}</td>
@@ -43,6 +44,7 @@
                             <td><a href="#" onclick="getData('{{student.studNum}}',false)">{{student.dept}}</a></td>
                             <td><a href="#" onclick="getData('{{student.studNum}}',true)"><img src="{%static 'resources/edit.png'%}" alt="edit"></a></td>
                         </tr>
+                        {%endif%}
                     {%endfor%}
                 </tbody>
             </table>
