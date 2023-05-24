@@ -1,11 +1,14 @@
 function errorMessageAdd(err, message) {
     document.getElementById(err).textContent = message;
     document.getElementById(err).style.color = "red";
+    document.getElementById(err).style.margin = "-25px 40px 5px";
     return false;
 }
 
 function errorMessageRemove(err) {
     document.getElementById(err).textContent = "";
+    document.getElementById(err).style.color = "black";
+    document.getElementById(err).style.margin = "0px";
     return true;
 }
 
