@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    {% if students %}
     <table id="Table">
         <thead>
             <tr>
@@ -29,66 +30,70 @@
         </thead>
         <tbody>
             {% csrf_token %}
-            {% if students %}
-                <script>
-                    alert("No Students found!");
-                    location.href = 'newStudent.html';
-                </script>
-            {% endif %}
             {% for student in students%}
-                <tr class="mainRow">
-                    <td>{{student.name}}</td>
-                    <td>{{student.studNum}}</td>
-                    <td>{{student.gpa}}</td>
-                    <td>{{student.level}}</td>
-                    <td>
-                        <div class="checkbox">
-                            {% if student.status == 'Active'%}
-                                <input type="checkbox" value="Active" id="check{{student.studNum}}" onclick="changeStatus('check{{student.studNum}}')" checked>
-                                <label for="check{{student.studNum}}"></label>
-                            {%else%}
-                                <input type="checkbox" value="Inactive" id="check{{student.studNum}}" onclick="changeStatus('check{{student.studNum}}')">
-                                <label for="check{{student.studNum}}"></label>
-                            {%endif%}
-                        </div>
-                    </td>
-                    <td onclick="popUp('modal{{student.studNum}}')"></td>
-                </tr>
+            <tr class="mainRow">
+                <td>{{student.name}}</td>
+                <td>{{student.studNum}}</td>
+                <td>{{student.gpa}}</td>
+                <td>{{student.level}}</td>
+                <td>
+                    <div class="checkbox">
+                        {% if student.status == 'Active'%}
+                        <input type="checkbox" value="Active" id="check{{student.studNum}}"
+                            onclick="changeStatus('check{{student.studNum}}')" checked>
+                        <label for="check{{student.studNum}}"></label>
+                        {%else%}
+                        <input type="checkbox" value="Inactive" id="check{{student.studNum}}"
+                            onclick="changeStatus('check{{student.studNum}}')">
+                        <label for="check{{student.studNum}}"></label>
+                        {%endif%}
+                    </div>
+                </td>
+                <td onclick="popUp('modal{{student.studNum}}')"></td>
+            </tr>
             {%endfor%}
             {%for student in students%}
-                <div class="modal" id="modal{{student.studNum}}">
-                    <div class="modal-head">
-                        <div class="title">More Information</div>
-                        <button class="close-button" onclick="closePopUp('modal{{student.studNum}}')">x</button>
-                    </div>
-                    <div class="modal-body">
-                        <span>
-                            <b>Gender: &nbsp;</b>
-                            {{student.gender}}
-                        </span>
-                        <br>
-                        <span>
-                            <b>Date of Birth: &nbsp;</b>
-                            {{student.dob}}
-                        </span>
-                        <br>
-                        <span>
-                            <b>Phone: &nbsp;</b>
-                            {{student.phone}}
-                        </span>
-                        <br>
-                        <span>
-                            <b>Email: &nbsp;</b>
-                            {{student.email}}
-                        </span>
-                        <br>
-                    </div>
+            <div class="modal" id="modal{{student.studNum}}">
+                <div class="modal-head">
+                    <div class="title">More Information</div>
+                    <button class="close-button" onclick="closePopUp('modal{{student.studNum}}')">x</button>
                 </div>
+                <div class="modal-body">
+                    <span>
+                        <b>Gender: &nbsp;</b>
+                        {{student.gender}}
+                    </span>
+                    <br>
+                    <span>
+                        <b>Date of Birth: &nbsp;</b>
+                        {{student.dob}}
+                    </span>
+                    <br>
+                    <span>
+                        <b>Phone: &nbsp;</b>
+                        {{student.phone}}
+                    </span>
+                    <br>
+                    <span>
+                        <b>Email: &nbsp;</b>
+                        {{student.email}}
+                    </span>
+                    <br>
+                </div>
+            </div>
             {%endfor%}
 
         </tbody>
     </table>
     <div class="overlay"></div>
+    {% else %}
+    <div id="container">
+        <div id="noStudents">
+            <p>No Students Found!</p>
+            <p><a href="newStudent.html">Add new students to view!</a></p>
+        </div>
+    </div>
+    {% endif %}
     <script src="{%static 'scripts/view.js'%}"></script>
 </body>
 

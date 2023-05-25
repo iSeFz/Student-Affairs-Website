@@ -207,30 +207,28 @@ div.checkbox {
     color: white;
 }
 
-.alertDiv{
-    margin: calc((100% - 80%)/2);
-    width: 80%;
-    font-family: 'Rubik', sans-serif;
-    padding: 30px 10px 10px 10px;
-    text-align: center;
-    justify-content: center;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
-}
-
-#alertBox {
+#container {
     display: flex;
+    margin: 5%;
+    padding: 5%;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: -20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Rubik', sans-serif;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-#alertBox a {
+#noStudents p {
+    font-size: 4rem;
+    font-weight: bold;
+    color: tomato;
+}
+
+p a {
     padding: 10px 20px;
-    font-family: 'Rubik', sans-serif;
+    font-size: 4rem;
     background-color: #458F6C;
     color: white;
     cursor: pointer;
