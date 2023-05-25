@@ -29,6 +29,12 @@
         </thead>
         <tbody>
             {% csrf_token %}
+            {% if students %}
+                <script>
+                    alert("No Students found!");
+                    location.href = 'newStudent.html';
+                </script>
+            {% endif %}
             {% for student in students%}
                 <tr class="mainRow">
                     <td>{{student.name}}</td>
