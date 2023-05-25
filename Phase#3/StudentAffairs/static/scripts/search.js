@@ -6,9 +6,9 @@ function searchName() {
         if (row.firstElementChild.textContent.toLowerCase().startsWith(searchValue.toLowerCase())) {
             row.style.display = "table-row";
             if (count % 2 == 1)
-                row.style.backgroundColor = "#d2ffc265";
-            else
                 row.style.backgroundColor = "#FFFFFF";
+            else
+                row.style.backgroundColor = "#d2ffc265";
             count++;
         }
         else {
