@@ -53,7 +53,7 @@ function errorMessageRemove(err) {
     return true;
 }
 
-let phoneValid = false, emailValid = false, gpaValid = false;
+let phoneValid = true, emailValid = true, gpaValid = true;
 
 // Check the validity of the student's phone number
 function checkNumber(phoneNumber) {
