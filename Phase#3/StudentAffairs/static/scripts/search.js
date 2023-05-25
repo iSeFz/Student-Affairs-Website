@@ -70,3 +70,11 @@ function getData(studentID, extended){
         studentID: studentID
     }));
 }
+
+window.addEventListener('DOMContentLoaded', function() {
+    var activeStudents = document.querySelectorAll('.mainRow');
+    if (activeStudents.length === 0) {
+        alert("No Active Students found!");
+        location.href = 'newStudent.html';
+    }
+});
