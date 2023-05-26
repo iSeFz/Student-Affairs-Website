@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    {% if students %}
     <div id="Table">
         <center>
             <!-- search bar -->
@@ -21,34 +22,43 @@
                 <input type="text" name="search" placeholder="Enter student name" id="studentName">
                 <input type="button" value="Search" onclick="searchName()" id="searchButton">
         </center>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>ID</th>
-                        <th>GPA</th>
-                        <th>Level</th>
-                        <th>Department</th>
-                        <th>Edit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% csrf_token %}
-                    {% for student in students%}
-                        {% if student.status == 'Active' %}
-                        <tr class="mainRow">
-                            <td>{{student.name}}</td>
-                            <td>{{student.studNum}}</td>
-                            <td>{{student.gpa}}</td>
-                            <td>{{student.level}}</td>
-                            <td><a href="#" onclick="getData('{{student.studNum}}',false)">{{student.dept}}</a></td>
-                            <td><a href="#" onclick="getData('{{student.studNum}}',true)"><img src="{%static 'resources/edit.png'%}" alt="edit"></a></td>
-                        </tr>
-                        {%endif%}
-                    {%endfor%}
-                </tbody>
-            </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>ID</th>
+                    <th>GPA</th>
+                    <th>Level</th>
+                    <th>Department</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% csrf_token %}
+                {% for student in students%}
+                {% if student.status == 'Active' %}
+                <tr class="mainRow">
+                    <td>{{student.name}}</td>
+                    <td>{{student.studNum}}</td>
+                    <td>{{student.gpa}}</td>
+                    <td>{{student.level}}</td>
+                    <td><a href="#" onclick="getData('{{student.studNum}}',false)">{{student.dept}}</a></td>
+                    <td><a href="#" onclick="getData('{{student.studNum}}',true)">
+                            <img src="{%static 'resources/edit.png'%}" alt="edit"></a></td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
+    {% else %}
+    <div id="container">
+        <div id="noActive">
+            <p>No Students Found!</p>
+            <p><a href="newStudent.html">Add new students to search!</a></p>
+        </div>
+    </div>
+    {%endif%}
     <script src="{%static 'scripts/search.js'%}"></script>
 </body>
 
