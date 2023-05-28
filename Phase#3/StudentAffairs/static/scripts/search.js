@@ -72,7 +72,7 @@ function getData(studentID, extended){
 }
 
 // Check if there are any active students before loading the table
-window.addEventListener('DOMContentLoaded', function() {
+this.window.addEventListener('DOMContentLoaded', function() {
     var activeStudents = document.querySelectorAll('.mainRow'); 
     if (activeStudents.length === 0) {
         // Create container div
@@ -83,7 +83,7 @@ window.addEventListener('DOMContentLoaded', function() {
         noActive.setAttribute("id", "noActive");
         // Create the first paragraph node
         let p1 = this.document.createElement("p");
-        let txt = this.document.createTextNode("No Active Students found!");
+        let txt = this.document.createTextNode("No Active Students Found!");
         p1.appendChild(txt);
         // Append the first paragraph node to div
         noActive.appendChild(p1);

@@ -83,7 +83,7 @@ this.window.addEventListener('DOMContentLoaded', function() {
         noActive.setAttribute("id", "noActive");
         // Create the first paragraph node
         let p1 = this.document.createElement("p");
-        let txt = this.document.createTextNode("No Active Students found!");
+        let txt = this.document.createTextNode("No Active Students Found!");
         p1.appendChild(txt);
         // Append the first paragraph node to div
         noActive.appendChild(p1);
