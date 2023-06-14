@@ -3,15 +3,12 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from .models import Student
 from django.db.models import Avg
-# Create your views here.
 
-# homepage view
-
+# Homepage view
 def homePage(request):
     return render(request, 'homePage.html')
 
-# index view
-
+# Student Affairs homepage view
 def index(request):
     studentCount = Student.objects.all().count()
     activeCount = Student.objects.filter(status='Active').count()
@@ -24,8 +21,7 @@ def index(request):
     }
     return render(request, 'index.html', ctx)
 
-# newStudent view
-
+# Add New Student view
 def newStudent(request):
     # get values from form
     name = request.POST.get('name')
@@ -47,8 +43,7 @@ def newStudent(request):
         data.save()
     return render(request, 'newStudent.html', {'currentPage': 'newStudent'})
 
-# editStudent view
-
+# Edit Student view
 def editStudent(request):
     # get values from form
     name = request.POST.get('name')
@@ -70,16 +65,14 @@ def editStudent(request):
         return redirect('/search.html')
     return render(request, 'editStudent.html', {'currentPage': 'editStudent'})
 
-# deleteStudent button
-
+# Delete Student button
 def deleteStudent(request, id):
     # delete data by student id
     data = Student.objects.get(studNum=id)
     data.delete()
     return redirect('/search.html')
 
-# search view
-
+# Search view
 def search(request):
     ctx = {
         'currentPage': 'search',
@@ -87,8 +80,7 @@ def search(request):
     }
     return render(request, 'search.html', ctx)
 
-# viewAll view
-
+# View All Students view
 def viewAll(request):
     ctx = {
         'currentPage': 'viewAll',
@@ -96,8 +88,7 @@ def viewAll(request):
     }
     return render(request, 'viewAll.html', ctx)
 
-# deptAssign view
-
+# Department Assignment view
 def deptAssign(request):
     # when click on submit button
     if request.method == 'POST':
@@ -114,8 +105,7 @@ def deptAssign(request):
         return redirect('/search.html')
     return render(request, 'deptAssign.html', {'currentPage': 'deptAssign'})
 
-# get student data by id
-
+# Get student data by id
 def getStudent(request):
     if request.method == 'POST':
         # get student id from request body
@@ -137,7 +127,8 @@ def getStudent(request):
         # return student data as json response
         return JsonResponse(studDict)
     return JsonResponse({'message': 'Invalid request method.'})
-# change status of student
+
+# Change status of student
 def changeStatus(request):
     if request.method == 'POST':
         # get student id, status from request body
@@ -155,6 +146,7 @@ def changeStatus(request):
         data.save()
         return JsonResponse({'message': 'success'})
 
+# Get statistics of all students view
 def getStatistics(request):
     studInCS = Student.objects.filter(dept='CS').count()
     studInIT = Student.objects.filter(dept='IT').count()
@@ -184,12 +176,14 @@ def getStatistics(request):
     }
     return JsonResponse(resultDict)
 
+# Check if student ID exists
 def checkID(request, ID):
     if Student.objects.filter(studNum=ID).exists():
         return JsonResponse({'message': 'true'})
     else:
         return JsonResponse({'message': 'false'})
 
+# Check if student email exists
 def checkEmail(request, Email):
     if Student.objects.filter(email=Email).exists():
         return JsonResponse({'message': 'true'})

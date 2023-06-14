@@ -1,8 +1,7 @@
 import os
 from django.db import models
 
-# Create your models here.
-
+# Student Model
 class Student(models.Model):
     name = models.CharField(max_length=100, null=True)
     dob = models.DateField(default='2000-01-01')
