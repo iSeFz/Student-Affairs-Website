@@ -1,3 +1,4 @@
+// Load students statistics from database
 function loadStatistics() {
     // create the request
     myRequest = new XMLHttpRequest();
@@ -53,7 +54,6 @@ function loadStatistics() {
                         label: 'Average GPA',
                         data: [data['CS'], data['IS'], data['IT'], data['AI'], data['DS'], data['General']],
                         backgroundColor: [
-                            '#8f9897',
                             'rgba(41, 155, 99, 1)',
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 206, 86, 1)',
@@ -62,7 +62,6 @@ function loadStatistics() {
                             'rgba(55, 71, 133, 1)'
                         ],
                         borderColor: [
-                            '#8f9897',
                             'rgba(41, 155, 99, 1)',
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 206, 86, 1)',
@@ -94,4 +93,5 @@ function loadStatistics() {
     myRequest.open("GET", "/getStatistics", true);
     myRequest.send();
 }
+
 loadStatistics();
